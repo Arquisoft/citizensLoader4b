@@ -1,0 +1,7 @@
+#Aqui os dejo los comandos para configurar bien vuestra cuenta en el pc de casa.
+#Para que no pase lo que mepaso en clase a mi.
+
+#CONFIGURACION NOMBRE:
+	git config --global user.name "Raul Gomez Perez"
+#CONFIGURACION EMAIL:
+	git config --global user.email "raul.infotek@gmail.com"
