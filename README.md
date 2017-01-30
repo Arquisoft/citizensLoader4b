@@ -12,3 +12,4 @@ Skeleton of Citizens Loader module
 - Jorge Rodríguez Fernández (@JorRoFe)
 - Adrián García Lumbreras (@AdrianGLumbreras)
 - Iván González Mahagamage (@igm1990)
+- Raúl Gómez Pérez (@RaulG89)
