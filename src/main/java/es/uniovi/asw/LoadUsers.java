@@ -1,7 +1,5 @@
 package es.uniovi.asw;
 
-import java.util.logging.Logger;
-
 /**
  * Main application
  * 
@@ -18,5 +16,6 @@ public class LoadUsers {
 	// TODO
 	void run(String... args) {
 		System.out.println("TODO TODO");
+		System.out.println("A ver si funciona esto");
 	}
 }
