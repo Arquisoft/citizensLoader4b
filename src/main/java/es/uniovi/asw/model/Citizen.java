@@ -118,8 +118,8 @@ public class Citizen {
 	@Override
 	public String toString() {
 		return "Citizen [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", email="
-				+ email + ", fechaNacimiento=" + fechaNacimiento + ", residencia=" + residencia + ", nacionalidad="
-				+ nacionalidad + ", dni=" + dni + ", nombreUsuario=" + nombreUsuario + ", password=" + password + "]";
+				+ email + ", fechaNacimiento=" + fecha_nacimiento + ", residencia=" + residencia + ", nacionalidad="
+				+ nacionalidad + ", dni=" + dni + ", nombreUsuario=" + nombre_usuario + ", password=" + password + "]";
 	}
 
 }
