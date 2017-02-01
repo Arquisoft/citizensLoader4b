@@ -116,4 +116,11 @@ public class Citizen {
 		this.password = password;
 	}
 
+	@Override
+	public String toString() {
+		return "Citizen [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", email="
+				+ email + ", fechaNacimiento=" + fechaNacimiento + ", residencia=" + residencia + ", nacionalidad="
+				+ nacionalidad + ", dni=" + dni + ", nombreUsuario=" + nombreUsuario + ", password=" + password + "]";
+	}
+
 }
