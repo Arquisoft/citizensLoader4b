@@ -1,9 +1,7 @@
-package parser;
+package es.uniovi.asw.parser;
 
 import java.io.*;
 import java.util.*;
-
-import java.sql.Date;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -66,8 +64,8 @@ public class LoadFromExcel implements Parser{
 			
 			citizen = new Citizen(i++,nombre, apellidos, email, fechaNacimiento, residencia, nacionalidad, dni, nombre, nombre);
 			citizens.add(citizen);
-		}catch(NoSuchElementException ne){
-			System.out.println("Número de campos incorrectos en fila: " + nombre + " " + email);
+		}catch(Exception ne){
+			System.out.println("Erro en el archivo. ");
 		}
 	}
 }

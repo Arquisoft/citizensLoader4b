@@ -3,8 +3,8 @@ package es.uniovi.asw;
 import java.io.IOException;
 import java.util.*;
 
-import parser.*;
 import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.parser.*;
 
 /**
  * Main application
