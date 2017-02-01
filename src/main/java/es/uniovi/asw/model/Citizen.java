@@ -9,30 +9,29 @@ public class Citizen {
 	private String nombre;
 	private String apellidos;
 	private String email;
-	private Date fechaNacimiento;
+	private Date fecha_nacimiento;
 	private String residencia;
 	private String nacionalidad;
 	private String dni;
 
-	private String nombreUsuario;
+	private String nombre_usuario;
 	private String password;
 
 	public Citizen() {
-
 	}
 
-	public Citizen(long id, String nombre, String apellidos, String email, Date fechaNacimiento, String residencia,
-			String nacionalidad, String dni, String nombreUsuario, String password) {
-		super();
+	public Citizen(long id, String nombre, String apellidos, String email,
+			Date fecha_nacimiento, String residencia, String nacionalidad,
+			String dni, String nombre_usuario, String password) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.email = email;
-		this.fechaNacimiento = fechaNacimiento;
+		this.fecha_nacimiento = fecha_nacimiento;
 		this.residencia = residencia;
 		this.nacionalidad = nacionalidad;
 		this.dni = dni;
-		this.nombreUsuario = nombreUsuario;
+		this.nombre_usuario = nombre_usuario;
 		this.password = password;
 	}
 
@@ -69,11 +68,11 @@ public class Citizen {
 	}
 
 	public Date getFechaNacimiento() {
-		return fechaNacimiento;
+		return fecha_nacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public void setFechaNacimiento(Date fecha_nacimiento) {
+		this.fecha_nacimiento = fecha_nacimiento;
 	}
 
 	public String getResidencia() {
@@ -101,11 +100,11 @@ public class Citizen {
 	}
 
 	public String getNombreUsuario() {
-		return nombreUsuario;
+		return nombre_usuario;
 	}
 
-	public void setNombreUsuario(String nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
+	public void setNombreUsuario(String nombre_usuario) {
+		this.nombre_usuario = nombre_usuario;
 	}
 
 	public String getPassword() {
