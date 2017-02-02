@@ -12,6 +12,8 @@ import es.uniovi.asw.model.Citizen;
 
 public class LoadFromExcel implements Parser{
 	/**
+	 * Leemos los parametros del excel y lo vamos almacenando en una lista de ciudadanos
+	 * que serán los que metamos en la BBDD.
 	 * 
 	 * @param fichero fichero de tipo excel
 	 * @return retorna una lista con todos los ciudadanos que se han incluido en el fichero
@@ -43,16 +45,19 @@ public class LoadFromExcel implements Parser{
 	}
 	
 	/**
+	 * Metodo que crea el Citizen y lo almacena en la lista
 	 * 
-	 * @param file 
-	 * @param columnas
-	 * @param citizens
+	 * @param columnas son los datos de cada fila e iteramos por columna para obtener cada dato
+	 * @param citizens lista donde se va a almacenar cada Citizen
 	 */
+	// Este id cuando tengamos la BBDD habra que obtenerlo de ahi, ya que es el ultimo que añadamos.
+	private long id = 0;
+	
 	private void loadDataCitizen( Iterator<Cell> columnas, List<Citizen> citizens ) {
 		String nombre= null, apellidos = null, dni, email = null, residencia, nacionalidad;
 		java.sql.Date fechaNacimiento;
 		Citizen citizen = null;
-		long i = 0;
+		
 		try{
 			nombre = columnas.next().getStringCellValue();
 			apellidos = columnas.next().getStringCellValue();
@@ -62,7 +67,7 @@ public class LoadFromExcel implements Parser{
 			nacionalidad = columnas.next().getStringCellValue();
 			dni = columnas.next().getStringCellValue();
 			
-			citizen = new Citizen(i++,nombre, apellidos, email, fechaNacimiento, residencia, nacionalidad, dni);
+			citizen = new Citizen(id++,nombre, apellidos, email, fechaNacimiento, residencia, nacionalidad, dni);
 			citizens.add(citizen);
 		}catch(Exception ne){
 			System.out.println("Erro en el archivo. ");
