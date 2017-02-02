@@ -85,6 +85,12 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.15</version>
 		</dependency>
+		<!--JPA DEPENDENCE -->
+		<dependency>
+        	<groupId>org.springframework.data</groupId>
+        	<artifactId>spring-data-jpa</artifactId>
+       		<version>1.11.0.RELEASE</version>
+   		</dependency>
 	</dependencies>
 	<!--Build plugins -->
 	<build>
