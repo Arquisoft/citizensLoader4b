@@ -7,5 +7,5 @@ import es.uniovi.asw.model.Citizen;
 public interface JpaCitizen extends JpaRepository<Citizen, Long> {
 
 	public List<Citizen> save(List<Citizen> citizens);
-	
+
 }

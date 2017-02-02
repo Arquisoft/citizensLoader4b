@@ -7,7 +7,7 @@ public class PDFLetter implements Letter {
 	@Override
 	public void generateLetter(Citizen citizen) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

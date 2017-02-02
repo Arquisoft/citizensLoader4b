@@ -1,10 +1,11 @@
 package es.uniovi.asw;
 
-import java.io.IOException;
 import java.util.*;
+
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.parser.*;
 import es.uniovi.asw.parser.writer.*;
+import es.uniovi.asw.util.Printer;
 
 /**
  * Main application
@@ -19,28 +20,21 @@ public class LoadUsers {
 		runner.run(args);
 	}
 
-	void run(String... args) throws Exception {
-		System.out.println("TODO TODO");
-		System.out.println("A ver si funciona esto");
-		String fichero = "..\\citizensLoader4b\\src\\test\\resources\\test.xlsx";
-		ReadCitizens leer = new RCitizens();
-		List<Citizen> citizens = new ArrayList<Citizen>();
-		
+	void run(String... args) {
 		try {
+			String fichero = "..\\itizensLoader4b\\src\\test\\resources\\test.xlsx";
+			ReadCitizens leer = new RCitizens();
+			List<Citizen> citizens = new ArrayList<Citizen>();
+
 			citizens = leer.readCitizens(fichero, fichero);
-		} catch (IOException e) {
-			e.printStackTrace();
+
+			Letter letterTxt = new TXTLetter();
+			letterTxt = LetterWriter.generate("txt");
+			Printer.imprimirCitizen(citizens, letterTxt);
+		} catch (Exception e) {
+			Printer.printBusinessException(e);
 		}
 
-		Letter letterTxt = new TXTLetter();
-		letterTxt = LetterWriter.generate("txt");
-		
-		for(Citizen citizen: citizens) {
-			System.out.println("ID: " + citizen.getId());
-			System.out.println("DNI: " + citizen.getDni());
-			System.out.println("PASS: " +citizen.getPassword());
-			letterTxt.generateLetter(citizen);
-		}
-		
 	}
+
 }

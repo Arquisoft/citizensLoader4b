@@ -22,8 +22,9 @@ public class Citizen {
 	public Citizen() {
 	}
 
-	public Citizen(long id, String nombre, String apellidos, String email, Date fecha_nacimiento, String residencia,
-			String nacionalidad, String dni) throws NoSuchAlgorithmException {
+	public Citizen(long id, String nombre, String apellidos, String email,
+			Date fecha_nacimiento, String residencia, String nacionalidad,
+			String dni) throws NoSuchAlgorithmException {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -104,7 +105,8 @@ public class Citizen {
 	}
 
 	public void setPassword(String password) throws NoSuchAlgorithmException {
-		this.password = EncryptMD5.encrypting(password);;
+		this.password = EncryptMD5.encrypting(password);
+		;
 	}
 
 	private String generarPassword() throws NoSuchAlgorithmException {
@@ -113,23 +115,26 @@ public class Citizen {
 		long milis = new java.util.GregorianCalendar().getTimeInMillis();
 		Random r = new Random(milis);
 		int i = 0;
-		
+
 		while (i < 10) {
 			char c = (char) r.nextInt(255);
-			if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) {
+			if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z')
+					|| (c >= 'a' && c <= 'z')) {
 				password += c;
 				i++;
 			}
 		}
-	
+
 		return EncryptMD5.encrypting(password);
 	}
 
 	@Override
 	public String toString() {
-		return "Citizen [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email
-				+ ", fechaNacimiento=" + fecha_nacimiento + ", residencia=" + residencia + ", nacionalidad="
-				+ nacionalidad + ", dni=" + dni + ", password=" + password + "]";
+		return "Citizen [id=" + id + ", nombre=" + nombre + ", apellidos="
+				+ apellidos + ", email=" + email + ", fechaNacimiento="
+				+ fecha_nacimiento + ", residencia=" + residencia
+				+ ", nacionalidad=" + nacionalidad + ", dni=" + dni
+				+ ", password=" + password + "]";
 	}
 
 }

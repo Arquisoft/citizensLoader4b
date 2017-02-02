@@ -10,18 +10,17 @@ import org.springframework.data.domain.Sort;
 import es.uniovi.asw.model.Citizen;
 
 public class JpaCitizenImpl implements JpaCitizen {
-	
 
 	@Override
 	public void deleteAllInBatch() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void deleteInBatch(Iterable<Citizen> arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -57,7 +56,7 @@ public class JpaCitizenImpl implements JpaCitizen {
 	@Override
 	public void flush() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -93,25 +92,25 @@ public class JpaCitizenImpl implements JpaCitizen {
 	@Override
 	public void delete(Long arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void delete(Citizen arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void delete(Iterable<? extends Citizen> arg0) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void deleteAll() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -161,8 +160,5 @@ public class JpaCitizenImpl implements JpaCitizen {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
-	
-	
+
 }
