@@ -1,6 +1,10 @@
 package es.uniovi.asw.model;
 
+import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
+import java.util.Random;
+
+import es.uniovi.asw.util.EncryptMD5;
 
 public class Citizen {
 
@@ -13,16 +17,13 @@ public class Citizen {
 	private String residencia;
 	private String nacionalidad;
 	private String dni;
-
-	private String nombre_usuario;
 	private String password;
 
 	public Citizen() {
 	}
 
-	public Citizen(long id, String nombre, String apellidos, String email,
-			Date fecha_nacimiento, String residencia, String nacionalidad,
-			String dni, String nombre_usuario, String password) {
+	public Citizen(long id, String nombre, String apellidos, String email, Date fecha_nacimiento, String residencia,
+			String nacionalidad, String dni) throws NoSuchAlgorithmException {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -31,8 +32,7 @@ public class Citizen {
 		this.residencia = residencia;
 		this.nacionalidad = nacionalidad;
 		this.dni = dni;
-		this.nombre_usuario = nombre_usuario;
-		this.password = password;
+		this.password = generarPassword();
 	}
 
 	public long getId() {
@@ -99,27 +99,37 @@ public class Citizen {
 		this.dni = dni;
 	}
 
-	public String getNombreUsuario() {
-		return nombre_usuario;
-	}
-
-	public void setNombreUsuario(String nombre_usuario) {
-		this.nombre_usuario = nombre_usuario;
-	}
-
 	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(String password) throws NoSuchAlgorithmException {
+		this.password = EncryptMD5.encrypting(password);;
+	}
+
+	private String generarPassword() throws NoSuchAlgorithmException {
+
+		String password = "";
+		long milis = new java.util.GregorianCalendar().getTimeInMillis();
+		Random r = new Random(milis);
+		int i = 0;
+		
+		while (i < 10) {
+			char c = (char) r.nextInt(255);
+			if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) {
+				password += c;
+				i++;
+			}
+		}
+	
+		return EncryptMD5.encrypting(password);
 	}
 
 	@Override
 	public String toString() {
-		return "Citizen [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", email="
-				+ email + ", fechaNacimiento=" + fecha_nacimiento + ", residencia=" + residencia + ", nacionalidad="
-				+ nacionalidad + ", dni=" + dni + ", nombreUsuario=" + nombre_usuario + ", password=" + password + "]";
+		return "Citizen [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email
+				+ ", fechaNacimiento=" + fecha_nacimiento + ", residencia=" + residencia + ", nacionalidad="
+				+ nacionalidad + ", dni=" + dni + ", password=" + password + "]";
 	}
 
 }

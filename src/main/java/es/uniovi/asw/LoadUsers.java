@@ -23,7 +23,7 @@ public class LoadUsers {
 	void run(String... args) {
 		System.out.println("TODO TODO");
 		System.out.println("A ver si funciona esto");
-		String fichero = "C:\\Users\\yo\\Desktop\\git repository\\citizensLoader4b\\src\\test\\resources\\test.xlsx";
+		String fichero = "..\\citizensLoader4b\\src\\test\\resources\\test.xlsx";
 		Parser leer = new LoadFromExcel();
 		List<Citizen> citizens = new ArrayList<Citizen>();
 		
@@ -34,9 +34,9 @@ public class LoadUsers {
 			e.printStackTrace();
 		}
 		
-		for(Citizen citizen: citizens)
-			System.out.println(citizen);
-			
-		
+		for(Citizen citizen: citizens) {
+			System.out.println("DNI: " + citizen.getDni());
+			System.out.println("PASS: " +citizen.getPassword());
+		}
 	}
 }

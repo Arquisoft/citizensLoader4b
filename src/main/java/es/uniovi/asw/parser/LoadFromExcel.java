@@ -62,7 +62,7 @@ public class LoadFromExcel implements Parser{
 			nacionalidad = columnas.next().getStringCellValue();
 			dni = columnas.next().getStringCellValue();
 			
-			citizen = new Citizen(i++,nombre, apellidos, email, fechaNacimiento, residencia, nacionalidad, dni, nombre, nombre);
+			citizen = new Citizen(i++,nombre, apellidos, email, fechaNacimiento, residencia, nacionalidad, dni);
 			citizens.add(citizen);
 		}catch(Exception ne){
 			System.out.println("Erro en el archivo. ");
