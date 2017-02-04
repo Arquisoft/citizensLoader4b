@@ -31,11 +31,9 @@ public class Log {
 			fichero.write(mensaje_log);
 			fichero.close();
 		} catch (FileNotFoundException fnfe) {
-			throw new CitizenException(
-					"El archivo LOG no se ha podido guardar.");
+			throw new CitizenException(fnfe.getLocalizedMessage());
 		} catch (IOException ioe) {
-			throw new CitizenException(
-					"Error de entrada/salida en el archivo LOG.");
+			throw new CitizenException(ioe.getLocalizedMessage());
 		}
 	}
 }

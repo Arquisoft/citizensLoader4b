@@ -26,7 +26,7 @@ public class LoadUsers {
 	}
 
 	void run(String... args) throws CitizenException {
-		String fichero = "..\\itizensLoader4b\\src\\test\\resources\\test.xlsx";
+		String fichero = "..\\citizensLoader4b\\src\\test\\resources\\test.xlsx";
 		ReadCitizens leer = new RCitizens();
 		List<Citizen> citizens = new ArrayList<Citizen>();
 		citizens = leer.readCitizens(fichero, fichero);
