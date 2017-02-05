@@ -3,11 +3,14 @@ package es.uniovi.asw.model;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
 import java.util.Random;
-
+//import org.springframework.data.annotation.Id;
 import es.uniovi.asw.util.EncryptMD5;
 
+//@Entity
+//@Table(name="citizen")
 public class Citizen {
 
+	//@Id @GeneratedValue
 	private long id;
 
 	private String nombre;
