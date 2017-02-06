@@ -30,9 +30,23 @@ public class LoadUsers {
 		ReadCitizens leer = new RCitizens();
 		List<Citizen> citizens = new ArrayList<Citizen>();
 		citizens = leer.readCitizens(fichero, fichero);
+		
 		Letter letterTxt = new TXTLetter();
 		letterTxt = LetterWriter.generate("txt");
-		Printer.imprimirCitizen(citizens, letterTxt);
+				
+		Letter letterPDF = new PDFLetter();
+		letterPDF = LetterWriter.generate("pdf");
+		
+		Letter letterWord = new WordLetter();
+		letterWord = LetterWriter.generate("word");
+		
+		for (Citizen citizen : citizens) {
+			letterTxt.generateLetter(citizen);
+			letterPDF.generateLetter(citizen);
+			letterWord.generateLetter(citizen);
+		}
+		
+		Printer.imprimirCitizen(citizens);
 	}
 
 }
