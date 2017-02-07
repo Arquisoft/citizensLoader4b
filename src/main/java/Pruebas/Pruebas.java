@@ -21,6 +21,13 @@ import es.uniovi.asw.common.CitizenException;
  */
 public class Pruebas {
 
+	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+
+	@Before
+	public void setUpStreams() {
+		System.setErr(new PrintStream(errContent));
+	}
+
 	/**
 	 * Test que comprueba que se crean correctamente las carpetas que contiene
 	 * el log de fallos y las cartas dirigidas a los usuarios respectivamente.
@@ -47,18 +54,6 @@ public class Pruebas {
 		assertEquals("WORD", tiposCarta[2].getName());
 	}
 
-	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
-
-	@Before
-	public void setUpStreams() {
-		System.setErr(new PrintStream(errContent));
-	}
-
-	@After
-	public void cleanUpStreams() {
-		System.setErr(null);
-	}
-
 	/**
 	 * Test que comprueba que funciona el lector de excel si indicamos bien la
 	 * dirección.
@@ -69,16 +64,33 @@ public class Pruebas {
 	public void testLecturaExcel() throws CitizenException {
 		// Ruta correcta
 		LoadUsers.main("..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
-		assertEquals("", errContent.toString());
+		comprobarSalidaPantalla("");
 
 		// Si no indicamos ruta
 		LoadUsers.main();
-		assertEquals("No se ha especificado la ruta de acceso al archivo.",
-				errContent.toString());
+		comprobarSalidaPantalla(
+				"No se ha especificado la ruta de acceso al archivo.");
+		errContent.reset();
 
 		// Ruta no correcta
-		/*LoadUsers.main("..\\citizb\\src\\test\\resources\\test.xlxs");
-		assertEquals("Error en el fichero la extensión del archivo",
-				errContent.toString());*/
+		LoadUsers.main("..\\citizb\\src\\test\\resources\\test.xlxs");
+		comprobarSalidaPantalla("Error en el fichero la extensión del archivo");
+	}
+
+	/**
+	 * Comrueba la salida por pantalla y borra la salida para que no haya
+	 * problemas.
+	 * 
+	 * @param salida
+	 *            Mensaje que debe salir al capturar una excepción.
+	 */
+	private void comprobarSalidaPantalla(String salida) {
+		assertEquals(salida, errContent.toString());
+		errContent.reset();
+	}
+
+	@After
+	public void cleanUpStreams() {
+		System.setErr(null);
 	}
 }
