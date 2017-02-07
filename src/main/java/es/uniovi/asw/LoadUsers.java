@@ -15,6 +15,7 @@ import es.uniovi.asw.util.Printer;
  *
  */
 public class LoadUsers {
+	public final static String DIRECTIORIO_EXCEL_DEFECTO = "..\\citizensLoader4b\\src\\test\\resources\\test.xlxs";
 
 	public static void main(String... args) throws CitizenException {
 		try {
@@ -26,15 +27,21 @@ public class LoadUsers {
 	}
 
 	private void run(String... args) throws CitizenException {
-		List<Citizen> citizens = leerFichero();
+		List<Citizen> citizens;
+		if (args == null) {
+			citizens = leerFichero(DIRECTIORIO_EXCEL_DEFECTO);
+		} else {
+			citizens = leerFichero(args[0]);
+		}
 		generarCartas(citizens);
 		Printer.imprimirCitizen(citizens);
 	}
 
-	private List<Citizen> leerFichero() throws CitizenException {
-		String fichero = "..\\citizensLoader4b\\src\\test\\resources\\test.xlsx";
+	private List<Citizen> leerFichero(String ruta) throws CitizenException {
+		// String fichero =
+		// "..\\citizensLoader4b\\src\\test\\resources\\test.xlsx";
 		ReadCitizens leer = new RCitizens();
-		return leer.readCitizens(fichero, fichero);
+		return leer.readCitizens(ruta, ruta);
 	}
 
 	private void generarCartas(List<Citizen> citizens) throws CitizenException {

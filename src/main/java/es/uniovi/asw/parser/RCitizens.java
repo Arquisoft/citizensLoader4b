@@ -23,7 +23,7 @@ public class RCitizens implements ReadCitizens {
 				if (analizador[3].equals("xlsx"))
 					leer = new LoadFromExcel();
 				else
-					System.out.println(
+					throw new CitizenException(
 							"Error en el fichero la extensión del archivo");
 				citizens = leer.loadUsers(args[i]);
 			} else {

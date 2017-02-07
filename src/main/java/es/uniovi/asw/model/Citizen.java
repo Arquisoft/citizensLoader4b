@@ -10,13 +10,13 @@ import es.uniovi.asw.util.EncryptMD5;
 //@Table(name="citizen")
 public class Citizen {
 
-	//@Id @GeneratedValue
+	// @Id @GeneratedValue
 	private long id;
 
 	private String nombre;
 	private String apellidos;
 	private String email;
-	private Date fecha_nacimiento;
+	private Date fechaNacimiento;
 	private String residencia;
 	private String nacionalidad;
 	private String dni;
@@ -26,13 +26,13 @@ public class Citizen {
 	}
 
 	public Citizen(long id, String nombre, String apellidos, String email,
-			Date fecha_nacimiento, String residencia, String nacionalidad,
+			Date fechaNacimiento, String residencia, String nacionalidad,
 			String dni) throws NoSuchAlgorithmException {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.email = email;
-		this.fecha_nacimiento = fecha_nacimiento;
+		this.fechaNacimiento = fechaNacimiento;
 		this.residencia = residencia;
 		this.nacionalidad = nacionalidad;
 		this.dni = dni;
@@ -72,11 +72,11 @@ public class Citizen {
 	}
 
 	public Date getFechaNacimiento() {
-		return fecha_nacimiento;
+		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fecha_nacimiento) {
-		this.fecha_nacimiento = fecha_nacimiento;
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
 
 	public String getResidencia() {
@@ -109,11 +109,9 @@ public class Citizen {
 
 	public void setPassword(String password) throws NoSuchAlgorithmException {
 		this.password = EncryptMD5.encrypting(password);
-		;
 	}
 
 	private String generarPassword() throws NoSuchAlgorithmException {
-
 		String password = "";
 		long milis = new java.util.GregorianCalendar().getTimeInMillis();
 		Random r = new Random(milis);
@@ -135,7 +133,7 @@ public class Citizen {
 	public String toString() {
 		return "Citizen [id=" + id + ", nombre=" + nombre + ", apellidos="
 				+ apellidos + ", email=" + email + ", fechaNacimiento="
-				+ fecha_nacimiento + ", residencia=" + residencia
+				+ fechaNacimiento + ", residencia=" + residencia
 				+ ", nacionalidad=" + nacionalidad + ", dni=" + dni
 				+ ", password=" + password + "]";
 	}
