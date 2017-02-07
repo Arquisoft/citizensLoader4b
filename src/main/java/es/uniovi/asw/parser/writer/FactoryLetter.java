@@ -1,31 +1,25 @@
 package es.uniovi.asw.parser.writer;
 
-import java.io.File;
-
 import es.uniovi.asw.common.CitizenException;
+import es.uniovi.asw.util.FactoryCarpetas;
 
-public class LetterWriter {
+public class FactoryLetter {
 
 	public static Letter generate(String formato) throws CitizenException {
+		FactoryCarpetas.crearCarpeta("Letter/" + formato);
+		return crearCarta(formato.toLowerCase());
+	}
 
-		Letter writer = null;
-		File file = new File("Letter");
-
-		if (!file.exists()) {
-			file.mkdir();
-		}
-
+	private static Letter crearCarta(String formato) throws CitizenException {
 		if (formato.equals("txt")) {
-			writer = new TXTLetter();
+			return new TXTLetter();
 		} else if (formato.equals("pdf")) {
-			writer = new PDFLetter();
+			return new PDFLetter();
 		} else if (formato.equals("word")) {
-			writer = new WordLetter();
+			return new WordLetter();
 		} else {
 			throw new CitizenException(
 					"ERROR. Formato (" + formato + ") no soportado");
 		}
-
-		return writer;
 	}
 }

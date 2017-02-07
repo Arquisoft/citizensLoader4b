@@ -5,28 +5,36 @@ import java.io.*;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 
-import es.uniovi.asw.common.CitizenException;
 import es.uniovi.asw.model.Citizen;
 
-public class PDFLetter implements Letter {
+public class PDFLetter extends TemplateLetter {
+	Document doc;
 
 	@Override
-	public void generateLetter(Citizen citizen) throws CitizenException {
-		Document doc = null;
+	protected String indicarTipo() {
+		return "PDF";
+	}
+
+	@Override
+	protected void crearCarta(Citizen citizen)
+			throws FileNotFoundException, DocumentException {
+		doc = null;
 		FileOutputStream letter = null;
+		letter = new FileOutputStream(
+				"Letter/PDF/" + citizen.getDni() + ".pdf");
+		doc = new Document();
+		PdfWriter.getInstance(doc, letter);
+		doc.open();
+		doc.add(new Paragraph("Usuario: " + citizen.getDni() + "\n"
+				+ "Password: " + citizen.getPassword()));
+	}
 
-		try {
-			letter = new FileOutputStream("Letter/" + citizen.getDni() + ".pdf");
-			doc = new Document();
-			PdfWriter.getInstance(doc, letter);
-
-			doc.open();
-			doc.add(new Paragraph("Usuario: " + citizen.getDni() + "\n" + "Password: "
-					+ citizen.getPassword()));
+	@Override
+	protected void cerrarCarta(Citizen citizen) {
+		if (doc != null) {
 			doc.close();
-		} catch (FileNotFoundException | DocumentException e) {
-			throw new CitizenException(
-					"ERROR. No se ha podido generar la carta en PDF para el usuario " + citizen.getDni());
+			System.out.println("Generada la carta en formato [PDF] para ["
+					+ citizen.getDni() + "].");
 		}
 	}
 

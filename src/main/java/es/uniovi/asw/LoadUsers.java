@@ -39,13 +39,13 @@ public class LoadUsers {
 
 	private void generarCartas(List<Citizen> citizens) throws CitizenException {
 		Letter letterTxt = new TXTLetter();
-		letterTxt = LetterWriter.generate("txt");
+		letterTxt = FactoryLetter.generate("txt");
 
 		Letter letterPDF = new PDFLetter();
-		letterPDF = LetterWriter.generate("pdf");
+		letterPDF = FactoryLetter.generate("pdf");
 
 		Letter letterWord = new WordLetter();
-		letterWord = LetterWriter.generate("word");
+		letterWord = FactoryLetter.generate("word");
 
 		for (Citizen citizen : citizens) {
 			letterTxt.generateLetter(citizen);

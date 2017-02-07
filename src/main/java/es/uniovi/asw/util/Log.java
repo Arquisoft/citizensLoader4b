@@ -13,6 +13,7 @@ import es.uniovi.asw.common.CitizenException;;
  *
  */
 public class Log {
+
 	/**
 	 * Método que modifica el archivo LOG.txt para añadir una nueva excepción.
 	 * 
@@ -22,6 +23,7 @@ public class Log {
 	 *             Cualquier problema ocurrido durante la ejecución del método.
 	 */
 	public static void grabarError(String error) throws CitizenException {
+		FactoryCarpetas.crearCarpeta("Log");
 		try {
 			String mensaje_log = "(";
 			mensaje_log += GregorianCalendar.getInstance().getTime() + ") -> ";

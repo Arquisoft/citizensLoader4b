@@ -1,5 +1,4 @@
-(Fri Feb 03 18:29:00 CET 2017) -> Fichero no encontrado
-(Fri Feb 03 18:29:01 CET 2017) -> Fichero no encontrado
-(Fri Feb 03 18:29:02 CET 2017) -> Fichero no encontrado
-(Sat Feb 04 15:14:25 CET 2017) -> Fichero no encontrado
-(Sat Feb 04 15:15:39 CET 2017) -> Fichero no encontrado
+(Tue Feb 07 16:11:05 CET 2017) -> ERROR. Formato (Letter/TXT) no soportado
+(Tue Feb 07 16:12:04 CET 2017) -> ERROR. Formato (Letter/TXT/) no soportado
+(Tue Feb 07 16:16:32 CET 2017) -> ERROR. Formato (TXT) no soportado
+(Tue Feb 07 16:16:46 CET 2017) -> ERROR. Formato (TXT) no soportado
