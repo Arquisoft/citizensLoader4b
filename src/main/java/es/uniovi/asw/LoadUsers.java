@@ -25,28 +25,33 @@ public class LoadUsers {
 		}
 	}
 
-	void run(String... args) throws CitizenException {
+	private void run(String... args) throws CitizenException {
+		List<Citizen> citizens = leerFichero();
+		generarCartas(citizens);
+		Printer.imprimirCitizen(citizens);
+	}
+
+	private List<Citizen> leerFichero() throws CitizenException {
 		String fichero = "..\\citizensLoader4b\\src\\test\\resources\\test.xlsx";
 		ReadCitizens leer = new RCitizens();
-		List<Citizen> citizens = new ArrayList<Citizen>();
-		citizens = leer.readCitizens(fichero, fichero);
-		
+		return leer.readCitizens(fichero, fichero);
+	}
+
+	private void generarCartas(List<Citizen> citizens) throws CitizenException {
 		Letter letterTxt = new TXTLetter();
 		letterTxt = LetterWriter.generate("txt");
-				
+
 		Letter letterPDF = new PDFLetter();
 		letterPDF = LetterWriter.generate("pdf");
-		
+
 		Letter letterWord = new WordLetter();
 		letterWord = LetterWriter.generate("word");
-		
+
 		for (Citizen citizen : citizens) {
 			letterTxt.generateLetter(citizen);
 			letterPDF.generateLetter(citizen);
 			letterWord.generateLetter(citizen);
 		}
-		
-		Printer.imprimirCitizen(citizens);
 	}
 
 }
