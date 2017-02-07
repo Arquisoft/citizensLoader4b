@@ -11,10 +11,10 @@ public class RCitizens implements ReadCitizens {
 
 	@Override
 	public List<Citizen> readCitizens(String... args) throws CitizenException {
+		List<Citizen> citizens;
 		String[] analizador;
-
 		Parser leer = null;
-		List<Citizen> citizens = new ArrayList<Citizen>();
+		citizens = new ArrayList<Citizen>();
 		List<Citizen> aux = new ArrayList<Citizen>();
 
 		for (int i = 0; i < args.length; i++) {

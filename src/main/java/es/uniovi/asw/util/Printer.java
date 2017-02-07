@@ -25,7 +25,7 @@ public class Printer {
 	public static void printCitizenException(Exception e)
 			throws CitizenException {
 		Log.grabarError(e.getLocalizedMessage());
-		System.err.println(e.getLocalizedMessage());
+		System.err.print(e.getLocalizedMessage());
 	}
 
 	public static void imprimirCitizen(List<Citizen> citizens)
