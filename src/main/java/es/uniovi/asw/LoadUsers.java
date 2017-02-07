@@ -31,14 +31,9 @@ public class LoadUsers {
 		List<Citizen> citizens = new ArrayList<Citizen>();
 		citizens = leer.readCitizens(fichero, fichero);
 		
-		Letter letterTxt = new TXTLetter();
-		letterTxt = LetterWriter.generate("txt");
-				
+		Letter letterTxt = new TXTLetter();		
 		Letter letterPDF = new PDFLetter();
-		letterPDF = LetterWriter.generate("pdf");
-		
 		Letter letterWord = new WordLetter();
-		letterWord = LetterWriter.generate("word");
 		
 		for (Citizen citizen : citizens) {
 			letterTxt.generateLetter(citizen);
