@@ -70,7 +70,6 @@ public class Pruebas {
 		LoadUsers.main();
 		comprobarSalidaPantalla(
 				"No se ha especificado la ruta de acceso al archivo.");
-		errContent.reset();
 
 		// Ruta no correcta
 		LoadUsers.main("..\\citizb\\src\\test\\resources\\test.xlxs");

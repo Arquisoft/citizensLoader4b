@@ -17,7 +17,11 @@ public abstract class TemplateLetter implements Letter {
 		try {
 			FactoryLetter.generate(tipo);
 			crearCarta(citizen);
-		} catch (DocumentException | IOException e) {
+		} catch (DocumentException e) {
+			throw new CitizenException(
+					"[ERROR] No se ha podido generar la carta en [" + tipo
+							+ "] para el usuario " + citizen.getDni());
+		} catch (IOException e) {
 			throw new CitizenException(
 					"[ERROR] No se ha podido generar la carta en [" + tipo
 							+ "] para el usuario " + citizen.getDni());
