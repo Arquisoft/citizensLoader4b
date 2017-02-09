@@ -9,11 +9,10 @@ import es.uniovi.asw.common.CitizenException;
 import es.uniovi.asw.model.Citizen;
 
 public abstract class TemplateLetter implements Letter {
-	private String tipo;
-
+	
 	@Override
 	public void generateLetter(Citizen citizen) throws CitizenException {
-		tipo = indicarTipo();
+		String tipo = indicarTipo();
 		try {
 			FactoryLetter.generate(tipo);
 			crearCarta(citizen);
