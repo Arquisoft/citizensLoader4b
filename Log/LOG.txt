@@ -178,3 +178,5 @@ Se usara la ruta por defecto: ..\citizensLoader4b\src\test\resources\test.xlxs
 (Wed Feb 08 09:50:01 CET 2017) -> Error en el fichero la extensión del archivo
 (Wed Feb 08 11:16:41 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
 (Wed Feb 08 11:16:41 CET 2017) -> Error en el fichero la extensión del archivo
+(Thu Feb 09 10:51:13 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Thu Feb 09 10:51:13 CET 2017) -> Error en el fichero la extensión del archivo

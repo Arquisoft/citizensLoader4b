@@ -9,18 +9,14 @@ import es.uniovi.asw.common.CitizenException;
 import es.uniovi.asw.model.Citizen;
 
 public abstract class TemplateLetter implements Letter {
-	
+
 	@Override
 	public void generateLetter(Citizen citizen) throws CitizenException {
 		String tipo = indicarTipo();
 		try {
 			FactoryLetter.generate(tipo);
 			crearCarta(citizen);
-		} catch (DocumentException e) {
-			throw new CitizenException(
-					"[ERROR] No se ha podido generar la carta en [" + tipo
-							+ "] para el usuario " + citizen.getDni());
-		} catch (IOException e) {
+		} catch (DocumentException | IOException e) {
 			throw new CitizenException(
 					"[ERROR] No se ha podido generar la carta en [" + tipo
 							+ "] para el usuario " + citizen.getDni());

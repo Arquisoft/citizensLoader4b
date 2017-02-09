@@ -64,27 +64,19 @@ public class Pruebas {
 	public void testLecturaExcel() throws CitizenException {
 		// Ruta correcta
 		LoadUsers.main("..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
-		comprobarSalidaPantalla("");
+		assertEquals("", errContent.toString());
+		errContent.reset();
 
 		// Si no indicamos ruta
 		LoadUsers.main();
-		comprobarSalidaPantalla(
-				"No se ha especificado la ruta de acceso al archivo.");
+		assertEquals("No se ha especificado la ruta de acceso al archivo.",
+				errContent.toString());
+		errContent.reset();
 
 		// Ruta no correcta
 		LoadUsers.main("..\\citizb\\src\\test\\resources\\test.xlxs");
-		comprobarSalidaPantalla("Error en el fichero la extensión del archivo");
-	}
-
-	/**
-	 * Comrueba la salida por pantalla y borra la salida para que no haya
-	 * problemas.
-	 * 
-	 * @param salida
-	 *            Mensaje que debe salir al capturar una excepción.
-	 */
-	private void comprobarSalidaPantalla(String salida) {
-		assertEquals(salida, errContent.toString());
+		assertEquals("Error en el fichero la extensión del archivo",
+				errContent.toString());
 		errContent.reset();
 	}
 
