@@ -8,7 +8,7 @@ import com.itextpdf.text.pdf.*;
 import es.uniovi.asw.model.Citizen;
 
 public class PDFLetter extends TemplateLetter {
-	Document doc;
+	private Document doc;
 
 	@Override
 	protected String indicarTipo() {
