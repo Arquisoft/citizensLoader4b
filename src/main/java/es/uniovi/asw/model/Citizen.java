@@ -3,14 +3,19 @@ package es.uniovi.asw.model;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
 import java.util.Random;
-//import org.springframework.data.annotation.Id;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import es.uniovi.asw.util.EncryptMD5;
 
-//@Entity
-//@Table(name="citizen")
+@Entity
+@Table(name="TCITIZENS")
 public class Citizen {
 
-	// @Id @GeneratedValue
+	@Id @GeneratedValue
 	private long id;
 
 	private String nombre;
