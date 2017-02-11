@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import es.uniovi.asw.util.EncryptMD5;
 
@@ -18,13 +19,19 @@ public class Citizen {
 	@Id @GeneratedValue
 	private long id;
 
+	@NotNull
 	private String nombre;
+	@NotNull
 	private String apellidos;
+	@NotNull
 	private String email;
+	@NotNull
 	private Date fechaNacimiento;
 	private String residencia;
 	private String nacionalidad;
+	@NotNull
 	private String dni;
+	@NotNull
 	private String password;
 
 	public Citizen() {
@@ -124,7 +131,8 @@ public class Citizen {
 
 		while (i < 10) {
 			char c = (char) r.nextInt(255);
-			if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z')
+			if ((c >= '0' && c <= '9') 
+					|| (c >= 'A' && c <= 'Z')
 					|| (c >= 'a' && c <= 'z')) {
 				password += c;
 				i++;
