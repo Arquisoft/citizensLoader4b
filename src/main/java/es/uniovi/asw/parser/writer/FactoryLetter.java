@@ -6,16 +6,17 @@ import es.uniovi.asw.util.FactoryCarpetas;
 public class FactoryLetter {
 
 	public static Letter generate(String formato) throws CitizenException {
-		FactoryCarpetas.crearCarpeta("Letter/" + formato);
+		FactoryCarpetas.crearCarpeta("Letter");
+		FactoryCarpetas.crearCarpeta("Letter\\" + formato.toUpperCase());
 		return crearCarta(formato.toLowerCase());
 	}
 
 	private static Letter crearCarta(String formato) throws CitizenException {
-		if (formato.equals("txt")) {
+		if ("txt".equals(formato)) {
 			return new TXTLetter();
-		} else if (formato.equals("pdf")) {
+		} else if ("pdf".equals(formato)) {
 			return new PDFLetter();
-		} else if (formato.equals("word")) {
+		} else if ("word".equals(formato)) {
 			return new WordLetter();
 		} else {
 			throw new CitizenException(

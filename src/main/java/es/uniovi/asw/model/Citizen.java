@@ -146,8 +146,7 @@ public class Citizen {
 	private String generarPassword()
 			throws NoSuchAlgorithmException, CitizenException {
 		String password = "";
-		long milis = new java.util.GregorianCalendar().getTimeInMillis();
-		Random r = new Random(milis);
+		Random r = new Random(calendar.getTimeInMillis());
 		int i = 0;
 
 		while (i < 10) {

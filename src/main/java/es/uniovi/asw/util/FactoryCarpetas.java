@@ -4,8 +4,8 @@ import java.io.File;
 
 public class FactoryCarpetas {
 	public static void crearCarpeta(String nombreCarpeta) {
-		File file = new File(nombreCarpeta);
-
+		String nombre = "..\\citizensLoader4b\\" + nombreCarpeta;
+		File file = new File(nombre);
 		if (!file.exists()) {
 			file.mkdir();
 		}

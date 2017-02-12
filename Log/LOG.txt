@@ -381,3 +381,21 @@ Se usara la ruta por defecto: ..\citizensLoader4b\src\test\resources\test.xlxs
 (Sun Feb 12 20:01:20 CET 2017) -> El siguiente campo del usuario esta vacío -> ID
 (Sun Feb 12 20:03:11 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
 (Sun Feb 12 20:03:11 CET 2017) -> Error en el fichero la extensión del archivo
+(Sun Feb 12 20:29:41 CET 2017) -> [IOException] No se ha podido generar la carta en [TXT] para el usuario 90500084Y
+(Sun Feb 12 20:29:41 CET 2017) -> [IOException] No se ha podido generar la carta en [TXT] para el usuario 90500084Y
+(Sun Feb 12 20:30:08 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Sun Feb 12 20:30:08 CET 2017) -> Error en el fichero la extensión del archivo
+(Sun Feb 12 20:31:50 CET 2017) -> [IOException] No se ha podido generar la carta en [TXT] para el usuario 90500084Y
+(Sun Feb 12 20:31:50 CET 2017) -> [IOException] No se ha podido generar la carta en [TXT] para el usuario 90500084Y
+(Sun Feb 12 20:36:19 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Sun Feb 12 20:36:19 CET 2017) -> Error en el fichero la extensión del archivo
+(Sun Feb 12 20:37:09 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Sun Feb 12 20:37:09 CET 2017) -> Error en el fichero la extensión del archivo
+(Sun Feb 12 20:38:32 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Sun Feb 12 20:38:32 CET 2017) -> Error en el fichero la extensión del archivo
+(Sun Feb 12 20:38:47 CET 2017) -> [IOException] No se ha podido generar la carta en [TXT] para el usuario 90500084Y
+(Sun Feb 12 20:38:47 CET 2017) -> [IOException] No se ha podido generar la carta en [TXT] para el usuario 90500084Y
+(Sun Feb 12 20:40:19 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Sun Feb 12 20:40:19 CET 2017) -> Error en el fichero la extensión del archivo
+(Sun Feb 12 20:41:10 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Sun Feb 12 20:41:10 CET 2017) -> Error en el fichero la extensión del archivo
