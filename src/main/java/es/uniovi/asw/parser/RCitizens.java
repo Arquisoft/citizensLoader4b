@@ -16,25 +16,30 @@ public class RCitizens implements ReadCitizens {
 		Parser leer = null;
 		citizens = new ArrayList<Citizen>();
 		List<Citizen> aux = new ArrayList<Citizen>();
-
-		for (int i = 0; i < args.length; i++) {
-			analizador = args[i].split(Pattern.quote("."));
-			if (citizens.isEmpty()) {
-				if (analizador[3].equals("xlsx"))
-					leer = new LoadFromExcel();
-				else
-					throw new CitizenException(
-							"Error en el fichero la extensión del archivo");
-				citizens = leer.loadUsers(args[i]);
-			} else {
-				aux = leer.loadUsers(args[i]);
+		try {
+			for (int i = 0; i < args.length; i++) {
+				analizador = args[i].split(Pattern.quote("."));
+				if (citizens.isEmpty()) {
+					if (analizador[3].equals("xlsx")) {
+						leer = new LoadFromExcel();
+					} else {
+						throw new CitizenException(
+								"Error en el fichero la extensión del archivo");
+					}
+					citizens = leer.loadUsers(args[i]);
+				} else {
+					aux = leer.loadUsers(args[i]);
+				}
+				for (int j = 0; j < aux.size(); j++)
+					citizens.add(aux.get(j));
 			}
-
-			for (int j = 0; j < aux.size(); j++)
-				citizens.add(aux.get(j));
+		} catch (ArrayIndexOutOfBoundsException e) {
+			throw new CitizenException("No se ha especificado la ruta de "
+					+ "acceso al archivo correctamente.");
 		}
 
 		return citizens;
+
 	}
 
 }

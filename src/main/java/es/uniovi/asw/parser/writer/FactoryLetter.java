@@ -11,14 +11,15 @@ public class FactoryLetter {
 	}
 
 	private static Letter crearCarta(String formato) throws CitizenException {
-		if ("txt".equals(formato)) {
+		if (formato.equals("txt")) {
 			return new TXTLetter();
-		} else if ("pdf".equals(formato)) {
+		} else if (formato.equals("pdf")) {
 			return new PDFLetter();
-		} else if ("word".equals(formato)) {
+		} else if (formato.equals("word")) {
 			return new WordLetter();
 		} else {
-			throw new CitizenException("ERROR. Formato (" + formato + ") no soportado");
+			throw new CitizenException(
+					"ERROR. Formato (" + formato + ") no soportado");
 		}
 	}
 }
