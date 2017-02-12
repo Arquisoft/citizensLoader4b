@@ -12,7 +12,6 @@ import com.itextpdf.text.DocumentException;
 import es.uniovi.asw.model.Citizen;
 
 public class WordLetter extends TemplateLetter {
-	private XWPFDocument documento;
 	private FileOutputStream letter;
 
 	@Override
@@ -23,7 +22,7 @@ public class WordLetter extends TemplateLetter {
 	@Override
 	protected void crearCarta(Citizen citizen)
 			throws FileNotFoundException, DocumentException, IOException {
-		documento = new XWPFDocument();
+		XWPFDocument documento = new XWPFDocument();
 		File folder = new File("Letter/WORD");
 		folder.mkdir();
 		letter = new FileOutputStream(
@@ -35,6 +34,7 @@ public class WordLetter extends TemplateLetter {
 		run.addBreak();
 		run.setText("Password: " + citizen.getPassword());
 		documento.write(letter);
+		documento.close();
 	}
 
 	@Override

@@ -9,7 +9,7 @@ import es.uniovi.asw.common.CitizenException;
 import es.uniovi.asw.model.Citizen;
 
 public abstract class TemplateLetter implements Letter {
-	private String tipo;
+	protected String tipo;
 
 	@Override
 	public void generateLetter(Citizen citizen) throws CitizenException {
@@ -43,7 +43,8 @@ public abstract class TemplateLetter implements Letter {
 			if (citizen == null) {
 				throw new CitizenException(
 						"Se ha pasado un null como parámetro.");
-			} else if (citizen.getId() == 0) {
+			}
+			if (citizen.getId() == 0) {
 				throw new CitizenException(mensaje + "ID");
 			} else if (citizen.getApellidos().isEmpty()) {
 				throw new CitizenException(mensaje + "Apellidos");
@@ -51,7 +52,7 @@ public abstract class TemplateLetter implements Letter {
 				throw new CitizenException(mensaje + "DNI");
 			} else if (citizen.getEmail().isEmpty()) {
 				throw new CitizenException(mensaje + "Email");
-			} else if (citizen.getFechaNacimiento().equals(null)) {
+			} else if (citizen.getFechaNacimiento() == null) {
 				throw new CitizenException(mensaje + "Fecha de nacimiento");
 			} else if (citizen.getNacionalidad().isEmpty()) {
 				throw new CitizenException(mensaje + "Nacionalidad");
