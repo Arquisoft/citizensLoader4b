@@ -7,7 +7,7 @@ import com.itextpdf.text.DocumentException;
 import es.uniovi.asw.model.Citizen;
 
 public class TXTLetter extends TemplateLetter {
-	private Writer writer;
+	Writer writer;
 
 	@Override
 	protected String indicarTipo() {

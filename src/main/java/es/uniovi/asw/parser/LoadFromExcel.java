@@ -12,11 +12,6 @@ import es.uniovi.asw.common.CitizenException;
 import es.uniovi.asw.model.Citizen;
 
 public class LoadFromExcel implements Parser {
-
-	// Este id cuando tengamos la BBDD habra que obtenerlo de ahi, ya que es el
-	// ultimo que añadamos.
-	private long id = 0;
-
 	/**
 	 * Leemos los parametros del excel y lo vamos almacenando en una lista de
 	 * ciudadanos que serán los que metamos en la BBDD.
@@ -42,7 +37,8 @@ public class LoadFromExcel implements Parser {
 		try {
 			patron = new XSSFWorkbook(file);
 		} catch (IOException e) {
-			throw new CitizenException("No hemos obtenido la hoja de votantes del censo");
+			throw new CitizenException(
+					"No hemos obtenido la hoja de votantes del censo");
 
 		}
 
@@ -63,7 +59,8 @@ public class LoadFromExcel implements Parser {
 		try {
 			patron.close();
 		} catch (IOException e) {
-			throw new CitizenException("No se ha podido cerrar la hoja del libro excel.");
+			throw new CitizenException(
+					"No se ha podido cerrar la hoja del libro excel.");
 		}
 		return citizens;
 	}
@@ -77,13 +74,14 @@ public class LoadFromExcel implements Parser {
 	 * @param citizens
 	 *            lista donde se va a almacenar cada Citizen
 	 */
-	private void loadDataCitizen(Iterator<Cell> columnas, List<Citizen> citizens) throws CitizenException {
-		String nombre = null;
-		String apellidos = null;
-		String dni;
-		String email = null;
-		String residencia;
-		String nacionalidad;
+	// Este id cuando tengamos la BBDD habra que obtenerlo de ahi, ya que es el
+	// ultimo que añadamos.
+	private long id = 1;
+
+	private void loadDataCitizen(Iterator<Cell> columnas,
+			List<Citizen> citizens) throws CitizenException {
+		String nombre = null, apellidos = null, dni, email = null, residencia,
+				nacionalidad;
 		java.sql.Date fechaNacimiento;
 		Citizen citizen = null;
 
@@ -91,15 +89,19 @@ public class LoadFromExcel implements Parser {
 			nombre = columnas.next().getStringCellValue();
 			apellidos = columnas.next().getStringCellValue();
 			email = columnas.next().getStringCellValue();
-			fechaNacimiento = new java.sql.Date(columnas.next().getDateCellValue().getTime());
+			fechaNacimiento = new java.sql.Date(
+					columnas.next().getDateCellValue().getTime());
 			residencia = columnas.next().getStringCellValue();
 			nacionalidad = columnas.next().getStringCellValue();
 			dni = columnas.next().getStringCellValue();
 
-			citizen = new Citizen(id++, nombre, apellidos, email, fechaNacimiento, residencia, nacionalidad, dni);
+			citizen = new Citizen(id++, nombre, apellidos, email,
+					fechaNacimiento, residencia, nacionalidad, dni);
 			citizens.add(citizen);
 		} catch (Exception ne) {
-			throw new CitizenException("Erro en el archivo. ");
+			throw new CitizenException("Error en el archivo.");
 		}
 	}
+	
+
 }
