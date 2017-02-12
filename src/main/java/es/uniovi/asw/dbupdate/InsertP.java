@@ -1,4 +1,4 @@
-package es.uniovi.asw.persistence;
+package es.uniovi.asw.dbupdate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,43 +22,22 @@ public class InsertP implements Insert {
 
 	@Override
 	public List<Citizen> save(List<Citizen> citizens) {
-<<<<<<< HEAD:src/main/java/es/uniovi/asw/DBUpdate/InsertP.java
-		
 		List<Citizen> addedCitizens = new ArrayList<Citizen>();
-		
-		for(Citizen citizen: citizens){
-			try{
-				if(citizen != null ){
-=======
-
 		for (Citizen citizen : citizens) {
 			try {
 				if (citizen != null) {
->>>>>>> a1a085fb08f986870e6fe378b81996460699a569:src/main/java/es/uniovi/asw/persistence/InsertP.java
 					repository.save(citizen);
 					addedCitizens.add(citizen);
 				}
-<<<<<<< HEAD:src/main/java/es/uniovi/asw/DBUpdate/InsertP.java
-			}catch(DataIntegrityViolationException e){
-				//Falta reportar cuando un ciudadano no se puede insertar
-				e.printStackTrace();
-			}catch(Exception e2){
-				//Error con la base de datos
-				e2.printStackTrace();
-			}
-		}
-		
-		return addedCitizens;
-=======
 			} catch (DataIntegrityViolationException e) {
-
+				// Falta reportar cuando un ciudadano no se puede insertar
+				e.printStackTrace();
 			} catch (Exception e2) {
+				// Error con la base de datos
 				e2.printStackTrace();
 			}
 		}
-
-		return null;
->>>>>>> a1a085fb08f986870e6fe378b81996460699a569:src/main/java/es/uniovi/asw/persistence/InsertP.java
+		return addedCitizens;
 	}
 
 }
