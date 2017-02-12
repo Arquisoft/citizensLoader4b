@@ -373,3 +373,11 @@ Se usara la ruta por defecto: ..\citizensLoader4b\src\test\resources\test.xlxs
 (Sun Feb 12 19:40:59 CET 2017) -> Error en el fichero la extensión del archivo
 (Sun Feb 12 19:41:58 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
 (Sun Feb 12 19:41:58 CET 2017) -> Error en el fichero la extensión del archivo
+(Sun Feb 12 19:59:47 CET 2017) -> El siguiente campo del usuario esta vacío -> ID
+(Sun Feb 12 19:59:47 CET 2017) -> El siguiente campo del usuario esta vacío -> ID
+(Sun Feb 12 20:00:25 CET 2017) -> El siguiente campo del usuario esta vacío -> ID
+(Sun Feb 12 20:00:25 CET 2017) -> El siguiente campo del usuario esta vacío -> ID
+(Sun Feb 12 20:01:16 CET 2017) -> El siguiente campo del usuario esta vacío -> ID
+(Sun Feb 12 20:01:20 CET 2017) -> El siguiente campo del usuario esta vacío -> ID
+(Sun Feb 12 20:03:11 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Sun Feb 12 20:03:11 CET 2017) -> Error en el fichero la extensión del archivo

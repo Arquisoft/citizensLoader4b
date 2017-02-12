@@ -12,6 +12,10 @@ import es.uniovi.asw.common.CitizenException;
 import es.uniovi.asw.model.Citizen;
 
 public class LoadFromExcel implements Parser {
+	// Este id cuando tengamos la BBDD habra que obtenerlo de ahi, ya que es el
+	// ultimo que añadamos.
+	private long id = 0;
+
 	/**
 	 * Leemos los parametros del excel y lo vamos almacenando en una lista de
 	 * ciudadanos que serán los que metamos en la BBDD.
@@ -74,13 +78,10 @@ public class LoadFromExcel implements Parser {
 	 * @param citizens
 	 *            lista donde se va a almacenar cada Citizen
 	 */
-	// Este id cuando tengamos la BBDD habra que obtenerlo de ahi, ya que es el
-	// ultimo que añadamos.
-	private long id = 0;
-
 	private void loadDataCitizen(Iterator<Cell> columnas,
 			List<Citizen> citizens) throws CitizenException {
 		try {
+			id++;
 			String nombre = columnas.next().getStringCellValue();
 			String apellidos = columnas.next().getStringCellValue();
 			String email = columnas.next().getStringCellValue();
@@ -90,7 +91,7 @@ public class LoadFromExcel implements Parser {
 			String nacionalidad = columnas.next().getStringCellValue();
 			String dni = columnas.next().getStringCellValue();
 
-			Citizen citizen = new Citizen(id++, nombre, apellidos, email,
+			Citizen citizen = new Citizen(id, nombre, apellidos, email,
 					fechaNacimiento, residencia, nacionalidad, dni);
 			citizens.add(citizen);
 		} catch (Exception ne) {
