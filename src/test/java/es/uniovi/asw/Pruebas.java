@@ -1,4 +1,4 @@
-package Pruebas;
+package es.uniovi.asw;
 
 import static org.junit.Assert.*;
 
