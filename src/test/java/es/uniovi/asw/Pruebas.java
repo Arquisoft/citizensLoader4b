@@ -7,6 +7,9 @@ import java.io.File;
 import java.io.PrintStream;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.junit.After;
@@ -22,6 +25,8 @@ import es.uniovi.asw.parser.RCitizens;
 import es.uniovi.asw.parser.ReadCitizens;
 import es.uniovi.asw.parser.writer.Letter;
 import es.uniovi.asw.parser.writer.PDFLetter;
+import es.uniovi.asw.parser.writer.TXTLetter;
+import es.uniovi.asw.parser.writer.WordLetter;
 
 /**
  * Clase test para comprobar el correcto funcionamiento de la aplicación.
@@ -35,6 +40,8 @@ public class Pruebas {
 	private List<Citizen> citizens;
 	private Exception exception;
 	private Citizen usuario;
+	private Calendar c1 = GregorianCalendar.getInstance();
+	private File file;
 
 	/**
 	 * Test que comprueba que se crean correctamente las carpetas que contiene
@@ -47,7 +54,7 @@ public class Pruebas {
 	public void testCreacionCarpetas() throws CitizenException {
 		LoadUsers.main("..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
 		// Compramos la correcta creación del Log
-		File file = new File("Log");
+		file = new File("Log");
 		assertTrue(file.exists());
 		assertTrue(file.isDirectory());
 
@@ -62,14 +69,27 @@ public class Pruebas {
 		assertEquals("WORD", tiposCarta[2].getName());
 	}
 
-	@SuppressWarnings("deprecation")
+	/**
+	 * Inicializamos los parámetros que usamos en los test.
+	 * 
+	 * @throws NoSuchAlgorithmException
+	 * @throws CitizenException
+	 */
 	@Before
-	public void inicializarTest() throws NoSuchAlgorithmException {
+	public void inicializarTest()
+			throws NoSuchAlgorithmException, CitizenException {
 		System.setErr(new PrintStream(errContent));
+		c1.set(Calendar.YEAR, 1988);
+		c1.set(Calendar.MONTH, Calendar.JANUARY);
+		c1.set(Calendar.DAY_OF_MONTH, 1);
 		usuario = new Citizen(8, "a", "b b", "c@gmail.com",
-				new Date(2000, 2, 2), "residencia", "nacionalidad", "dni");
+				new Date(c1.getTimeInMillis()), "residencia", "nacionalidad",
+				"dni");
 	}
 
+	/**
+	 * 
+	 */
 	@After
 	public void finalizarTest() {
 		System.setErr(null);
@@ -77,8 +97,7 @@ public class Pruebas {
 	}
 
 	/**
-	 * Test que comprueba que funciona el lector de excel si indicamos bien la
-	 * dirección.
+	 * Test que comprueba el correcto funcionamiento de la clase LoadUsers
 	 * 
 	 * @throws CitizenException
 	 */
@@ -101,6 +120,11 @@ public class Pruebas {
 		errContent.reset();
 	}
 
+	/**
+	 * Test que comprueba el correcto funcionamiento de la clase RCitizens.
+	 * 
+	 * @throws CitizenException
+	 */
 	@Test
 	public void testRCitizens() throws CitizenException {
 		ReadCitizens rs = new RCitizens();
@@ -132,6 +156,11 @@ public class Pruebas {
 				+ "archivo correctamente.", exception.getMessage());
 	}
 
+	/**
+	 * Test que comprueba el correcto funcionamiento de la clase LoadFromExcel.
+	 * 
+	 * @throws CitizenException
+	 */
 	@Test
 	public void testLoadFromExcel() throws CitizenException {
 		Parser parser = new LoadFromExcel();
@@ -162,9 +191,66 @@ public class Pruebas {
 		assertEquals("Fichero no encontrado", exception.getMessage());
 	}
 
+	/**
+	 * Test que comprueba el correcto funcionamiento de la clase PDFLetter
+	 * 
+	 * @throws CitizenException
+	 * @throws NoSuchAlgorithmException
+	 */
 	@Test
-	public void testWritterPDF() throws CitizenException {
+	public void testWritterPDF()
+			throws CitizenException, NoSuchAlgorithmException {
 		Letter carta = new PDFLetter();
+		assertNotNull(carta);
+		pruebaTemplate(carta);
+		file = new File("..\\citizensLoader4b\\Letter\\PDF\\" + usuario.getDni()
+				+ ".pdf");
+		assertTrue(file.exists());
+
+	}
+
+	/**
+	 * Test que comprueba el correcto funcionamiento de la clase testWritterTXT
+	 * 
+	 * @throws CitizenException
+	 * @throws NoSuchAlgorithmException
+	 */
+	@Test
+	public void testWritterTXT()
+			throws CitizenException, NoSuchAlgorithmException {
+		Letter carta = new TXTLetter();
+		assertNotNull(carta);
+		pruebaTemplate(carta);
+		file = new File("..\\citizensLoader4b\\Letter\\TXT\\" + usuario.getDni()
+				+ ".txt");
+		assertTrue(file.exists());
+	}
+
+	/**
+	 * Test que comprueba el correcto funcionamiento de la clase WordLetter
+	 * 
+	 * @throws CitizenException
+	 * @throws NoSuchAlgorithmException
+	 */
+	@Test
+	public void testWritterWord()
+			throws CitizenException, NoSuchAlgorithmException {
+		Letter carta = new WordLetter();
+		assertNotNull(carta);
+		pruebaTemplate(carta);
+		file = new File("..\\citizensLoader4b\\Letter\\WORD\\"
+				+ usuario.getDni() + ".docx");
+		assertTrue(file.exists());
+	}
+
+	/**
+	 * Testea todas las acciones comunes de los objetos de tipo Letter
+	 * 
+	 * @param carta
+	 *            Letter que queremos comprobar
+	 */
+	private void pruebaTemplate(Letter carta) {
+		// Prueba con un usuario correcto
 		try {
 			carta.generateLetter(usuario);
 		} catch (Exception e) {
@@ -172,6 +258,7 @@ public class Pruebas {
 		}
 		assertNull(exception);
 
+		// Prueba con un usuario null
 		try {
 			carta.generateLetter(null);
 		} catch (Exception e) {
@@ -181,6 +268,7 @@ public class Pruebas {
 		assertEquals("Se ha pasado un null como parámetro.",
 				exception.getMessage());
 
+		// Prueba con un usuario sin ningun parámetro iniciado
 		Citizen anonimo = new Citizen();
 		try {
 			carta.generateLetter(anonimo);
@@ -191,8 +279,10 @@ public class Pruebas {
 		assertEquals("El siguiente campo del usuario esta vacío -> ID",
 				exception.getMessage());
 
-		anonimo.setId(9);
+		// Vamos comprobando con el usuario sin parámetro pero cada vez vamos
+		// añadiendo uno para ver por donde puede fallar.
 		try {
+			anonimo.setId(9);
 			carta.generateLetter(anonimo);
 		} catch (Exception e) {
 			exception = e;
@@ -201,5 +291,133 @@ public class Pruebas {
 		assertEquals("No todos los campos estan inicializados",
 				exception.getMessage());
 
+		try {
+			anonimo.setApellidos("");
+			carta.generateLetter(anonimo);
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("El siguiente campo del usuario esta vacío -> Apellidos",
+				exception.getMessage());
+
+		try {
+			anonimo.setApellidos("a");
+			anonimo.setDni("");
+			carta.generateLetter(anonimo);
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("El siguiente campo del usuario esta vacío -> DNI",
+				exception.getMessage());
+
+		try {
+			anonimo.setDni("a");
+			anonimo.setEmail("");
+			carta.generateLetter(anonimo);
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("El siguiente campo del usuario esta vacío -> Email",
+				exception.getMessage());
+
+		try {
+			anonimo.setEmail("a");
+			anonimo.setFechaNacimiento(null);
+			carta.generateLetter(anonimo);
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("La fecha de nacimiento no puede ser null.",
+				exception.getMessage());
+
+		try {
+			anonimo.setFechaNacimiento(new Date(c1.getTimeInMillis()));
+			anonimo.setNacionalidad("");
+			carta.generateLetter(anonimo);
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals(
+				"El siguiente campo del usuario esta vacío -> Nacionalidad",
+				exception.getMessage());
+
+		try {
+			anonimo.setNacionalidad("a");
+			anonimo.setNombre("");
+			carta.generateLetter(anonimo);
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("El siguiente campo del usuario esta vacío -> Nombre",
+				exception.getMessage());
+
+		try {
+			anonimo.setNombre("a");
+			anonimo.setPassword(null);
+			carta.generateLetter(anonimo);
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("No se puede encriptar una contraseña nula",
+				exception.getMessage());
+
+		try {
+			anonimo.setPassword("");
+			carta.generateLetter(anonimo);
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("No todos los campos estan inicializados",
+				exception.getMessage());
+
+		try {
+			anonimo.setPassword("sadf");
+			anonimo.setResidencia("");
+			carta.generateLetter(anonimo);
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("El siguiente campo del usuario esta vacío -> Residencia",
+				exception.getMessage());
+
+		try {
+			anonimo.setResidencia("a");
+			carta.generateLetter(anonimo);
+			exception = null;
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNull(exception);
+
+		// Prueba con un usuario con ID negativo
+		try {
+			anonimo.setId(-25);
+			carta.generateLetter(anonimo);
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("El ID es menor que 0", exception.getMessage());
+
+		// Prueba con un usuario que todavía no ha nacido
+		try {
+			c1.set(2056, 12, 12);
+			anonimo.setFechaNacimiento(new Date(c1.getTimeInMillis()));
+			carta.generateLetter(anonimo);
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("La fecha de nacimiento es posterior al dia actual.",
+				exception.getMessage());
 	}
 }

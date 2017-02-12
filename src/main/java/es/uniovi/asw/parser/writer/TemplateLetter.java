@@ -43,7 +43,7 @@ public abstract class TemplateLetter implements Letter {
 			if (citizen == null) {
 				throw new CitizenException(
 						"Se ha pasado un null como parámetro.");
-			} else if (citizen.getId() == 0) {
+			}  if (citizen.getId() == 0) {
 				throw new CitizenException(mensaje + "ID");
 			} else if (citizen.getApellidos().isEmpty()) {
 				throw new CitizenException(mensaje + "Apellidos");
