@@ -1,5 +1,6 @@
 package es.uniovi.asw.DBUpdate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,19 +23,24 @@ public class InsertP implements Insert {
 	@Override
 	public List<Citizen> save(List<Citizen> citizens) {
 		
+		List<Citizen> addedCitizens = new ArrayList<Citizen>();
+		
 		for(Citizen citizen: citizens){
 			try{
 				if(citizen != null ){
 					repository.save(citizen);
+					addedCitizens.add(citizen);
 				}
 			}catch(DataIntegrityViolationException e){
-				
+				//Falta reportar cuando un ciudadano no se puede insertar
+				e.printStackTrace();
 			}catch(Exception e2){
+				//Error con la base de datos
 				e2.printStackTrace();
 			}
 		}
 		
-		return null;
+		return addedCitizens;
 	}
 
 }
