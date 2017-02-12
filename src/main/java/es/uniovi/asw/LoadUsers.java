@@ -26,8 +26,7 @@ public class LoadUsers {
 
 	private void run(String... args) throws CitizenException {
 		if (args.length != 0) {
-			List<Citizen> citizens;
-			citizens = leerFichero(args[0]);
+			List<Citizen> citizens = leerFichero(args[0]);
 			generarCartas(citizens);
 			Printer.imprimirCitizen(citizens);
 		} else {
