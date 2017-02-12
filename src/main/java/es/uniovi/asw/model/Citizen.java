@@ -1,8 +1,8 @@
 package es.uniovi.asw.model;
 
 import java.security.NoSuchAlgorithmException;
-import java.sql.Date;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Random;
 

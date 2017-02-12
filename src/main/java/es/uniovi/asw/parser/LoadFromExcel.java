@@ -76,32 +76,26 @@ public class LoadFromExcel implements Parser {
 	 */
 	// Este id cuando tengamos la BBDD habra que obtenerlo de ahi, ya que es el
 	// ultimo que añadamos.
-	private long id = 1;
+	private long id = 0;
 
 	private void loadDataCitizen(Iterator<Cell> columnas,
 			List<Citizen> citizens) throws CitizenException {
-		String nombre = null, apellidos = null, dni, email = null, residencia,
-				nacionalidad;
-		java.sql.Date fechaNacimiento;
-		Citizen citizen = null;
-
 		try {
-			nombre = columnas.next().getStringCellValue();
-			apellidos = columnas.next().getStringCellValue();
-			email = columnas.next().getStringCellValue();
-			fechaNacimiento = new java.sql.Date(
+			String nombre = columnas.next().getStringCellValue();
+			String apellidos = columnas.next().getStringCellValue();
+			String email = columnas.next().getStringCellValue();
+			Date fechaNacimiento = new java.sql.Date(
 					columnas.next().getDateCellValue().getTime());
-			residencia = columnas.next().getStringCellValue();
-			nacionalidad = columnas.next().getStringCellValue();
-			dni = columnas.next().getStringCellValue();
+			String residencia = columnas.next().getStringCellValue();
+			String nacionalidad = columnas.next().getStringCellValue();
+			String dni = columnas.next().getStringCellValue();
 
-			citizen = new Citizen(id++, nombre, apellidos, email,
+			Citizen citizen = new Citizen(id++, nombre, apellidos, email,
 					fechaNacimiento, residencia, nacionalidad, dni);
 			citizens.add(citizen);
 		} catch (Exception ne) {
 			throw new CitizenException("Error en el archivo.");
 		}
 	}
-	
 
 }

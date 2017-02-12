@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.PrintStream;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -202,7 +201,7 @@ public class Pruebas {
 			throws CitizenException, NoSuchAlgorithmException {
 		Letter carta = new PDFLetter();
 		assertNotNull(carta);
-		pruebaTemplate(carta);
+		testTemplate(carta);
 		file = new File("..\\citizensLoader4b\\Letter\\PDF\\" + usuario.getDni()
 				+ ".pdf");
 		assertTrue(file.exists());
@@ -220,7 +219,7 @@ public class Pruebas {
 			throws CitizenException, NoSuchAlgorithmException {
 		Letter carta = new TXTLetter();
 		assertNotNull(carta);
-		pruebaTemplate(carta);
+		testTemplate(carta);
 		file = new File("..\\citizensLoader4b\\Letter\\TXT\\" + usuario.getDni()
 				+ ".txt");
 		assertTrue(file.exists());
@@ -237,7 +236,7 @@ public class Pruebas {
 			throws CitizenException, NoSuchAlgorithmException {
 		Letter carta = new WordLetter();
 		assertNotNull(carta);
-		pruebaTemplate(carta);
+		testTemplate(carta);
 		file = new File("..\\citizensLoader4b\\Letter\\WORD\\"
 				+ usuario.getDni() + ".docx");
 		assertTrue(file.exists());
@@ -249,7 +248,7 @@ public class Pruebas {
 	 * @param carta
 	 *            Letter que queremos comprobar
 	 */
-	private void pruebaTemplate(Letter carta) {
+	private void testTemplate(Letter carta) {
 		// Prueba con un usuario correcto
 		try {
 			carta.generateLetter(usuario);
