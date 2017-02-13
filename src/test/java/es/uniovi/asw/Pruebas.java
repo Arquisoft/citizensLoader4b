@@ -154,6 +154,7 @@ public class Pruebas {
 			exception = e;
 		}
 		assertNotNull(exception);
+		System.out.println(exception.getMessage());
 		assertEquals("No se ha especificado la ruta de acceso al "
 				+ "archivo correctamente.", exception.getMessage());
 	}

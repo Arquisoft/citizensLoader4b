@@ -20,11 +20,11 @@ public class RCitizens implements ReadCitizens {
 			for (int i = 0; i < args.length; i++) {
 				analizador = args[i].split(Pattern.quote("."));
 				if (citizens.isEmpty()) {
-					if (analizador[3].equals("xlsx")) {
+					args[i].replace("\\", "\\\\");
+					if (analizador[analizador.length - 1].equals("xlsx")) {
 						leer = new LoadFromExcel();
 					} else {
-						throw new CitizenException(
-								"Error en el fichero la extensión del archivo");
+						throw new CitizenException("Error en el fichero la extensión del archivo");
 					}
 					citizens = leer.loadUsers(args[i]);
 				} else {
@@ -34,8 +34,7 @@ public class RCitizens implements ReadCitizens {
 					citizens.add(aux.get(j));
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
-			throw new CitizenException("No se ha especificado la ruta de "
-					+ "acceso al archivo correctamente.");
+			throw new CitizenException("No se ha especificado la ruta de " + "acceso al archivo correctamente.");
 		}
 
 		return citizens;

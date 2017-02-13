@@ -399,3 +399,48 @@ Se usara la ruta por defecto: ..\citizensLoader4b\src\test\resources\test.xlxs
 (Sun Feb 12 20:40:19 CET 2017) -> Error en el fichero la extensión del archivo
 (Sun Feb 12 20:41:10 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
 (Sun Feb 12 20:41:10 CET 2017) -> Error en el fichero la extensión del archivo
+(Mon Feb 13 12:22:33 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:22:33 CET 2017) -> Error en el fichero la extensión del archivo
+(Mon Feb 13 12:28:07 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:28:07 CET 2017) -> Error en el fichero la extensión del archivo
+(Mon Feb 13 12:30:31 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:30:31 CET 2017) -> Error en el fichero la extensión del archivo
+(Mon Feb 13 12:31:29 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:31:29 CET 2017) -> Error en el fichero la extensión del archivo
+(Mon Feb 13 12:46:46 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:46:46 CET 2017) -> Error en el fichero la extensión del archivo
+(Mon Feb 13 12:47:38 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:47:38 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:48:19 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:48:19 CET 2017) -> Error en el fichero la extensión del archivo
+(Mon Feb 13 12:49:52 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:49:52 CET 2017) -> Error en el fichero la extensión del archivo
+(Mon Feb 13 12:50:31 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:50:31 CET 2017) -> Error en el fichero la extensión del archivo
+(Mon Feb 13 12:51:41 CET 2017) -> 0
+(Mon Feb 13 12:51:57 CET 2017) -> 0
+(Mon Feb 13 12:52:58 CET 2017) -> 0
+(Mon Feb 13 12:53:25 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:53:25 CET 2017) -> Error en el fichero la extensión del archivo
+(Mon Feb 13 12:53:35 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:53:35 CET 2017) -> Error en el fichero la extensión del archivo
+(Mon Feb 13 12:53:45 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:53:45 CET 2017) -> Error en el fichero la extensión del archivo
+(Mon Feb 13 12:54:20 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:54:21 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:54:50 CET 2017) -> 0
+(Mon Feb 13 12:55:12 CET 2017) -> No se ha especificado la ruta de acceso al archivo.
+(Mon Feb 13 12:55:12 CET 2017) -> Error en el fichero la extensión del archivo
+(Mon Feb 13 12:55:30 CET 2017) -> 0
+(Mon Feb 13 13:01:04 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Mon Feb 13 13:01:35 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Mon Feb 13 13:01:38 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Mon Feb 13 13:01:39 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Mon Feb 13 13:02:07 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Mon Feb 13 13:02:10 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Mon Feb 13 13:02:20 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Mon Feb 13 13:02:21 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Mon Feb 13 13:04:00 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Mon Feb 13 13:04:17 CET 2017) -> Fichero no encontrado
+(Mon Feb 13 13:05:13 CET 2017) -> Fichero no encontrado
+(Mon Feb 13 13:05:26 CET 2017) -> Fichero no encontrado
