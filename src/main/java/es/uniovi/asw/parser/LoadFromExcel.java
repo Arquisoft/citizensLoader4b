@@ -24,7 +24,8 @@ public class LoadFromExcel implements Parser {
 	 *            fichero de tipo excel
 	 * @return retorna una lista con todos los ciudadanos que se han incluido en
 	 *         el fichero
-	 * @throws IOException
+	 * @throws CitizenException
+	 *             Excepción ocurrida durante la ejecución
 	 */
 	public List<Citizen> loadUsers(String fichero) throws CitizenException {
 
@@ -70,13 +71,15 @@ public class LoadFromExcel implements Parser {
 	}
 
 	/**
-	 * Metodo que crea el Citizen y lo almacena en la lista
+	 * Método que crea el Citizen y lo almacena en la lista
 	 * 
 	 * @param columnas
 	 *            son los datos de cada fila e iteramos por columna para obtener
 	 *            cada dato
 	 * @param citizens
 	 *            lista donde se va a almacenar cada Citizen
+	 * @throws CitizenException
+	 *             Excepción ocurrida durante la ejecución
 	 */
 	private void loadDataCitizen(Iterator<Cell> columnas,
 			List<Citizen> citizens) throws CitizenException {

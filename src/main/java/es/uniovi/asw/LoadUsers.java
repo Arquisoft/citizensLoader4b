@@ -25,14 +25,15 @@ public class LoadUsers {
 	}
 
 	private void run(String... args) throws CitizenException {
-		if(args.length == 0){
-			throw new CitizenException("No se ha especificado la ruta de acceso al " +
-					 "archivo correctamente.");
-//			while(true){
-//				System.out.println("Introduce un archivo(xlsx, txt): ");
-//				break;
-//			}
-		}else{
+		if (args.length == 0) {
+			throw new CitizenException(
+					"No se ha especificado la ruta de acceso al "
+							+ "archivo correctamente.");
+			// while(true){
+			// System.out.println("Introduce un archivo(xlsx, txt): ");
+			// break;
+			// }
+		} else {
 			List<Citizen> citizens = leerFichero(args);
 			generarCartas(citizens);
 			Printer.imprimirCitizen(citizens);

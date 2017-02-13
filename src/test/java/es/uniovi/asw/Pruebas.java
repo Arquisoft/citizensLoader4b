@@ -47,6 +47,7 @@ public class Pruebas {
 	 * el log de fallos y las cartas dirigidas a los usuarios respectivamente.
 	 * 
 	 * @throws CitizenException
+	 *             Excepción ocurrida durante la ejecución
 	 */
 
 	@Test
@@ -72,7 +73,9 @@ public class Pruebas {
 	 * Inicializamos los parámetros que usamos en los test.
 	 * 
 	 * @throws NoSuchAlgorithmException
+	 *             Excepción ocurrida durante la encriptación
 	 * @throws CitizenException
+	 *             Excepción ocurrida durante la ejecución
 	 */
 	@Before
 	public void inicializarTest()
@@ -102,6 +105,7 @@ public class Pruebas {
 	 * Test que comprueba el correcto funcionamiento de la clase LoadUsers
 	 * 
 	 * @throws CitizenException
+	 *             Excepción ocurrida durante la ejecución
 	 */
 	@Test
 	public void testLecturaExcel() throws CitizenException {
@@ -126,6 +130,7 @@ public class Pruebas {
 	 * Test que comprueba el correcto funcionamiento de la clase RCitizens.
 	 * 
 	 * @throws CitizenException
+	 *             Excepción ocurrida durante la ejecución
 	 */
 	@Test
 	public void testRCitizens() throws CitizenException {
@@ -163,6 +168,7 @@ public class Pruebas {
 	 * Test que comprueba el correcto funcionamiento de la clase LoadFromExcel.
 	 * 
 	 * @throws CitizenException
+	 *             Excepción ocurrida durante la ejecución
 	 */
 	@Test
 	public void testLoadFromExcel() throws CitizenException {
@@ -198,7 +204,9 @@ public class Pruebas {
 	 * Test que comprueba el correcto funcionamiento de la clase PDFLetter
 	 * 
 	 * @throws CitizenException
+	 *             Excepción ocurrida durante la ejecución
 	 * @throws NoSuchAlgorithmException
+	 *             Excepción ocurrida durante la encriptación
 	 */
 	@Test
 	public void testWritterPDF()
@@ -216,7 +224,9 @@ public class Pruebas {
 	 * Test que comprueba el correcto funcionamiento de la clase testWritterTXT
 	 * 
 	 * @throws CitizenException
+	 *             Excepción ocurrida durante la ejecución
 	 * @throws NoSuchAlgorithmException
+	 *             Excepción ocurrida durante la encriptación
 	 */
 	@Test
 	public void testWritterTXT()
@@ -233,7 +243,9 @@ public class Pruebas {
 	 * Test que comprueba el correcto funcionamiento de la clase WordLetter
 	 * 
 	 * @throws CitizenException
+	 *             Excepción ocurrida durante la ejecución
 	 * @throws NoSuchAlgorithmException
+	 *             Excepción ocurrida durante la encriptación
 	 */
 	@Test
 	public void testWritterWord()
