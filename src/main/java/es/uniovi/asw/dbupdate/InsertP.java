@@ -15,6 +15,7 @@ import es.uniovi.asw.model.Citizen;
  * @author Raúl Gómez Pérez
  *
  */
+
 public class InsertP implements Insert {
 
 	@Autowired
