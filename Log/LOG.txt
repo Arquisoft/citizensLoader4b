@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (Tue Feb 07 16:11:05 CET 2017) -> ERROR. Formato (Letter/TXT) no soportado
 (Tue Feb 07 16:12:04 CET 2017) -> ERROR. Formato (Letter/TXT/) no soportado
 (Tue Feb 07 16:16:32 CET 2017) -> ERROR. Formato (TXT) no soportado
@@ -444,3 +445,22 @@ Se usara la ruta por defecto: ..\citizensLoader4b\src\test\resources\test.xlxs
 (Mon Feb 13 13:04:17 CET 2017) -> Fichero no encontrado
 (Mon Feb 13 13:05:13 CET 2017) -> Fichero no encontrado
 (Mon Feb 13 13:05:26 CET 2017) -> Fichero no encontrado
+=======
+(Thu Feb 16 22:42:30 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Thu Feb 16 22:42:46 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Thu Feb 16 22:43:11 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Thu Feb 16 22:43:30 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Thu Feb 16 22:43:30 CET 2017) -> Error en el fichero la extensiÃ³n del archivo
+(Thu Feb 16 22:43:38 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Thu Feb 16 22:43:38 CET 2017) -> Error en el fichero la extensión del archivo
+(Thu Feb 16 22:43:56 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Thu Feb 16 22:43:56 CET 2017) -> Error en el fichero la extensión del archivo
+(Thu Feb 16 22:45:07 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Thu Feb 16 22:45:07 CET 2017) -> Error en el fichero la extensión del archivo
+(Thu Feb 16 22:45:31 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Thu Feb 16 22:45:31 CET 2017) -> Error en el fichero la extensión del archivo
+(Thu Feb 16 22:45:46 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Thu Feb 16 22:45:46 CET 2017) -> Error en el fichero la extensión del archivo
+(Thu Feb 16 22:49:11 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Thu Feb 16 22:49:11 CET 2017) -> Error en el fichero la extensión del archivo
+>>>>>>> 1Âº parte de arreglo del proyecto

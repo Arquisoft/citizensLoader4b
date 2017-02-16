@@ -36,8 +36,13 @@ public class LoadUsers {
 		} else {
 			List<Citizen> citizens = leerFichero(args);
 			//Se deben generar las cartas para los ciudadanos insertados correctamente
+<<<<<<< HEAD
 			//generarCartas(citizens);
 			generarCartas(new InsertR().save(citizens));
+=======
+			generarCartas(citizens);
+			//generarCartas(new InsertR().save(citizens));
+>>>>>>> 1º parte de arreglo del proyecto
 			Printer.imprimirCitizen(citizens);
 		}
 	}

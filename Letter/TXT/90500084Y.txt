@@ -1,2 +1,6 @@
 Usuario: 90500084Y
+<<<<<<< HEAD
 Password: b2f738eb61240267ac4a5f8e251be151
+=======
+Password: ec477a5239bc0d3a62d4d49be34471e2
+>>>>>>> 1º parte de arreglo del proyecto
