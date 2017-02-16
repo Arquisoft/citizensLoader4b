@@ -1,6 +1,2 @@
 Usuario: 09940449X
-<<<<<<< HEAD
-Password: e8d8703ad20b55a9756f873105df3bfd
-=======
-Password: ac733b90ce006f73245adb8d5966ec9d
->>>>>>> 1º parte de arreglo del proyecto
+Password: bc87f43ef90eea8dcc2f618e11e3ee8c

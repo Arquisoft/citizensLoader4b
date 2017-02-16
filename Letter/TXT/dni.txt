@@ -1,6 +1,2 @@
 Usuario: dni
-<<<<<<< HEAD
-Password: e15d4fca415afb072ad02e55dae5a264
-=======
-Password: 399505ab8b57e9e45f29ce8de3cc6de1
->>>>>>> 1º parte de arreglo del proyecto
+Password: 0ce3866f5dc90d9742494022b1461060
