@@ -466,3 +466,15 @@ Se usara la ruta por defecto: ..\citizensLoader4b\src\test\resources\test.xlxs
 >>>>>>> 1Âº parte de arreglo del proyecto
 (Thu Feb 16 23:13:35 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
 (Thu Feb 16 23:13:35 CET 2017) -> Error en el fichero la extensión del archivo
+(Fri Feb 17 00:29:05 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Fri Feb 17 00:29:05 CET 2017) -> Error en el fichero la extensión del archivo
+(Fri Feb 17 00:36:03 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Fri Feb 17 00:36:03 CET 2017) -> Error en el fichero la extensión del archivo
+(Fri Feb 17 00:36:17 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Fri Feb 17 00:36:17 CET 2017) -> Error en el fichero la extensión del archivo
+(Fri Feb 17 00:36:46 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Fri Feb 17 00:36:46 CET 2017) -> Error en el fichero la extensión del archivo
+(Fri Feb 17 00:37:32 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Fri Feb 17 00:37:32 CET 2017) -> Error en el fichero la extensión del archivo
+(Fri Feb 17 00:38:38 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Fri Feb 17 00:38:38 CET 2017) -> Error en el fichero la extensión del archivo
