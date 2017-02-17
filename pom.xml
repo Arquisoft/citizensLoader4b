@@ -20,7 +20,25 @@
 	</parent>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.sun</groupId>
+			<artifactId>tools</artifactId>
+			<version>1.6</version>
+			<scope>system</scope>
+			<systemPath>C:\Program Files\Java\jdk1.8.0_121\lib\tools.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.cobertura</groupId>
+			<artifactId>cobertura</artifactId>
+			<version>2.0.3</version>
+		</dependency>
 
+		<dependency>
+			<groupId>net.sourceforge.cobertura</groupId>
+			<artifactId>cobertura-runtime</artifactId>
+			<version>2.0.3</version>
+			<type>pom</type>
+		</dependency>
 		<!--Logging -->
 		<dependency>
 			<groupId>log4j</groupId>
@@ -111,18 +129,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/net.sourceforge.cobertura/cobertura -->
-		<dependency>
-			<groupId>net.sourceforge.cobertura</groupId>
-			<artifactId>cobertura</artifactId>
-			<version>2.0.3</version>
-		</dependency>
 
-		<dependency>
-			<groupId>net.sourceforge.cobertura</groupId>
-			<artifactId>cobertura-runtime</artifactId>
-			<version>2.0.3</version>
-			<type>pom</type>
-		</dependency>
 
 		<!-- JPA Provider (Hibernate) -->
 		<dependency>
@@ -131,7 +138,6 @@
 		</dependency>
 		<!-- Database (MySQL) -->
 		<dependency>
-
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>

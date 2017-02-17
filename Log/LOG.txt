@@ -536,3 +536,11 @@ Se usara la ruta por defecto: ..\citizensLoader4b\src\test\resources\test.xlxs
 (Fri Feb 17 18:39:59 CET 2017) -> Error en el fichero la extensión del archivo
 (Fri Feb 17 18:40:05 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
 (Fri Feb 17 18:40:05 CET 2017) -> Error en el fichero la extensión del archivo
+(Fri Feb 17 19:00:56 CET 2017) -> [IOException] No se ha podido generar la carta en [TXT] para el usuario 90500084Y
+(Fri Feb 17 19:00:56 CET 2017) -> [IOException] No se ha podido generar la carta en [TXT] para el usuario 90500084Y
+(Fri Feb 17 19:01:53 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Fri Feb 17 19:01:53 CET 2017) -> Error en el fichero la extensiÃ³n del archivo
+(Fri Feb 17 19:09:53 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Fri Feb 17 19:09:53 CET 2017) -> Error en el fichero la extensión del archivo
+(Fri Feb 17 19:09:59 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Fri Feb 17 19:09:59 CET 2017) -> Error en el fichero la extensión del archivo
