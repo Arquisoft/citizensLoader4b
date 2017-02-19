@@ -70,15 +70,15 @@ public class LoadFromExcelTest {
 
 	@Test
 	public void testExcelRutaNull() throws CitizenException {
-		// try {
-		// citizens = parser.loadUsers(null);
-		// } catch (Exception e) {
-		// exception = e;
-		// }
-		// assertNotNull(exception);
-		// assertEquals(CitizenException.class, exception.getClass());
-		// assertEquals("No se puede pasar como fichero un null",
-		// exception.getMessage());
-		// assertNull(citizens);
+		try {
+			citizens = parser.loadUsers(null);
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals(CitizenException.class, exception.getClass());
+		assertEquals("No se puede pasar como fichero un null",
+				exception.getMessage());
+		assertNull(citizens);
 	}
 }

@@ -14,7 +14,6 @@ import es.uniovi.asw.common.CitizenException;;
  */
 public class Log {
 
-
 	/**
 	 * Método que modifica el archivo LOG.txt para añadir una nueva excepción.
 	 * 
@@ -28,7 +27,7 @@ public class Log {
 			throw new CitizenException(
 					"El error a guardar en el fichero Log no puede ser vacio.");
 		try {
-			if (error.equals(null))
+			if (error == null)
 				throw new CitizenException(
 						"El error a guardar en el fichero Log no puede ser vacio.");
 		} catch (NullPointerException e) {
