@@ -1,6 +1,5 @@
 package es.uniovi.asw;
 
-
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -13,11 +12,12 @@ import es.uniovi.asw.util.LogTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-	FactoryCarpetasTest.class,
-	LoadUsersTest.class,
-	RCitizensTest.class,
-	TemplateWritterTest.class,
-	LoadFromExcelTest.class,
-	LogTest.class
+		// FactoryCarpetasTest.class,
+		// LoadUsersTest.class,
+		// RCitizensTest.class,
+		// TemplateWritterTest.class,
+		LoadFromExcelTest.class,
+		// LogTest.class
 })
-public class AllTests { }
+public class AllTests {
+}

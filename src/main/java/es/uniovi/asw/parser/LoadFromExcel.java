@@ -32,7 +32,13 @@ public class LoadFromExcel implements Parser {
 		List<Citizen> citizens = new ArrayList<Citizen>();
 		FileInputStream file = null;
 		try {
-			file = new FileInputStream(new File(fichero));
+			try {
+				File aux = new File(fichero);
+				file = new FileInputStream(aux);
+			} catch (NullPointerException e) {
+				throw new CitizenException(
+						"No se puede pasar como fichero un null");
+			}
 		} catch (FileNotFoundException e) {
 			throw new CitizenException("Fichero no encontrado");
 		}
