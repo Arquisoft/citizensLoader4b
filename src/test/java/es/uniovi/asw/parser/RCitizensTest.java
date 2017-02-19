@@ -40,7 +40,8 @@ public class RCitizensTest {
 		} catch (Exception e) {
 			exception = e;
 		}
-		assertNotNull(citizens);
+		System.out.println("eeeeeeeeeeeeeeeesssssssssssssssssseeeeee");
+		System.out.println(citizens);
 		assertNull(exception);
 		assertNotEquals(citizens.size(), 0);
 	}

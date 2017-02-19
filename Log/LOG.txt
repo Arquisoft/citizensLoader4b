@@ -656,3 +656,7 @@ Se usara la ruta por defecto: ..\citizensLoader4b\src\test\resources\test.xlxs
 (Sun Feb 19 18:22:11 CET 2017) -> No se encuentra la carpeta con los archivos Excel
 (Sun Feb 19 18:22:25 CET 2017) -> No se encuentra la carpeta con los archivos Excel
 (Sun Feb 19 18:22:32 CET 2017) -> No se encuentra la carpeta con los archivos Excel
+(Sun Feb 19 18:31:23 CET 2017) -> Prueba de fallo
+(Sun Feb 19 18:31:23 CET 2017) -> Prueba de fallo
+(Sun Feb 19 18:32:13 CET 2017) -> Prueba de fallo
+(Sun Feb 19 18:32:13 CET 2017) -> Prueba de fallo
