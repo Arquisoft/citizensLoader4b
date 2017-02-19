@@ -12,7 +12,10 @@ import es.uniovi.asw.util.Printer;
 /**
  * Main application
  * 
- * @author Labra
+ * @author Jorge Rodríguez Fernández
+ * @author Adrián García Lumbreras
+ * @author Iván González Mahagamage
+ * @author Raúl Gómez Pérez
  *
  */
 public class LoadUsers {
@@ -31,7 +34,6 @@ public class LoadUsers {
 		if (f.exists()) {
 			File[] ficheros = f.listFiles();
 			for (int i = 0; i < ficheros.length; i++) {
-				System.out.println(ficheros[i].getName());
 				List<Citizen> citizens = leerFichero(ficheros[i]);
 				generarCartas(citizens);
 				// generarCartas(new InsertR().save(citizens));

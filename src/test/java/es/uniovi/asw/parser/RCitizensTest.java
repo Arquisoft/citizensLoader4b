@@ -22,7 +22,6 @@ public class RCitizensTest {
 	public void inicializarTest() {
 		citizens = null;
 		exception = null;
-
 	}
 
 	/**
@@ -47,8 +46,7 @@ public class RCitizensTest {
 	@Test
 	public void testRutaIncorrecta() throws CitizenException {
 		try {
-			File file = new File(
-					"archivosExcel/tes.xlsx");
+			File file = new File("archivosExcel/tes.xlsx");
 			citizens = rs.readCitizens(file);
 		} catch (Exception e) {
 			exception = e;

@@ -7,6 +7,13 @@ import com.itextpdf.text.pdf.*;
 
 import es.uniovi.asw.model.Citizen;
 
+/**
+ * Clase encargada de crear las cartas con formato PDF.
+ * 
+ * @author Adrián García Lumbreras
+ * @author Iván González Mahagamage
+ *
+ */
 public class PDFLetter extends TemplateLetter {
 	private Document doc;
 

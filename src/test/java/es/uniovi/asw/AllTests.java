@@ -12,11 +12,11 @@ import es.uniovi.asw.util.LogTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({ 
-	FactoryCarpetasTest.class, 
 	LoadUsersTest.class,
 	RCitizensTest.class, 
 	TemplateWritterTest.class, 
 	LoadFromExcelTest.class,
-	LogTest.class })
+	LogTest.class,
+	FactoryCarpetasTest.class})
 public class AllTests {
 }

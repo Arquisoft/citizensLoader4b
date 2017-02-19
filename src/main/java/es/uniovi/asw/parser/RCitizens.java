@@ -8,6 +8,13 @@ import java.util.regex.Pattern;
 import es.uniovi.asw.common.CitizenException;
 import es.uniovi.asw.model.Citizen;
 
+/**
+ * Clase encargada de leer los ficheros Excel con los datos de los usuarios.
+ * 
+ * @author Jorge Rodríguez Fernández
+ * @author Iván González Mahagamage
+ *
+ */
 public class RCitizens implements ReadCitizens {
 
 	@Override
@@ -32,8 +39,6 @@ public class RCitizens implements ReadCitizens {
 			throw new CitizenException("No se ha especificado la ruta de "
 					+ "acceso al archivo correctamente.");
 		}
-
 		return citizens;
-
 	}
 }

@@ -46,7 +46,6 @@ public class TemplateWritterTest {
 				new Date(c1.getTimeInMillis()), "residencia", "nacionalidad",
 				"dni");
 		anonimo = new Citizen();
-
 	}
 
 	/**

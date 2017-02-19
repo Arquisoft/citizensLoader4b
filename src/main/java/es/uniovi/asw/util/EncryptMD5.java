@@ -7,7 +7,7 @@ import es.uniovi.asw.common.CitizenException;
 
 public class EncryptMD5 {
 
-	public static String encrypting(String password)
+	public String encrypting(String password)
 			throws NoSuchAlgorithmException, CitizenException {
 		String newPassword = null;
 		try {

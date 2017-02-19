@@ -6,6 +6,13 @@ import com.itextpdf.text.DocumentException;
 
 import es.uniovi.asw.model.Citizen;
 
+/**
+ * Clase encargada de crear las cartas con formato TXT.
+ * 
+ * @author Adrián García Lumbreras
+ * @author Iván González Mahagamage
+ *
+ */
 public class TXTLetter extends TemplateLetter {
 	private Writer writer;
 

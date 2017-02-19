@@ -22,20 +22,20 @@ public class Log {
 	 * @throws CitizenException
 	 *             Cualquier problema ocurrido durante la ejecución del método.
 	 */
-	public static void grabarError(String error) throws CitizenException {
+	public void grabarError(String error) throws CitizenException {
 		if ("".equals(error))
 			throw new CitizenException(
 					"El error a guardar en el fichero Log no puede ser vacio.");
 		if (error == null)
 			throw new CitizenException(
 					"El error a guardar en el fichero Log no puede ser null.");
-		FactoryCarpetas.crearCarpeta("Log");
+		new FactoryCarpetas().crearCarpeta("Log");
 		try {
 			String mensajeLog = "(";
 			mensajeLog += GregorianCalendar.getInstance().getTime() + ") -> ";
 			mensajeLog += error + "\n";
 			BufferedWriter fichero = new BufferedWriter(
-					new FileWriter("..\\citizensLoader4b\\Log\\LOG.txt", true));
+					new FileWriter("Log/LOG.txt", true));
 			fichero.write(mensajeLog);
 			fichero.close();
 		} catch (IOException ioe) {

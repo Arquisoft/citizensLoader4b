@@ -23,10 +23,17 @@ public class Printer {
 	 *             Cualquier problema ocurrido durante la ejecución del método.
 	 */
 	public void printCitizenException(Exception e) throws CitizenException {
-		Log.grabarError(e.getLocalizedMessage());
+		new Log().grabarError(e.getLocalizedMessage());
 		System.err.print(e.getLocalizedMessage());
 	}
 
+	/**
+	 * Método encargado de imprimir toda la información del ciudadano.
+	 * 
+	 * @param citizens
+	 * @throws CitizenException
+	 *             Cualquier problema ocurrido durante la ejecución del método.
+	 */
 	public void imprimirCitizen(List<Citizen> citizens)
 			throws CitizenException {
 		for (Citizen citizen : citizens) {

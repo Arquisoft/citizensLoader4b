@@ -25,7 +25,7 @@ public class LoadFromExcel implements Parser {
 	 * @return retorna una lista con todos los ciudadanos que se han incluido en
 	 *         el fichero
 	 * @throws CitizenException
-	 *             Excepción ocurrida durante la ejecución
+	 *             Cualquier problema ocurrido durante la ejecución del método.
 	 */
 	public List<Citizen> loadUsers(File fichero) throws CitizenException {
 
@@ -98,7 +98,6 @@ public class LoadFromExcel implements Parser {
 			String residencia = columnas.next().getStringCellValue();
 			String nacionalidad = columnas.next().getStringCellValue();
 			String dni = columnas.next().getStringCellValue();
-
 			Citizen citizen = new Citizen(id, nombre, apellidos, email,
 					fechaNacimiento, residencia, nacionalidad, dni);
 			citizens.add(citizen);

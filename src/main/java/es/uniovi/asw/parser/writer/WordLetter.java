@@ -11,6 +11,13 @@ import com.itextpdf.text.DocumentException;
 
 import es.uniovi.asw.model.Citizen;
 
+/**
+ * Clase encargada de crear las cartas con formato WORD.
+ * 
+ * @author Adrián García Lumbreras
+ * @author Iván González Mahagamage
+ *
+ */
 public class WordLetter extends TemplateLetter {
 	private FileOutputStream letter;
 

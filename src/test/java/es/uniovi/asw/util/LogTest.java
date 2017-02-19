@@ -18,7 +18,7 @@ public class LogTest {
 	@Test
 	public void grabarNull() throws CitizenException {
 		try {
-			Log.grabarError(null);
+			new Log().grabarError(null);
 		} catch (Exception e) {
 			exception = e;
 		}
@@ -31,7 +31,7 @@ public class LogTest {
 	@Test
 	public void grabarFalloVacio() {
 		try {
-			Log.grabarError("");
+			new Log().grabarError("");
 		} catch (Exception e) {
 			exception = e;
 		}
@@ -43,7 +43,7 @@ public class LogTest {
 	@Test
 	public void grabarFallo() {
 		try {
-			Log.grabarError("Prueba de fallo");
+			new Log().grabarError("Prueba de fallo");
 		} catch (Exception e) {
 			exception = e;
 		}

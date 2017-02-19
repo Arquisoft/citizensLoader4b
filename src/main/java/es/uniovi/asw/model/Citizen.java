@@ -50,7 +50,7 @@ public class Citizen {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.email = email;
-		this.fechaNacimiento = fechaNacimiento;
+		setFechaNacimiento(fechaNacimiento);
 		this.residencia = residencia;
 		this.nacionalidad = nacionalidad;
 		this.dni = dni;
@@ -140,7 +140,7 @@ public class Citizen {
 
 	public void setPassword(String password)
 			throws NoSuchAlgorithmException, CitizenException {
-		this.password = EncryptMD5.encrypting(password);
+		this.password = new EncryptMD5().encrypting(password);
 	}
 
 	private String generarPassword()
@@ -158,7 +158,7 @@ public class Citizen {
 			}
 		}
 
-		return EncryptMD5.encrypting(password);
+		return new EncryptMD5().encrypting(password);
 	}
 
 	@Override
