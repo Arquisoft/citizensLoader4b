@@ -559,3 +559,14 @@ Se usara la ruta por defecto: ..\citizensLoader4b\src\test\resources\test.xlxs
 (Sun Feb 19 13:07:08 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
 (Sun Feb 19 13:08:43 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
 (Sun Feb 19 13:13:34 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Sun Feb 19 13:46:51 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Sun Feb 19 13:46:51 CET 2017) -> Error en el fichero la extensiÃ³n del archivo
+(Sun Feb 19 13:47:20 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Sun Feb 19 13:47:20 CET 2017) -> Error en el fichero la extensión del archivo
+(Sun Feb 19 13:47:53 CET 2017) -> Error en el fichero la extensión del archivo
+(Sun Feb 19 13:48:11 CET 2017) -> Fichero no encontrado
+(Sun Feb 19 13:48:29 CET 2017) -> Fichero no encontrado
+(Sun Feb 19 13:48:37 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Sun Feb 19 13:48:37 CET 2017) -> Error en el fichero la extensiÃ³n del archivo
+(Sun Feb 19 13:49:05 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Sun Feb 19 13:49:05 CET 2017) -> Error en el fichero la extensión del archivo

@@ -93,9 +93,20 @@ public class AllTest {
 	public void testLecturaExcel() throws CitizenException {
 		// 1a
 		// Ruta correcta
-				
 		LoadUsers.main("..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
-//		assertEquals("", errContent.toString());
+		assertEquals("", errContent.toString());
+
+		// Si no indicamos ruta
+		LoadUsers.main();
+		assertEquals("No se ha especificado la ruta de acceso al archivo correctamente.",
+				errContent.toString());
+		errContent.reset();
+
+		// Ruta no correcta
+		LoadUsers.main("..\\citizb\\src\\test\\resources\\test.xlxs");
+		assertEquals("Error en el fichero la extensión del archivo",
+				errContent.toString());
+		errContent.reset();
 	}
 
 	/**
@@ -115,25 +126,25 @@ public class AllTest {
 			exception = e;
 		}
 		assertNotEquals(citizens.size(), 0);
-//		assertNull(exception);
+		assertNull(exception);
 
-//		try {
-//			citizens = rs.readCitizens(
-//					"..\\citizensLoader4b\\src\\test\\resources\\tes.xlsx");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotNull(exception);
-//		assertEquals("Fichero no encontrado", exception.getMessage());
+		try {
+			citizens = rs.readCitizens(
+					"..\\citizensLoader4b\\src\\test\\resources\\tes.xlsx");
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("Fichero no encontrado", exception.getMessage());
 
-//		try {
-//			citizens = rs.readCitizens("");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotNull(exception);
-//		System.out.println(exception.getMessage());
-//		assertEquals("Error en el fichero la extensión del archivo", exception.getMessage());
+		try {
+			citizens = rs.readCitizens("");
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		System.out.println(exception.getMessage());
+		assertEquals("Error en el fichero la extensión del archivo", exception.getMessage());
 	}
 
 	/**
@@ -144,7 +155,6 @@ public class AllTest {
 	 */
 	@Test
 	public void testLoadFromExcel() throws CitizenException {
-		// 3a
 		Parser parser = new LoadFromExcel();
 		try {
 			citizens = parser.loadUsers(
@@ -153,16 +163,16 @@ public class AllTest {
 			exception = e;
 		}
 		assertNotEquals(citizens.size(), 0);
-//		assertNull(exception);
+		assertNull(exception);
 
-//		try {
-//			citizens = parser.loadUsers(
-//					"..\\citizensLoader4b\\src\\test\\resources\\tet.xlsx");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotNull(exception);
-//		assertEquals("Fichero no encontrado", exception.getMessage());
+		try {
+			citizens = parser.loadUsers(
+					"..\\citizensLoader4b\\src\\test\\resources\\tet.xlsx");
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("Fichero no encontrado", exception.getMessage());
 
 		try {
 			citizens = parser.loadUsers("");
@@ -170,7 +180,7 @@ public class AllTest {
 			exception = e;
 		}
 		assertNotNull(exception);
-//		assertEquals("Fichero no encontrado", exception.getMessage());
+		assertEquals("Fichero no encontrado", exception.getMessage());
 	}
 
 	/**
