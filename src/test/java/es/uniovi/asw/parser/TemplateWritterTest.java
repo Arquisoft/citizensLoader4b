@@ -69,12 +69,11 @@ public class TemplateWritterTest {
 	@Test
 	public void testWritterPDF()
 			throws CitizenException, NoSuchAlgorithmException {
-//		Letter carta = new PDFLetter();
-//		assertNotNull(carta);
-//		testTemplate(carta);
-//		File file = new File("..\\citizensLoader4b\\Letter\\PDF\\" + usuario.getDni()
-//				+ ".pdf");
-//		assertTrue(file.exists());
+		Letter carta = new PDFLetter();
+		assertNotNull(carta);
+		testTemplate(carta);
+		File file = new File("Letter/PDF/" + usuario.getDni() + ".pdf");
+		assertTrue(file.exists());
 
 	}
 
@@ -89,12 +88,11 @@ public class TemplateWritterTest {
 	@Test
 	public void testWritterTXT()
 			throws CitizenException, NoSuchAlgorithmException {
-//		Letter carta = new TXTLetter();
-//		assertNotNull(carta);
-//		testTemplate(carta);
-//		File file = new File("..\\citizensLoader4b\\Letter\\TXT\\" + usuario.getDni()
-//				+ ".txt");
-//		assertTrue(file.exists());
+		Letter carta = new TXTLetter();
+		assertNotNull(carta);
+		testTemplate(carta);
+		File file = new File("Letter/TXT/" + usuario.getDni() + ".txt");
+		assertTrue(file.exists());
 	}
 
 	/**
@@ -108,12 +106,11 @@ public class TemplateWritterTest {
 	@Test
 	public void testWritterWord()
 			throws CitizenException, NoSuchAlgorithmException {
-//		Letter carta = new WordLetter();
-//		assertNotNull(carta);
-//		testTemplate(carta);
-//		File file = new File("..\\citizensLoader4b\\Letter\\WORD\\"
-//				+ usuario.getDni() + ".docx");
-//		assertTrue(file.exists());
+		Letter carta = new WordLetter();
+		assertNotNull(carta);
+		testTemplate(carta);
+		File file = new File("Letter/WORD/" + usuario.getDni() + ".docx");
+		assertTrue(file.exists());
 	}
 
 	/**

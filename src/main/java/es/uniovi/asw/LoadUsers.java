@@ -26,23 +26,6 @@ public class LoadUsers {
 	}
 
 	private void run() throws CitizenException {
-//		try {
-//			if (args[0].equals(null)) {
-//				throw new CitizenException(
-//						"No se ha especificado la ruta de acceso al "
-//								+ "archivo correctamente.");
-//			} else {
-//
-//				List<Citizen> citizens = leerFichero(args);
-//				generarCartas(citizens);
-//				// generarCartas(new InsertR().save(citizens));
-//				new Printer().imprimirCitizen(citizens);
-//			}
-//		} catch (ArrayIndexOutOfBoundsException e) {
-//			throw new CitizenException(
-//					"No se ha especificado la ruta de acceso al "
-//							+ "archivo correctamente.");
-//		}
 		String directorio = "archivosExcel";
 		File f = new File(directorio);
 		if (f.exists()) {
@@ -51,6 +34,7 @@ public class LoadUsers {
 				System.out.println(ficheros[i].getName());
 				List<Citizen> citizens = leerFichero(ficheros[i]);
 				generarCartas(citizens);
+				// generarCartas(new InsertR().save(citizens));
 				new Printer().imprimirCitizen(citizens);
 			}
 		} else {

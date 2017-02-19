@@ -2,6 +2,7 @@ package es.uniovi.asw.parser;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
 import java.util.List;
 
 import org.junit.After;
@@ -31,55 +32,53 @@ public class LoadFromExcelTest {
 	 */
 	@Test
 	public void testExcelRutaCorrecta() throws CitizenException {
-//		try {
-//			citizens = parser.loadUsers(
-//					"..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotNull(citizens);
-//		assertNotEquals(citizens.size(), 0);
-//		assertNull(exception);
+		try {
+			citizens = parser.loadUsers(new File("archivosExcel/test.xlsx"));
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(citizens);
+		assertNotEquals(citizens.size(), 0);
+		assertNull(exception);
 	}
 
 	@Test
 	public void testExcelRutaIncorrecta() throws CitizenException {
-//		try {
-//			citizens = parser.loadUsers(
-//					"..\\citizensLoader4b\\src\\test\\resources\\tet.xlsx");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotNull(exception);
-//		assertEquals(CitizenException.class, exception.getClass());
-//		assertEquals("Fichero no encontrado", exception.getMessage());
-//		assertNull(citizens);
+		try {
+			citizens = parser.loadUsers(new File("archivosExcel/tet.xlsx"));
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals(CitizenException.class, exception.getClass());
+		assertEquals("Fichero no encontrado", exception.getMessage());
+		assertNull(citizens);
 	}
 
 	@Test
 	public void testExcelRutaVacia() throws CitizenException {
-//		try {
-//			citizens = parser.loadUsers("");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotNull(exception);
-//		assertEquals(CitizenException.class, exception.getClass());
-//		assertEquals("Fichero no encontrado", exception.getMessage());
-//		assertNull(citizens);
+		try {
+			citizens = parser.loadUsers(new File(""));
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals(CitizenException.class, exception.getClass());
+		assertEquals("Fichero no encontrado", exception.getMessage());
+		assertNull(citizens);
 	}
 
 	@Test
 	public void testExcelRutaNull() throws CitizenException {
-//		try {
-//			citizens = parser.loadUsers(null);
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotNull(exception);
-//		assertEquals(CitizenException.class, exception.getClass());
-//		assertEquals("No se puede pasar como fichero un null",
-//				exception.getMessage());
-//		assertNull(citizens);
+		// try {
+		// citizens = parser.loadUsers(null);
+		// } catch (Exception e) {
+		// exception = e;
+		// }
+		// assertNotNull(exception);
+		// assertEquals(CitizenException.class, exception.getClass());
+		// assertEquals("No se puede pasar como fichero un null",
+		// exception.getMessage());
+		// assertNull(citizens);
 	}
 }
