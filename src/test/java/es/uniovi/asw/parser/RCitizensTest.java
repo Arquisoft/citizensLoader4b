@@ -34,8 +34,7 @@ public class RCitizensTest {
 	@Test
 	public void testRutaCorrecta() throws CitizenException {
 		try {
-			File file = new File(
-					"..\\citizensLoader4b\\src\\main\\resources\\archivosExcel\\test.xlsx");
+			File file = new File("archivosExcel\\test.xlsx");
 			citizens = rs.readCitizens(file);
 		} catch (Exception e) {
 			exception = e;
