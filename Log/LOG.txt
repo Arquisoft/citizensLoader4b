@@ -617,3 +617,24 @@ Se usara la ruta por defecto: ..\citizensLoader4b\src\test\resources\test.xlxs
 (Sun Feb 19 17:09:20 CET 2017) -> Error en el fichero la extensi贸n del archivo
 (Sun Feb 19 17:09:20 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
 (Sun Feb 19 17:09:20 CET 2017) -> Prueba de fallo
+(Sun Feb 19 17:28:19 CET 2017) -> Error en el fichero la extensi髇 del archivo
+(Sun Feb 19 17:28:20 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Sun Feb 19 17:28:20 CET 2017) -> Prueba de fallo
+(Sun Feb 19 17:28:24 CET 2017) -> Error en el fichero la extensi髇 del archivo
+(Sun Feb 19 17:28:24 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Sun Feb 19 17:28:25 CET 2017) -> Prueba de fallo
+(Sun Feb 19 17:30:21 CET 2017) -> Error en el fichero la extensi贸n del archivo
+(Sun Feb 19 17:30:21 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Sun Feb 19 17:30:21 CET 2017) -> Prueba de fallo
+(Sun Feb 19 17:30:47 CET 2017) -> Error en el fichero la extensi贸n del archivo
+(Sun Feb 19 17:30:47 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Sun Feb 19 17:30:47 CET 2017) -> Prueba de fallo
+(Sun Feb 19 17:31:14 CET 2017) -> Error en el fichero la extensi贸n del archivo
+(Sun Feb 19 17:31:14 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Sun Feb 19 17:31:14 CET 2017) -> Prueba de fallo
+(Sun Feb 19 17:31:32 CET 2017) -> Error en el fichero la extensi贸n del archivo
+(Sun Feb 19 17:31:32 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Sun Feb 19 17:31:32 CET 2017) -> Prueba de fallo
+(Sun Feb 19 17:31:58 CET 2017) -> Error en el fichero la extensi贸n del archivo
+(Sun Feb 19 17:31:58 CET 2017) -> No se ha especificado la ruta de acceso al archivo correctamente.
+(Sun Feb 19 17:31:58 CET 2017) -> Prueba de fallo
