@@ -43,7 +43,7 @@ public class LoadUsers {
 //					"No se ha especificado la ruta de acceso al "
 //							+ "archivo correctamente.");
 //		}
-		String directorio = "..\\citizensLoader4b\\src\\main\\resources\\archivosExcel";
+		String directorio = "..\\citizensLoader4b\\archivosExcel";
 		File f = new File(directorio);
 		if (f.exists()) {
 			File[] ficheros = f.listFiles();
