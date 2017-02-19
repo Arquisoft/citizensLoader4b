@@ -25,7 +25,7 @@ public class LoadUsers {
 	}
 
 	private void run(String... args) throws CitizenException {
-		if (args.length == 0) {
+		if (args[0].equals(null)) {
 			throw new CitizenException(
 					"No se ha especificado la ruta de acceso al "
 							+ "archivo correctamente.");
