@@ -22,13 +22,12 @@ public class Printer {
 	 * @throws CitizenException
 	 *             Cualquier problema ocurrido durante la ejecución del método.
 	 */
-	public static void printCitizenException(Exception e)
-			throws CitizenException {
+	public void printCitizenException(Exception e) throws CitizenException {
 		Log.grabarError(e.getLocalizedMessage());
 		System.err.print(e.getLocalizedMessage());
 	}
 
-	public static void imprimirCitizen(List<Citizen> citizens)
+	public void imprimirCitizen(List<Citizen> citizens)
 			throws CitizenException {
 		for (Citizen citizen : citizens) {
 			System.out.println("ID: " + citizen.getId());

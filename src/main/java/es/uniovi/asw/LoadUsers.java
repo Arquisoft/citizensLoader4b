@@ -20,7 +20,7 @@ public class LoadUsers {
 			final LoadUsers runner = new LoadUsers();
 			runner.run(args);
 		} catch (Exception e) {
-			Printer.printCitizenException(e);
+			new Printer().printCitizenException(e);
 		}
 	}
 
@@ -38,8 +38,7 @@ public class LoadUsers {
 
 				generarCartas(citizens);
 				// generarCartas(new InsertR().save(citizens));
-				Printer.imprimirCitizen(citizens);
-
+				new Printer().imprimirCitizen(citizens);
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
 			throw new CitizenException(
