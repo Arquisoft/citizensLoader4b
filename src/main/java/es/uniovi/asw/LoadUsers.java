@@ -15,35 +15,34 @@ import es.uniovi.asw.util.Printer;
  *
  */
 public class LoadUsers {
+	
+	private static String ruta = "..\\citizensLoader4b\\src\\test\\resources\\test.xlsx";
+	
 	public static void main(String... args) throws CitizenException {
 		try {
 			final LoadUsers runner = new LoadUsers();
-			runner.run(args);
+			runner.run(ruta);
 		} catch (Exception e) {
 			Printer.printCitizenException(e);
 		}
 	}
 
-	private void run(String... args) throws CitizenException {
-		if (args.length == 0) {
-			throw new CitizenException(
-					"No se ha especificado la ruta de acceso al "
-							+ "archivo correctamente.");
-			// while(true){
-			// System.out.println("Introduce un archivo(xlsx, txt): ");
-			// break;
-			// }
+	private void run(String ruta) throws CitizenException {
+		if (ruta.length() == 0) {
+			throw new CitizenException("No se ha especificado la ruta de acceso al " + "archivo correctamente.");
+
 		} else {
-			List<Citizen> citizens = leerFichero(args);
-			//Se deben generar las cartas para los ciudadanos insertados correctamente
+			List<Citizen> citizens = leerFichero(ruta);
+			// Se deben generar las cartas para los ciudadanos insertados
+			// correctamente
 
 			generarCartas(citizens);
-			//generarCartas(new InsertR().save(citizens));
+			// generarCartas(new InsertR().save(citizens));
 			Printer.imprimirCitizen(citizens);
 		}
 	}
 
-	private List<Citizen> leerFichero(String... ruta) throws CitizenException {
+	private List<Citizen> leerFichero(String ruta) throws CitizenException {
 		ReadCitizens leer = new RCitizens();
 		return leer.readCitizens(ruta);
 	}

@@ -1,34 +1,18 @@
 package es.uniovi.asw;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.PrintStream;
+import java.io.*;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.List;
+import java.util.*;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 
 import es.uniovi.asw.common.CitizenException;
 import es.uniovi.asw.model.Citizen;
-import es.uniovi.asw.parser.LoadFromExcel;
-import es.uniovi.asw.parser.Parser;
-import es.uniovi.asw.parser.RCitizens;
-import es.uniovi.asw.parser.ReadCitizens;
-import es.uniovi.asw.parser.writer.Letter;
-import es.uniovi.asw.parser.writer.PDFLetter;
-import es.uniovi.asw.parser.writer.TXTLetter;
-import es.uniovi.asw.parser.writer.WordLetter;
+import es.uniovi.asw.parser.*;
+import es.uniovi.asw.parser.writer.*;
 
 public class AllTest {
 
@@ -107,21 +91,10 @@ public class AllTest {
 	 */
 	@Test
 	public void testLecturaExcel() throws CitizenException {
-//		// Ruta correcta
-//		LoadUsers.main("..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
-//		assertEquals("", errContent.toString());
-//
-//		// Si no indicamos ruta
-//		LoadUsers.main();
-//		assertEquals("No se ha especificado la ruta de acceso al archivo correctamente.",
-//				errContent.toString());
-//		errContent.reset();
-//
-//		// Ruta no correcta
-//		LoadUsers.main("..\\citizb\\src\\test\\resources\\test.xlxs");
-//		assertEquals("Error en el fichero la extensión del archivo",
-//				errContent.toString());
-//		errContent.reset();
+		// 1a
+		// Ruta correcta
+		LoadUsers.main("..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
+		assertEquals("", errContent.toString());
 	}
 
 	/**
@@ -132,33 +105,34 @@ public class AllTest {
 	 */
 	@Test
 	public void testRCitizens() throws CitizenException {
-//		ReadCitizens rs = new RCitizens();
-//		try {
-//			citizens = rs.readCitizens(
-//					"..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotEquals(citizens.size(), 0);
-//		assertNull(exception);
-//
-//		try {
-//			citizens = rs.readCitizens(
-//					"..\\citizensLoader4b\\src\\test\\resources\\tes.xlsx");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotNull(exception);
-//		assertEquals("Fichero no encontrado", exception.getMessage());
-//
-//		try {
-//			citizens = rs.readCitizens("");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotNull(exception);
-//		System.out.println(exception.getMessage());
-//		assertEquals("Error en el fichero la extensión del archivo", exception.getMessage());
+		// 2a
+		ReadCitizens rs = new RCitizens();
+		try {
+			citizens = rs.readCitizens(
+					"..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotEquals(citizens.size(), 0);
+		assertNull(exception);
+
+		try {
+			citizens = rs.readCitizens(
+					"..\\citizensLoader4b\\src\\test\\resources\\tes.xlsx");
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("Fichero no encontrado", exception.getMessage());
+
+		try {
+			citizens = rs.readCitizens("");
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		System.out.println(exception.getMessage());
+		assertEquals("Error en el fichero la extensión del archivo", exception.getMessage());
 	}
 
 	/**
@@ -169,32 +143,33 @@ public class AllTest {
 	 */
 	@Test
 	public void testLoadFromExcel() throws CitizenException {
-//		Parser parser = new LoadFromExcel();
-//		try {
-//			citizens = parser.loadUsers(
-//					"..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotEquals(citizens.size(), 0);
-//		assertNull(exception);
-//
-//		try {
-//			citizens = parser.loadUsers(
-//					"..\\citizensLoader4b\\src\\test\\resources\\tet.xlsx");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotNull(exception);
-//		assertEquals("Fichero no encontrado", exception.getMessage());
-//
-//		try {
-//			citizens = parser.loadUsers("");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotNull(exception);
-//		assertEquals("Fichero no encontrado", exception.getMessage());
+		// 3a
+		Parser parser = new LoadFromExcel();
+		try {
+			citizens = parser.loadUsers(
+					"..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotEquals(citizens.size(), 0);
+		assertNull(exception);
+
+		try {
+			citizens = parser.loadUsers(
+					"..\\citizensLoader4b\\src\\test\\resources\\tet.xlsx");
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("Fichero no encontrado", exception.getMessage());
+
+		try {
+			citizens = parser.loadUsers("");
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("Fichero no encontrado", exception.getMessage());
 	}
 
 	/**
@@ -208,12 +183,12 @@ public class AllTest {
 	@Test
 	public void testWritterPDF()
 			throws CitizenException, NoSuchAlgorithmException {
-//		Letter carta = new PDFLetter();
-//		assertNotNull(carta);
-//		testTemplate(carta);
-//		file = new File("..\\citizensLoader4b\\Letter\\PDF\\" + usuario.getDni()
-//				+ ".pdf");
-//		assertTrue(file.exists());
+		Letter carta = new PDFLetter();
+		assertNotNull(carta);
+		testTemplate(carta);
+		file = new File("..\\citizensLoader4b\\Letter\\PDF\\" + usuario.getDni()
+				+ ".pdf");
+		assertTrue(file.exists());
 
 	}
 
@@ -228,12 +203,12 @@ public class AllTest {
 	@Test
 	public void testWritterTXT()
 			throws CitizenException, NoSuchAlgorithmException {
-//		Letter carta = new TXTLetter();
-//		assertNotNull(carta);
-//		testTemplate(carta);
-//		file = new File("..\\citizensLoader4b\\Letter\\TXT\\" + usuario.getDni()
-//				+ ".txt");
-//		assertTrue(file.exists());
+		Letter carta = new TXTLetter();
+		assertNotNull(carta);
+		testTemplate(carta);
+		file = new File("..\\citizensLoader4b\\Letter\\TXT\\" + usuario.getDni()
+				+ ".txt");
+		assertTrue(file.exists());
 	}
 
 	/**
@@ -247,12 +222,12 @@ public class AllTest {
 	@Test
 	public void testWritterWord()
 			throws CitizenException, NoSuchAlgorithmException {
-//		Letter carta = new WordLetter();
-//		assertNotNull(carta);
-//		testTemplate(carta);
-//		file = new File("..\\citizensLoader4b\\Letter\\WORD\\"
-//				+ usuario.getDni() + ".docx");
-//		assertTrue(file.exists());
+		Letter carta = new WordLetter();
+		assertNotNull(carta);
+		testTemplate(carta);
+		file = new File("..\\citizensLoader4b\\Letter\\WORD\\"
+				+ usuario.getDni() + ".docx");
+		assertTrue(file.exists());
 	}
 
 	/**
