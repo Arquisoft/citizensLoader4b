@@ -22,15 +22,9 @@ import es.uniovi.asw.parser.writer.WordLetter;
 
 public class TemplateWritterTest {
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
-
-<<<<<<< HEAD:src/test/java/es/uniovi/asw/AllTest.java
-	private List<Citizen> citizens = null;
-=======
->>>>>>> 6d88d6874f9c615a3d99e97e6c7486294d1a4bdf:src/test/java/es/uniovi/asw/parser/TemplateWritterTest.java
 	private Exception exception;
 	private Citizen usuario, anonimo;
 	private Calendar c1;
-	private File file;
 
 	/**
 	 * Inicializamos los parámetros que usamos en los test.
@@ -63,110 +57,7 @@ public class TemplateWritterTest {
 		System.setErr(null);
 		exception = null;
 	}
-<<<<<<< HEAD:src/test/java/es/uniovi/asw/AllTest.java
 
-	/**
-	 * Test que comprueba el correcto funcionamiento de la clase LoadUsers
-	 * 
-	 * @throws CitizenException
-	 *             Excepción ocurrida durante la ejecución
-	 */
-	@Test
-	public void testLecturaExcel() throws CitizenException {
-		// 1a
-		// Ruta correcta
-		LoadUsers.main("..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
-//		assertEquals("asdasdasd", errContent.toString());
-
-		// Si no indicamos ruta
-		LoadUsers.main();
-//		assertEquals("No se ha especificado la ruta de acceso al archivo correctamente.",
-//				errContent.toString());
-		errContent.reset();
-
-		// Ruta no correcta
-		LoadUsers.main("..\\citizb\\src\\test\\resources\\test.xlxs");
-//		assertEquals("Error en el fichero la extensión del archivo",
-//				errContent.toString());
-		errContent.reset();
-	}
-
-	/**
-	 * Test que comprueba el correcto funcionamiento de la clase RCitizens.
-	 * 
-	 * @throws CitizenException
-	 *             Excepción ocurrida durante la ejecución
-	 */
-	@Test
-	public void testRCitizens() throws CitizenException {
-		// 2a
-		ReadCitizens rs = new RCitizens();
-		try {
-			citizens = rs.readCitizens(
-					"..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
-		} catch (Exception e) {
-			exception = e;
-		}
-//		assertNotEquals(citizens.size(), 0);
-//		assertNull(exception);
-
-		try {
-			citizens = rs.readCitizens(
-					"..\\citizensLoader4b\\src\\test\\resources\\tes.xlsx");
-		} catch (Exception e) {
-			exception = e;
-		}
-		assertNotNull(exception);
-		assertEquals("Fichero no encontrado", exception.getMessage());
-
-		try {
-			citizens = rs.readCitizens("");
-		} catch (Exception e) {
-			exception = e;
-		}
-		assertNotNull(exception);
-		System.out.println(exception.getMessage());
-		assertEquals("Error en el fichero la extensión del archivo", exception.getMessage());
-	}
-
-	/**
-	 * Test que comprueba el correcto funcionamiento de la clase LoadFromExcel.
-	 * 
-	 * @throws CitizenException
-	 *             Excepción ocurrida durante la ejecución
-	 */
-	@Test
-	public void testLoadFromExcel() throws CitizenException {
-		Parser parser = new LoadFromExcel();
-		try {
-			citizens = parser.loadUsers(
-					"..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
-		} catch (Exception e) {
-			exception = e;
-		}
-//		assertNotEquals(citizens.size(), 0);
-//		assertNull(exception);
-
-		try {
-			citizens = parser.loadUsers(
-					"..\\citizensLoader4b\\src\\test\\resources\\tet.xlsx");
-		} catch (Exception e) {
-			exception = e;
-		}
-		assertNotNull(exception);
-		assertEquals("Fichero no encontrado", exception.getMessage());
-
-		try {
-			citizens = parser.loadUsers("");
-		} catch (Exception e) {
-			exception = e;
-		}
-		assertNotNull(exception);
-		assertEquals("Fichero no encontrado", exception.getMessage());
-	}
-
-=======
->>>>>>> 6d88d6874f9c615a3d99e97e6c7486294d1a4bdf:src/test/java/es/uniovi/asw/parser/TemplateWritterTest.java
 	/**
 	 * Test que comprueba el correcto funcionamiento de la clase PDFLetter
 	 * 
@@ -181,9 +72,9 @@ public class TemplateWritterTest {
 		Letter carta = new PDFLetter();
 		assertNotNull(carta);
 		testTemplate(carta);
-		file = new File("..\\citizensLoader4b\\Letter\\PDF\\" + usuario.getDni()
+		File file = new File("..\\citizensLoader4b\\Letter\\PDF\\" + usuario.getDni()
 				+ ".pdf");
-//		assertTrue(file.exists());
+		assertTrue(file.exists());
 
 	}
 
@@ -201,9 +92,9 @@ public class TemplateWritterTest {
 		Letter carta = new TXTLetter();
 		assertNotNull(carta);
 		testTemplate(carta);
-		file = new File("..\\citizensLoader4b\\Letter\\TXT\\" + usuario.getDni()
+		File file = new File("..\\citizensLoader4b\\Letter\\TXT\\" + usuario.getDni()
 				+ ".txt");
-//		assertTrue(file.exists());
+		assertTrue(file.exists());
 	}
 
 	/**
@@ -220,9 +111,9 @@ public class TemplateWritterTest {
 		Letter carta = new WordLetter();
 		assertNotNull(carta);
 		testTemplate(carta);
-		file = new File("..\\citizensLoader4b\\Letter\\WORD\\"
+		File file = new File("..\\citizensLoader4b\\Letter\\WORD\\"
 				+ usuario.getDni() + ".docx");
-//		assertTrue(file.exists());
+		assertTrue(file.exists());
 	}
 
 	/**
