@@ -1,5 +1,6 @@
 package es.uniovi.asw;
 
+import java.io.File;
 import java.util.*;
 
 import es.uniovi.asw.common.CitizenException;
@@ -18,35 +19,50 @@ public class LoadUsers {
 	public static void main(String... args) throws CitizenException {
 		try {
 			final LoadUsers runner = new LoadUsers();
-			runner.run(args);
+			runner.run();
 		} catch (Exception e) {
 			new Printer().printCitizenException(e);
 		}
 	}
 
-	private void run(String... args) throws CitizenException {
-		try {
-			if (args[0].equals(null)) {
-				throw new CitizenException(
-						"No se ha especificado la ruta de acceso al "
-								+ "archivo correctamente.");
-			} else {
-
-				List<Citizen> citizens = leerFichero(args);
+	private void run() throws CitizenException {
+//		try {
+//			if (args[0].equals(null)) {
+//				throw new CitizenException(
+//						"No se ha especificado la ruta de acceso al "
+//								+ "archivo correctamente.");
+//			} else {
+//
+//				List<Citizen> citizens = leerFichero(args);
+//				generarCartas(citizens);
+//				// generarCartas(new InsertR().save(citizens));
+//				new Printer().imprimirCitizen(citizens);
+//			}
+//		} catch (ArrayIndexOutOfBoundsException e) {
+//			throw new CitizenException(
+//					"No se ha especificado la ruta de acceso al "
+//							+ "archivo correctamente.");
+//		}
+		String directorio = "..\\citizensLoader4b\\archivosExcel";
+		File f = new File(directorio);
+		if (f.exists()) {
+			File[] ficheros = f.listFiles();
+			for (int i = 0; i < ficheros.length; i++) {
+				System.out.println(ficheros[i].getName());
+				List<Citizen> citizens = leerFichero(ficheros[i]);
 				generarCartas(citizens);
-				// generarCartas(new InsertR().save(citizens));
 				new Printer().imprimirCitizen(citizens);
 			}
-		} catch (ArrayIndexOutOfBoundsException e) {
+		} else {
 			throw new CitizenException(
-					"No se ha especificado la ruta de acceso al "
-							+ "archivo correctamente.");
+					"No se encuentra la carpeta con los archivos Excel");
 		}
+
 	}
 
-	private List<Citizen> leerFichero(String... ruta) throws CitizenException {
+	private List<Citizen> leerFichero(File fichero) throws CitizenException {
 		ReadCitizens leer = new RCitizens();
-		return leer.readCitizens(ruta);
+		return leer.readCitizens(fichero);
 	}
 
 	private void generarCartas(List<Citizen> citizens) throws CitizenException {

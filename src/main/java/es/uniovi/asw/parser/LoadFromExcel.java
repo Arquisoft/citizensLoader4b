@@ -27,14 +27,13 @@ public class LoadFromExcel implements Parser {
 	 * @throws CitizenException
 	 *             Excepción ocurrida durante la ejecución
 	 */
-	public List<Citizen> loadUsers(String fichero) throws CitizenException {
+	public List<Citizen> loadUsers(File fichero) throws CitizenException {
 
 		List<Citizen> citizens = new ArrayList<Citizen>();
 		FileInputStream file = null;
 		try {
 			try {
-				File aux = new File(fichero);
-				file = new FileInputStream(aux);
+				file = new FileInputStream(fichero);
 			} catch (NullPointerException e) {
 				throw new CitizenException(
 						"No se puede pasar como fichero un null");
@@ -107,5 +106,4 @@ public class LoadFromExcel implements Parser {
 			throw new CitizenException("Error en el archivo.");
 		}
 	}
-
 }

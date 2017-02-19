@@ -2,6 +2,7 @@ package es.uniovi.asw.parser;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
 import java.util.List;
 
 import org.junit.Before;
@@ -32,22 +33,24 @@ public class RCitizensTest {
 	 */
 	@Test
 	public void testRutaCorrecta() throws CitizenException {
-//		try {
-//			citizens = rs.readCitizens(
-//					"..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotNull(citizens);
-//		assertNull(exception);
-//		assertNotEquals(citizens.size(), 0);
+		try {
+			File file = new File(
+					"..\\citizensLoader4b\\archivosExcel\\test.xlsx");
+			citizens = rs.readCitizens(file);
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(citizens);
+		assertNull(exception);
+		assertNotEquals(citizens.size(), 0);
 	}
 
 	@Test
 	public void testRutaIncorrecta() throws CitizenException {
 		try {
-			citizens = rs.readCitizens(
-					"..\\citizensLoader4b\\src\\test\\resources\\tes.xlsx");
+			File file = new File(
+					"..\\citizensLoader4b\\archivosExcel\\tes.xlsx");
+			citizens = rs.readCitizens(file);
 		} catch (Exception e) {
 			exception = e;
 		}
@@ -60,7 +63,8 @@ public class RCitizensTest {
 	@Test
 	public void testRutaVacia() throws CitizenException {
 		try {
-			citizens = rs.readCitizens("");
+			File file = new File("");
+			citizens = rs.readCitizens(file);
 		} catch (Exception e) {
 			exception = e;
 		}

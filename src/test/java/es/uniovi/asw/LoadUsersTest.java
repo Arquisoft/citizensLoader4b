@@ -46,23 +46,7 @@ public class LoadUsersTest {
 	 */
 	@Test
 	public void testLecturaCorrecta() throws CitizenException {
-//		LoadUsers.main("..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
-//		assertEquals("", errContent.toString());
+		LoadUsers.main();
+		assertEquals("", errContent.toString());
 	}
-
-	@Test
-	public void testLecturaRutaErronea() throws CitizenException {
-//		LoadUsers.main("..\\citizb\\src\\test\\resources\\test.xlxs");
-//		assertEquals("Error en el fichero la extensión del archivo",
-//				errContent.toString());
-	}
-
-	@Test
-	public void testLecturaRutaVacia() throws CitizenException {
-//		LoadUsers.main();
-//		assertEquals(
-//				"No se ha especificado la ruta de acceso al archivo correctamente.",
-//				errContent.toString());
-	}
-
 }
