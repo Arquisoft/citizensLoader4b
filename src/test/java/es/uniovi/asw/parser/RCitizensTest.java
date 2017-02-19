@@ -22,36 +22,36 @@ public class RCitizensTest {
 	@Test
 	public void testRCitizens() throws CitizenException {
 		// 2a
-//		ReadCitizens rs = new RCitizens();
-//		List<Citizen> citizens = null;
-//		Exception exception = null;
-//		try {
-//			citizens = rs.readCitizens(
-//					"..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotEquals(citizens.size(), 0);
-//		assertNull(exception);
-//
-//		try {
-//			citizens = rs.readCitizens(
-//					"..\\citizensLoader4b\\src\\test\\resources\\tes.xlsx");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotNull(exception);
-//		assertEquals("Fichero no encontrado", exception.getMessage());
-//
-//		try {
-//			citizens = rs.readCitizens("");
-//		} catch (Exception e) {
-//			exception = e;
-//		}
-//		assertNotNull(exception);
-//		System.out.println(exception.getMessage());
-//		assertEquals("Error en el fichero la extensión del archivo",
-//				exception.getMessage());
+		ReadCitizens rs = new RCitizens();
+		List<Citizen> citizens = null;
+		Exception exception = null;
+		try {
+			citizens = rs.readCitizens(
+					"..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotEquals(citizens.size(), 0);
+		assertNull(exception);
+
+		try {
+			citizens = rs.readCitizens(
+					"..\\citizensLoader4b\\src\\test\\resources\\tes.xlsx");
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		assertEquals("Fichero no encontrado", exception.getMessage());
+
+		try {
+			citizens = rs.readCitizens("");
+		} catch (Exception e) {
+			exception = e;
+		}
+		assertNotNull(exception);
+		System.out.println(exception.getMessage());
+		assertEquals("Error en el fichero la extensión del archivo",
+				exception.getMessage());
 	}
 
 }
