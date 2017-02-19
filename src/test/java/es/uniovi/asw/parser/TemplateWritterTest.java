@@ -1,55 +1,36 @@
-package es.uniovi.asw;
+package es.uniovi.asw.parser;
 
 import static org.junit.Assert.*;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.PrintStream;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
-import java.util.*;
-
-import org.junit.*;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import es.uniovi.asw.common.CitizenException;
 import es.uniovi.asw.model.Citizen;
-import es.uniovi.asw.parser.*;
-import es.uniovi.asw.parser.writer.*;
+import es.uniovi.asw.parser.writer.Letter;
+import es.uniovi.asw.parser.writer.PDFLetter;
+import es.uniovi.asw.parser.writer.TXTLetter;
+import es.uniovi.asw.parser.writer.WordLetter;
 
-public class AllTest {
-
+public class TemplateWritterTest {
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
+<<<<<<< HEAD:src/test/java/es/uniovi/asw/AllTest.java
 	private List<Citizen> citizens = null;
+=======
+>>>>>>> 6d88d6874f9c615a3d99e97e6c7486294d1a4bdf:src/test/java/es/uniovi/asw/parser/TemplateWritterTest.java
 	private Exception exception;
 	private Citizen usuario, anonimo;
 	private Calendar c1;
 	private File file;
-
-	/**
-	 * Test que comprueba que se crean correctamente las carpetas que contiene
-	 * el log de fallos y las cartas dirigidas a los usuarios respectivamente.
-	 * 
-	 * @throws CitizenException
-	 *             Excepción ocurrida durante la ejecución
-	 */
-
-	@Test
-	public void testCreacionCarpetas() throws CitizenException {
-		LoadUsers.main("..\\citizensLoader4b\\src\\test\\resources\\test.xlsx");
-		// Compramos la correcta creación del Log
-		file = new File("Log");
-		assertTrue(file.exists());
-		assertTrue(file.isDirectory());
-
-		// Comprobamos la correcta creación de las cartas
-		file = new File("Letter");
-		assertTrue(file.exists());
-		assertTrue(file.isDirectory());
-		File[] tiposCarta = file.listFiles();
-		assertEquals(3, tiposCarta.length);
-		assertEquals("PDF", tiposCarta[0].getName());
-		assertEquals("TXT", tiposCarta[1].getName());
-		assertEquals("WORD", tiposCarta[2].getName());
-	}
 
 	/**
 	 * Inicializamos los parámetros que usamos en los test.
@@ -82,6 +63,7 @@ public class AllTest {
 		System.setErr(null);
 		exception = null;
 	}
+<<<<<<< HEAD:src/test/java/es/uniovi/asw/AllTest.java
 
 	/**
 	 * Test que comprueba el correcto funcionamiento de la clase LoadUsers
@@ -183,6 +165,8 @@ public class AllTest {
 		assertEquals("Fichero no encontrado", exception.getMessage());
 	}
 
+=======
+>>>>>>> 6d88d6874f9c615a3d99e97e6c7486294d1a4bdf:src/test/java/es/uniovi/asw/parser/TemplateWritterTest.java
 	/**
 	 * Test que comprueba el correcto funcionamiento de la clase PDFLetter
 	 * 
@@ -549,6 +533,5 @@ public class AllTest {
 		assertEquals("La fecha de nacimiento es posterior al dia actual.",
 				exception.getMessage());
 	}
-
 
 }

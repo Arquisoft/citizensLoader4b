@@ -14,6 +14,7 @@ import es.uniovi.asw.common.CitizenException;;
  */
 public class Log {
 
+
 	/**
 	 * Método que modifica el archivo LOG.txt para añadir una nueva excepción.
 	 * 
@@ -23,19 +24,29 @@ public class Log {
 	 *             Cualquier problema ocurrido durante la ejecución del método.
 	 */
 	public static void grabarError(String error) throws CitizenException {
+		if ("".equals(error))
+			throw new CitizenException(
+					"El error a guardar en el fichero Log no puede ser vacio.");
+		try {
+			if (error.equals(null))
+				throw new CitizenException(
+						"El error a guardar en el fichero Log no puede ser vacio.");
+		} catch (NullPointerException e) {
+			throw new CitizenException(
+					"El error a guardar en el fichero Log no puede ser null.");
+		}
 		FactoryCarpetas.crearCarpeta("Log");
 		try {
-			String mensaje_log = "(";
-			mensaje_log += GregorianCalendar.getInstance().getTime() + ") -> ";
-			mensaje_log += error + "\n";
+			String mensajeLog = "(";
+			mensajeLog += GregorianCalendar.getInstance().getTime() + ") -> ";
+			mensajeLog += error + "\n";
 			BufferedWriter fichero = new BufferedWriter(
 					new FileWriter("..\\citizensLoader4b\\Log\\LOG.txt", true));
-			fichero.write(mensaje_log);
+			fichero.write(mensajeLog);
 			fichero.close();
-		} catch (FileNotFoundException fnfe) {
-			throw new CitizenException(fnfe.getLocalizedMessage());
 		} catch (IOException ioe) {
 			throw new CitizenException(ioe.getLocalizedMessage());
 		}
+
 	}
 }
