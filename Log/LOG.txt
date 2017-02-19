@@ -667,3 +667,5 @@ Se usara la ruta por defecto: ..\citizensLoader4b\src\test\resources\test.xlxs
 (Sun Feb 19 19:28:29 CET 2017) -> Prueba de fallo
 (Sun Feb 19 19:29:04 CET 2017) -> Prueba de fallo
 (Sun Feb 19 19:29:04 CET 2017) -> Prueba de fallo
+(Sun Feb 19 19:42:14 CET 2017) -> Prueba de fallo
+(Sun Feb 19 19:43:46 CET 2017) -> Prueba de fallo

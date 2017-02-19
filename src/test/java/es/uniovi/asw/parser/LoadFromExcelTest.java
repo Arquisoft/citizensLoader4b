@@ -67,18 +67,4 @@ public class LoadFromExcelTest {
 		assertEquals("Fichero no encontrado", exception.getMessage());
 		assertNull(citizens);
 	}
-
-	@Test
-	public void testExcelRutaNull() throws CitizenException {
-		try {
-			citizens = parser.loadUsers(null);
-		} catch (Exception e) {
-			exception = e;
-		}
-		assertNotNull(exception);
-		assertEquals(CitizenException.class, exception.getClass());
-		assertEquals("No se puede pasar como fichero un null",
-				exception.getMessage());
-		assertNull(citizens);
-	}
 }

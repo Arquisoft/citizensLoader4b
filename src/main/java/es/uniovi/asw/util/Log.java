@@ -26,14 +26,9 @@ public class Log {
 		if ("".equals(error))
 			throw new CitizenException(
 					"El error a guardar en el fichero Log no puede ser vacio.");
-		try {
-			if (error == null)
-				throw new CitizenException(
-						"El error a guardar en el fichero Log no puede ser vacio.");
-		} catch (NullPointerException e) {
+		if (error == null)
 			throw new CitizenException(
 					"El error a guardar en el fichero Log no puede ser null.");
-		}
 		FactoryCarpetas.crearCarpeta("Log");
 		try {
 			String mensajeLog = "(";
