@@ -4,3 +4,9 @@
 (Mon Feb 20 11:40:09 CET 2017) -> Prueba de fallo
 (Mon Feb 20 11:40:27 CET 2017) -> Prueba de fallo
 (Mon Feb 20 11:40:28 CET 2017) -> Prueba de fallo
+(Mon Feb 20 11:50:39 CET 2017) -> Prueba de fallo
+(Mon Feb 20 11:52:03 CET 2017) -> Prueba de fallo
+(Mon Feb 20 11:58:48 CET 2017) -> Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+(Mon Feb 20 11:59:29 CET 2017) -> Error con la base de datos
+(Mon Feb 20 11:59:35 CET 2017) -> Error con la base de datos
+(Mon Feb 20 11:59:41 CET 2017) -> Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.

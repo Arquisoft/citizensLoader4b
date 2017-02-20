@@ -25,14 +25,12 @@ import es.uniovi.asw.model.Citizen;
 @EnableAutoConfiguration
 public class InsertP implements Insert {
 
-	@Autowired
-	private CitizenRepository repository;
-
 	@Override
 	public List<Citizen> save(List<Citizen> citizens) throws CitizenException {
 		ConfigurableApplicationContext context = SpringApplication
 				.run(LoadUsers.class);
-		repository = context.getBean(CitizenRepository.class);
+		CitizenRepository repository = context
+				.getBean(CitizenRepository.class);
 		List<Citizen> addedCitizens = new ArrayList<Citizen>();
 		for (Citizen citizen : citizens) {
 			try {
