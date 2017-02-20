@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 
+import es.uniovi.asw.common.CitizenException;
 import es.uniovi.asw.model.Citizen;
 
 /**
@@ -22,7 +23,7 @@ public class InsertP implements Insert {
 	private CitizenRepository repository;
 
 	@Override
-	public List<Citizen> save(List<Citizen> citizens) {
+	public List<Citizen> save(List<Citizen> citizens) throws CitizenException {
 		List<Citizen> addedCitizens = new ArrayList<Citizen>();
 		for (Citizen citizen : citizens) {
 			try {
@@ -32,10 +33,11 @@ public class InsertP implements Insert {
 				}
 			} catch (DataIntegrityViolationException e) {
 				// Falta reportar cuando un ciudadano no se puede insertar
-				e.printStackTrace();
+				throw new CitizenException(
+						"un ciudadano no se puede insertar ->" + citizen);
 			} catch (Exception e2) {
 				// Error con la base de datos
-				e2.printStackTrace();
+				throw new CitizenException("Error con la base de datos");
 			}
 		}
 		return addedCitizens;

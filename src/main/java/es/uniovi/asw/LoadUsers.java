@@ -33,15 +33,20 @@ public class LoadUsers {
 		File f = new File(directorio);
 		if (f.exists()) {
 			File[] ficheros = f.listFiles();
-			for (int i = 0; i < ficheros.length; i++) {
-				List<Citizen> citizens = leerFichero(ficheros[i]);
-				generarCartas(citizens);
-				// generarCartas(new InsertR().save(citizens));
-				new Printer().imprimirCitizen(citizens);
+			if (ficheros.length > 0) {
+				for (int i = 0; i < ficheros.length; i++) {
+					List<Citizen> citizens = leerFichero(ficheros[i]);
+					generarCartas(citizens);
+					//generarCartas(new InsertR().save(citizens));
+					new Printer().imprimirCitizen(citizens);
+				}
+			} else {
+				throw new CitizenException(
+						"La carpeta \"archivosExcel\" no contiene archivos Excel para leer.");
 			}
 		} else {
 			throw new CitizenException(
-					"No se encuentra la carpeta con los archivos Excel");
+					"No se encuentra la carpeta \"archivosExcel\" con los archivos Excel.");
 		}
 
 	}

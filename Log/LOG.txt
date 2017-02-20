@@ -1,2 +1,13 @@
 (Sun Feb 19 20:17:27 CET 2017) -> Prueba de fallo
 (Sun Feb 19 20:32:19 CET 2017) -> Prueba de fallo
+(Mon Feb 20 09:13:06 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:24:03 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:24:37 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:24:38 CET 2017) -> Prueba de fallo
+(Mon Feb 20 09:24:38 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:24:38 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:24:38 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:24:38 CET 2017) -> Prueba de fallo
+(Mon Feb 20 09:26:29 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:30:46 CET 2017) -> Prueba de fallo
+(Mon Feb 20 09:30:47 CET 2017) -> Prueba de fallo
