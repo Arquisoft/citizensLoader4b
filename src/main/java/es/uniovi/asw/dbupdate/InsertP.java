@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.DataIntegrityViolationException;
 
+import es.uniovi.asw.LoadUsers;
 import es.uniovi.asw.common.CitizenException;
 import es.uniovi.asw.model.Citizen;
 
@@ -16,7 +21,8 @@ import es.uniovi.asw.model.Citizen;
  * @author Raúl Gómez Pérez
  *
  */
-
+@Configuration
+@EnableAutoConfiguration
 public class InsertP implements Insert {
 
 	@Autowired
@@ -24,6 +30,9 @@ public class InsertP implements Insert {
 
 	@Override
 	public List<Citizen> save(List<Citizen> citizens) throws CitizenException {
+		ConfigurableApplicationContext context = SpringApplication
+				.run(LoadUsers.class);
+		repository = context.getBean(CitizenRepository.class);
 		List<Citizen> addedCitizens = new ArrayList<Citizen>();
 		for (Citizen citizen : citizens) {
 			try {

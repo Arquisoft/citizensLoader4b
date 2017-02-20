@@ -19,22 +19,26 @@ import es.uniovi.asw.util.Printer;
  * @author Raúl Gómez Pérez
  *
  */
+
 public class LoadUsers {
 	public static void main(String... args) throws CitizenException {
-		try{
-			if(args[0].equals("-help")){
-				System.out.println("Debe añadir los ficheros de los datos de usuarios a la carpeta archivosExcel.\n"
-						+ "Y ejecutar sin argumentos ejemplo:\n\t"
-						+ "java -jar target\\citizensLoader4b-0.0.1-jar-with-dependecies.jar");
-			}else{
-				System.out.println("La orden: " + args[0] + " no ha sido reconocida. \n"
-						+ "Consulte la ayuda con -help.");
+
+		try {
+			if (args[0].equals("-help")) {
+				System.out.println(
+						"Debe añadir los ficheros de los datos de usuarios a la carpeta archivosExcel.\n"
+								+ "Y ejecutar sin argumentos ejemplo:\n\t"
+								+ "java -jar target\\citizensLoader4b-0.0.1-jar-with-dependecies.jar");
+			} else {
+				System.out.println(
+						"La orden: " + args[0] + " no ha sido reconocida. \n"
+								+ "Consulte la ayuda con -help.");
 			}
-		}catch(Exception e){
+		} catch (Exception e) {
 			try {
 				final LoadUsers runner = new LoadUsers();
 				runner.run();
-				
+
 			} catch (Exception e1) {
 				new Printer().printCitizenException(e1);
 			}
@@ -46,19 +50,30 @@ public class LoadUsers {
 		File f = new File(directorio);
 		if (f.exists()) {
 			File[] ficheros = f.listFiles();
+<<<<<<< HEAD
 			
 			if(ficheros.length == 0){
+=======
+
+			if (ficheros.length == 0) {
+>>>>>>> refs/remotes/origin/master
 				System.out.println("Consulte el manual de uso con -help.");
-			}else{
+			} else {
 				for (int i = 0; i < ficheros.length; i++) {
 					List<Citizen> citizens = leerFichero(ficheros[i]);
 					generarCartas(citizens);
 					// generarCartas(new InsertR().save(citizens));
 					new Printer().imprimirCitizen(citizens);
+<<<<<<< HEAD
 				}	
 			}	
 		} else {
 			FactoryCarpetas.crearCarpeta("archivosExcel");
+=======
+				}
+			}
+		} else {
+>>>>>>> refs/remotes/origin/master
 			System.out.println("Consulte el manual de ayuda con -help.");
 			throw new CitizenException(
 					"No se encuentra la carpeta con los archivos Excel");
