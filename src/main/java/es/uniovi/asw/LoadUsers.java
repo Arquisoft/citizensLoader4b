@@ -22,28 +22,28 @@ import es.uniovi.asw.util.Printer;
 
 public class LoadUsers {
 	public static void main(String... args) throws CitizenException {
-		// try {
-		// if (args[0].equals("-help")) {
-		// System.out.println(
-		// "Debe añadir los ficheros de los datos de usuarios a "
-		// + "la carpeta archivosExcel.\n"
-		// + "Y ejecutar sin argumentos ejemplo:\n\t"
-		// + "java -jar target\\citizensLoader4b-0.0.1-"
-		// + "jar-with-dependecies.jar");
-		// } else {
-		// System.out.println(
-		// "La orden: " + args[0] + " no ha sido reconocida. \n"
-		// + "Consulte la ayuda con -help.");
-		// }
-		// } catch (Exception e) {
 		try {
-			final LoadUsers runner = new LoadUsers();
-			runner.run();
+			if (args[0].equals("-help")) {
+				System.out.println(
+						"Debe añadir los ficheros de los datos de usuarios a "
+								+ "la carpeta archivosExcel.\n"
+								+ "Y ejecutar sin argumentos ejemplo:\n\t"
+								+ "java -jar target\\citizensLoader4b-0.0.1-"
+								+ "jar-with-dependecies.jar");
+			} else {
+				System.out.println(
+						"La orden: " + args[0] + " no ha sido reconocida. \n"
+								+ "Consulte la ayuda con -help.");
+			}
+		} catch (Exception e) {
+			try {
+				final LoadUsers runner = new LoadUsers();
+				runner.run();
 
-		} catch (Exception e1) {
-			new Printer().printCitizenException(e1);
+			} catch (Exception e1) {
+				new Printer().printCitizenException(e1);
+			}
 		}
-		// }
 	}
 
 	private void run() throws CitizenException {
@@ -57,8 +57,8 @@ public class LoadUsers {
 			} else {
 				for (int i = 0; i < ficheros.length; i++) {
 					List<Citizen> citizens = leerFichero(ficheros[i]);
-					//generarCartas(citizens);
-					generarCartas(new InsertR().save(citizens));
+					generarCartas(citizens);
+					// generarCartas(new InsertR().save(citizens));
 					new Printer().imprimirCitizen(citizens);
 				}
 			}
