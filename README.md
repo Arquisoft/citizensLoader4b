@@ -22,5 +22,5 @@ En caso contrario se le notificara que error ha ocurrido.
 Si no ha creado dicha carpeta el programa la creara por defecto.
 
 El usuario tendrá ayuda con el comando -help.
-Un ejemplo de uso sería:
+Un ejemplo de uso sería:\n\t
   java -jar target\citizensLoader4b-0.0.1-jar-with-dependecies.jar [-help]
