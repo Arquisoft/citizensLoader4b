@@ -11,3 +11,27 @@
 (Mon Feb 20 09:26:29 CET 2017) -> Error con la base de datos
 (Mon Feb 20 09:30:46 CET 2017) -> Prueba de fallo
 (Mon Feb 20 09:30:47 CET 2017) -> Prueba de fallo
+(Mon Feb 20 09:33:56 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:34:07 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:36:42 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:38:10 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:38:11 CET 2017) -> Prueba de fallo
+(Mon Feb 20 09:38:11 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:38:11 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:38:12 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:38:12 CET 2017) -> Prueba de fallo
+(Mon Feb 20 09:38:35 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:48:21 CET 2017) -> No se encuentra la carpeta "archivosExcel" con los archivos Excel.
+(Mon Feb 20 09:49:31 CET 2017) -> No se encuentra la carpeta "archivosExcel" con los archivos Excel.
+Se ha creado automaticamente.
+(Mon Feb 20 09:49:34 CET 2017) -> La carpeta "archivosExcel" no contiene archivos Excel para leer.
+(Mon Feb 20 09:49:55 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:56:33 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:57:54 CET 2017) -> Error con la base de datos
+(Mon Feb 20 09:57:58 CET 2017) -> Error con la base de datos
+(Mon Feb 20 10:06:30 CET 2017) -> Error con la base de datos
+(Mon Feb 20 10:12:17 CET 2017) -> Error con la base de datos
+(Mon Feb 20 10:12:43 CET 2017) -> Error con la base de datos
+(Mon Feb 20 10:20:16 CET 2017) -> Error con la base de datos
+(Mon Feb 20 10:25:13 CET 2017) -> Error con la base de datos
+(Mon Feb 20 10:25:42 CET 2017) -> Error con la base de datos

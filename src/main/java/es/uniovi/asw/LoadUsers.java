@@ -7,6 +7,7 @@ import es.uniovi.asw.common.CitizenException;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.parser.*;
 import es.uniovi.asw.parser.writer.*;
+import es.uniovi.asw.util.FactoryCarpetas;
 import es.uniovi.asw.util.Printer;
 
 /**
@@ -18,8 +19,10 @@ import es.uniovi.asw.util.Printer;
  * @author Raúl Gómez Pérez
  *
  */
+
 public class LoadUsers {
 	public static void main(String... args) throws CitizenException {
+
 		try {
 			final LoadUsers runner = new LoadUsers();
 			runner.run();
@@ -36,8 +39,8 @@ public class LoadUsers {
 			if (ficheros.length > 0) {
 				for (int i = 0; i < ficheros.length; i++) {
 					List<Citizen> citizens = leerFichero(ficheros[i]);
-					generarCartas(citizens);
-					//generarCartas(new InsertR().save(citizens));
+					// generarCartas(citizens);
+					generarCartas(new InsertR().save(citizens));
 					new Printer().imprimirCitizen(citizens);
 				}
 			} else {
@@ -45,8 +48,9 @@ public class LoadUsers {
 						"La carpeta \"archivosExcel\" no contiene archivos Excel para leer.");
 			}
 		} else {
+			new FactoryCarpetas().crearCarpeta(directorio);
 			throw new CitizenException(
-					"No se encuentra la carpeta \"archivosExcel\" con los archivos Excel.");
+					"No se encuentra la carpeta \"archivosExcel\" con los archivos Excel.\nSe ha creado automaticamente.");
 		}
 
 	}
