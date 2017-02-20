@@ -37,8 +37,8 @@ public class LoadUsers {
 			if (ficheros.length > 0) {
 				for (int i = 0; i < ficheros.length; i++) {
 					List<Citizen> citizens = leerFichero(ficheros[i]);
-					// generarCartas(citizens);
-					generarCartas(new InsertR().save(citizens));
+					generarCartas(citizens);
+					//generarCartas(new InsertR().save(citizens));
 					new Printer().imprimirCitizen(citizens);
 				}
 			} else {
