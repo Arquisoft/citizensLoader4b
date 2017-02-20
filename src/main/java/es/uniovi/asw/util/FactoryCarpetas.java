@@ -17,7 +17,7 @@ public class FactoryCarpetas {
 	 * @param nombreCarpeta
 	 *            Nombre y ubicación de la nueva carpeta.
 	 */
-	public static void crearCarpeta(String nombreCarpeta) {
+	public void crearCarpeta(String nombreCarpeta) {
 		String nombre = "" + nombreCarpeta;
 		File file = new File(nombre);
 		if (!file.exists()) {

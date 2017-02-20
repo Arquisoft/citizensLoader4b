@@ -50,13 +50,8 @@ public class LoadUsers {
 		File f = new File(directorio);
 		if (f.exists()) {
 			File[] ficheros = f.listFiles();
-<<<<<<< HEAD
-			
-			if(ficheros.length == 0){
-=======
 
 			if (ficheros.length == 0) {
->>>>>>> refs/remotes/origin/master
 				System.out.println("Consulte el manual de uso con -help.");
 			} else {
 				for (int i = 0; i < ficheros.length; i++) {
@@ -64,19 +59,14 @@ public class LoadUsers {
 					generarCartas(citizens);
 					// generarCartas(new InsertR().save(citizens));
 					new Printer().imprimirCitizen(citizens);
-<<<<<<< HEAD
-				}	
-			}	
-		} else {
-			FactoryCarpetas.crearCarpeta("archivosExcel");
-=======
 				}
 			}
 		} else {
->>>>>>> refs/remotes/origin/master
+			new FactoryCarpetas().crearCarpeta("archivosExcel");
 			System.out.println("Consulte el manual de ayuda con -help.");
 			throw new CitizenException(
-					"No se encuentra la carpeta con los archivos Excel");
+					"No se encuentra la carpeta archivosExcel."
+							+ "\nSe ha creado automáticamente.");
 		}
 
 	}
