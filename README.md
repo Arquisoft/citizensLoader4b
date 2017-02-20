@@ -16,7 +16,7 @@ Skeleton of Citizens Loader module
 - Iván González Mahagamage (@igm1990)
 - Raúl Gómez Pérez (@RaulG89)
 
-# USAGE
+# Usage
 Para que la aplicación funcione, el usuario debe introducir en la carpeta "archivosExcel", ubicada en el directorio raíz del proyecto, los documentos que desee leer.
 En caso contrario se le notificara que error ha ocurrido.
 Si no ha creado dicha carpeta el programa la creara por defecto.
