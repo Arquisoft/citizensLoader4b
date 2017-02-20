@@ -29,6 +29,7 @@ public class LoadUsers {
 		List<Citizen> citizens = new ArrayList<Citizen>();
 		
 		try {
+			//citizens = leer.readCitizens(args);
 			citizens = leer.readCitizens(fichero, fichero);
 		} catch (IOException e) {
 			e.printStackTrace();
