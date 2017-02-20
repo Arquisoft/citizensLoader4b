@@ -1,49 +1,71 @@
 package es.uniovi.asw;
 
-import java.io.IOException;
+import java.io.File;
 import java.util.*;
-import java.util.regex.Pattern;
 
+import es.uniovi.asw.common.CitizenException;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.parser.*;
 import es.uniovi.asw.parser.writer.*;
+import es.uniovi.asw.util.Printer;
 
 /**
  * Main application
  * 
- * @author Labra
+ * @author Jorge Rodríguez Fernández
+ * @author Adrián García Lumbreras
+ * @author Iván González Mahagamage
+ * @author Raúl Gómez Pérez
  *
  */
 public class LoadUsers {
-
-	public static void main(String... args) throws Exception {
-		final LoadUsers runner = new LoadUsers();
-		runner.run(args);
-	}
-
-	void run(String... args) throws Exception {
-		System.out.println("TODO TODO");
-		System.out.println("A ver si funciona esto");
-		String fichero = "..\\citizensLoader4b\\src\\test\\resources\\test.xlsx";
-		ReadCitizens leer = new RCitizens();
-		List<Citizen> citizens = new ArrayList<Citizen>();
-		
+	public static void main(String... args) throws CitizenException {
 		try {
-			//citizens = leer.readCitizens(args);
-			citizens = leer.readCitizens(fichero, fichero);
-		} catch (IOException e) {
-			e.printStackTrace();
+			final LoadUsers runner = new LoadUsers();
+			runner.run();
+		} catch (Exception e) {
+			new Printer().printCitizenException(e);
+		}
+	}
+
+	private void run() throws CitizenException {
+		String directorio = "archivosExcel";
+		File f = new File(directorio);
+		if (f.exists()) {
+			File[] ficheros = f.listFiles();
+			for (int i = 0; i < ficheros.length; i++) {
+				List<Citizen> citizens = leerFichero(ficheros[i]);
+				generarCartas(citizens);
+				// generarCartas(new InsertR().save(citizens));
+				new Printer().imprimirCitizen(citizens);
+			}
+		} else {
+			throw new CitizenException(
+					"No se encuentra la carpeta con los archivos Excel");
 		}
 
-		Letter letterTxt = new TXTLetter();
-		letterTxt = LetterWriter.generate("txt");
-		
-		for(Citizen citizen: citizens) {
-			System.out.println("ID: " + citizen.getId());
-			System.out.println("DNI: " + citizen.getDni());
-			System.out.println("PASS: " +citizen.getPassword());
-			letterTxt.generateLetter(citizen);
-		}
-		
 	}
+
+	private List<Citizen> leerFichero(File fichero) throws CitizenException {
+		ReadCitizens leer = new RCitizens();
+		return leer.readCitizens(fichero);
+	}
+
+	private void generarCartas(List<Citizen> citizens) throws CitizenException {
+		Letter letterTxt = new TXTLetter();
+		letterTxt = FactoryLetter.generate("txt");
+
+		Letter letterPDF = new PDFLetter();
+		letterPDF = FactoryLetter.generate("pdf");
+
+		Letter letterWord = new WordLetter();
+		letterWord = FactoryLetter.generate("word");
+
+		for (Citizen citizen : citizens) {
+			letterTxt.generateLetter(citizen);
+			letterPDF.generateLetter(citizen);
+			letterWord.generateLetter(citizen);
+		}
+	}
+
 }
