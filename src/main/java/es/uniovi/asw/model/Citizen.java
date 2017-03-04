@@ -8,6 +8,7 @@ import java.util.Random;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -20,7 +21,7 @@ import es.uniovi.asw.util.EncryptMD5;
 public class Citizen {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
 	@NotNull

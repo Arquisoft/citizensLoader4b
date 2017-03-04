@@ -58,7 +58,7 @@ public class LoadUsers {
 				for (int i = 0; i < ficheros.length; i++) {
 					List<Citizen> citizens = leerFichero(ficheros[i]);
 					generarCartas(citizens);
-					// generarCartas(new InsertR().save(citizens));
+					generarCartas(new InsertR().save(citizens));
 					new Printer().imprimirCitizen(citizens);
 				}
 			}
