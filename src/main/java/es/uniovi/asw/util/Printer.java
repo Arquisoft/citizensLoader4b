@@ -2,6 +2,7 @@ package es.uniovi.asw.util;
 
 import java.util.List;
 
+import es.uniovi.asw.ReportWritter.WreportP;
 import es.uniovi.asw.common.CitizenException;
 import es.uniovi.asw.model.Citizen;
 
@@ -23,7 +24,7 @@ public class Printer {
 	 *             Cualquier problema ocurrido durante la ejecución del método.
 	 */
 	public void printCitizenException(Exception e) throws CitizenException {
-		new Log().grabarError(e.getLocalizedMessage());
+		new WreportP().grabarError(e.getLocalizedMessage());
 		System.err.print(e.getLocalizedMessage());
 	}
 

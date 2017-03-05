@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Test;
 
+import es.uniovi.asw.ReportWritter.WreportP;
 import es.uniovi.asw.common.CitizenException;
 
 public class LogTest {
@@ -18,7 +19,7 @@ public class LogTest {
 	@Test
 	public void grabarNull() throws CitizenException {
 		try {
-			new Log().grabarError(null);
+			new WreportP().grabarError(null);
 		} catch (Exception e) {
 			exception = e;
 		}
@@ -31,7 +32,7 @@ public class LogTest {
 	@Test
 	public void grabarFalloVacio() {
 		try {
-			new Log().grabarError("");
+			new WreportP().grabarError("");
 		} catch (Exception e) {
 			exception = e;
 		}
@@ -43,7 +44,7 @@ public class LogTest {
 	@Test
 	public void grabarFallo() {
 		try {
-			new Log().grabarError("Prueba de fallo");
+			new WreportP().grabarError("Prueba de fallo");
 		} catch (Exception e) {
 			exception = e;
 		}
