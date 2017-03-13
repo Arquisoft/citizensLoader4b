@@ -21,7 +21,7 @@ import es.uniovi.asw.util.EncryptMD5;
 public class Citizen {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
 	@NotNull
@@ -44,9 +44,8 @@ public class Citizen {
 	public Citizen() {
 	}
 
-	public Citizen(long id, String nombre, String apellidos, String email,
-			Date fechaNacimiento, String residencia, String nacionalidad,
-			String dni) throws NoSuchAlgorithmException, CitizenException {
+	public Citizen(long id, String nombre, String apellidos, String email, Date fechaNacimiento, String residencia,
+			String nacionalidad, String dni) throws NoSuchAlgorithmException, CitizenException {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -97,17 +96,14 @@ public class Citizen {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento)
-			throws CitizenException {
+	public void setFechaNacimiento(Date fechaNacimiento) throws CitizenException {
 		try {
 			if (fechaNacimiento.before(calendar.getTime()))
 				this.fechaNacimiento = fechaNacimiento;
 			else
-				throw new CitizenException(
-						"La fecha de nacimiento es posterior al dia actual.");
+				throw new CitizenException("La fecha de nacimiento es posterior al dia actual.");
 		} catch (NullPointerException e) {
-			throw new CitizenException(
-					"La fecha de nacimiento no puede ser null.");
+			throw new CitizenException("La fecha de nacimiento no puede ser null.");
 		}
 	}
 
@@ -139,21 +135,18 @@ public class Citizen {
 		return password;
 	}
 
-	public void setPassword(String password)
-			throws NoSuchAlgorithmException, CitizenException {
+	public void setPassword(String password) throws NoSuchAlgorithmException, CitizenException {
 		this.password = new EncryptMD5().encrypting(password);
 	}
 
-	private String generarPassword()
-			throws NoSuchAlgorithmException, CitizenException {
+	private String generarPassword() throws NoSuchAlgorithmException, CitizenException {
 		String password = "";
 		Random r = new Random(calendar.getTimeInMillis());
 		int i = 0;
 
 		while (i < 10) {
 			char c = (char) r.nextInt(255);
-			if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z')
-					|| (c >= 'a' && c <= 'z')) {
+			if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) {
 				password += c;
 				i++;
 			}
@@ -164,11 +157,85 @@ public class Citizen {
 
 	@Override
 	public String toString() {
-		return "Citizen [id=" + id + ", nombre=" + nombre + ", apellidos="
-				+ apellidos + ", email=" + email + ", fechaNacimiento="
-				+ fechaNacimiento + ", residencia=" + residencia
-				+ ", nacionalidad=" + nacionalidad + ", dni=" + dni
-				+ ", password=" + password + "]";
+		return "Citizen [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email
+				+ ", fechaNacimiento=" + fechaNacimiento + ", residencia=" + residencia + ", nacionalidad="
+				+ nacionalidad + ", dni=" + dni + ", password=" + password + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((apellidos == null) ? 0 : apellidos.hashCode());
+		result = prime * result + ((calendar == null) ? 0 : calendar.hashCode());
+		result = prime * result + ((dni == null) ? 0 : dni.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((fechaNacimiento == null) ? 0 : fechaNacimiento.hashCode());
+		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((nacionalidad == null) ? 0 : nacionalidad.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((residencia == null) ? 0 : residencia.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Citizen other = (Citizen) obj;
+		if (apellidos == null) {
+			if (other.apellidos != null)
+				return false;
+		} else if (!apellidos.equals(other.apellidos))
+			return false;
+		if (calendar == null) {
+			if (other.calendar != null)
+				return false;
+		} else if (!calendar.equals(other.calendar))
+			return false;
+		if (dni == null) {
+			if (other.dni != null)
+				return false;
+		} else if (!dni.equals(other.dni))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (fechaNacimiento == null) {
+			if (other.fechaNacimiento != null)
+				return false;
+		} else if (!fechaNacimiento.equals(other.fechaNacimiento))
+			return false;
+		if (id != other.id)
+			return false;
+		if (nacionalidad == null) {
+			if (other.nacionalidad != null)
+				return false;
+		} else if (!nacionalidad.equals(other.nacionalidad))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (residencia == null) {
+			if (other.residencia != null)
+				return false;
+		} else if (!residencia.equals(other.residencia))
+			return false;
+		return true;
 	}
 
 }
