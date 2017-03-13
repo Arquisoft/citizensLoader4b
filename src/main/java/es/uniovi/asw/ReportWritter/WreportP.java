@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.GregorianCalendar;
 
 import es.uniovi.asw.common.CitizenException;
-import es.uniovi.asw.util.FactoryCarpetas;;
+import es.uniovi.asw.util.FactoryCarpetas;
 
 /**
  * Clase encargar de documentar y guardar todas las excepciones ocurridas con el
