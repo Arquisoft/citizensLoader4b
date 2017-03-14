@@ -8,10 +8,10 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import es.uniovi.asw.common.CitizenException;
-import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.dbupdate.model.Citizen;
 import es.uniovi.asw.parser.RCitizens;
 import es.uniovi.asw.parser.ReadCitizens;
+import es.uniovi.asw.util.CitizenException;
 
 public class RCitizensTest {
 	private ReadCitizens rs = new RCitizens();

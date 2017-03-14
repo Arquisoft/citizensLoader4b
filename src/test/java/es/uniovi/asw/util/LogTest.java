@@ -6,7 +6,6 @@ import org.junit.After;
 import org.junit.Test;
 
 import es.uniovi.asw.ReportWritter.WreportP;
-import es.uniovi.asw.common.CitizenException;
 
 public class LogTest {
 	private Exception exception;

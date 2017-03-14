@@ -1,9 +1,9 @@
-package es.uniovi.asw.dbupdate;
+package es.uniovi.asw.dbupdate.presentation;
 
 import java.util.List;
 
-import es.uniovi.asw.common.CitizenException;
-import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.dbupdate.model.Citizen;
+import es.uniovi.asw.util.CitizenException;
 
 /**
  * Interfaz. Recibe un objeto con la información para insertar en la base de

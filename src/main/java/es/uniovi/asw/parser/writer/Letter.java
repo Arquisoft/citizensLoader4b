@@ -1,7 +1,7 @@
 package es.uniovi.asw.parser.writer;
 
-import es.uniovi.asw.common.CitizenException;
-import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.dbupdate.model.Citizen;
+import es.uniovi.asw.util.CitizenException;
 
 /**
  * Interfaz que define los métodos que usarán las distintas clase que generan

@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import es.uniovi.asw.common.CitizenException;
-import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.dbupdate.model.Citizen;
+import es.uniovi.asw.util.CitizenException;
 
 /**
  * Clase encargada de leer los ficheros Excel con los datos de los usuarios.

@@ -13,3 +13,36 @@
 (Sat Mar 04 14:05:24 CET 2017) -> Prueba de fallo
 (Sat Mar 04 14:05:24 CET 2017) -> Prueba de fallo
 (Sat Mar 04 14:26:30 CET 2017) -> Unable to start embedded container; nested exception is org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat
+(Mon Mar 13 15:17:39 CET 2017) -> Unable to start embedded container; nested exception is org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat
+(Mon Mar 13 15:17:39 CET 2017) -> Prueba de fallo
+(Mon Mar 13 15:17:47 CET 2017) -> Unable to start embedded container; nested exception is org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat
+(Mon Mar 13 15:17:49 CET 2017) -> Unable to start embedded container; nested exception is org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat
+(Mon Mar 13 15:17:52 CET 2017) -> Unable to start embedded container; nested exception is org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat
+(Mon Mar 13 15:17:52 CET 2017) -> Prueba de fallo
+(Tue Mar 14 16:17:26 CET 2017) -> Unable to start embedded container; nested exception is org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat
+(Tue Mar 14 16:40:59 CET 2017) -> Error con la base de datos
+(Tue Mar 14 16:43:04 CET 2017) -> Error con la base de datos
+(Tue Mar 14 16:45:10 CET 2017) -> Error con la base de datos
+(Tue Mar 14 16:47:29 CET 2017) -> Error con la base de datos
+(Tue Mar 14 16:50:11 CET 2017) -> Error con la base de datos
+(Tue Mar 14 16:52:08 CET 2017) -> Error con la base de datos
+(Tue Mar 14 16:53:27 CET 2017) -> Error con la base de datos
+(Tue Mar 14 16:55:07 CET 2017) -> Error con la base de datos
+(Tue Mar 14 16:58:41 CET 2017) -> Error con la base de datos
+(Tue Mar 14 20:02:02 CET 2017) -> Error con la base de datos
+(Tue Mar 14 20:09:36 CET 2017) -> Error con la base de datos
+(Tue Mar 14 20:12:02 CET 2017) -> Error con la base de datos
+(Tue Mar 14 20:12:34 CET 2017) -> Error con la base de datos
+(Tue Mar 14 20:14:21 CET 2017) -> Error con la base de datos
+(Tue Mar 14 20:15:09 CET 2017) -> Error con la base de datos
+(Tue Mar 14 20:43:15 CET 2017) -> Error con la base de datos
+(Tue Mar 14 20:45:31 CET 2017) -> Error con la base de datos
+(Tue Mar 14 22:57:52 CET 2017) -> Error con la base de datos
+(Tue Mar 14 23:05:01 CET 2017) -> Prueba de fallo
+(Tue Mar 14 23:05:44 CET 2017) -> Prueba de fallo
+(Tue Mar 14 23:06:38 CET 2017) -> Prueba de fallo
+(Tue Mar 14 23:06:40 CET 2017) -> Prueba de fallo
+(Tue Mar 14 23:06:56 CET 2017) -> Prueba de fallo
+(Tue Mar 14 23:06:58 CET 2017) -> Prueba de fallo
+(Tue Mar 14 23:07:44 CET 2017) -> Prueba de fallo
+(Tue Mar 14 23:07:45 CET 2017) -> Prueba de fallo

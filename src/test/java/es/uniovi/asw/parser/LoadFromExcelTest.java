@@ -8,10 +8,10 @@ import java.util.List;
 import org.junit.After;
 import org.junit.Test;
 
-import es.uniovi.asw.common.CitizenException;
-import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.dbupdate.model.Citizen;
 import es.uniovi.asw.parser.LoadFromExcel;
 import es.uniovi.asw.parser.Parser;
+import es.uniovi.asw.util.CitizenException;
 
 public class LoadFromExcelTest {
 	private List<Citizen> citizens;

@@ -13,12 +13,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import es.uniovi.asw.common.CitizenException;
-import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.dbupdate.model.Citizen;
 import es.uniovi.asw.parser.writer.Letter;
 import es.uniovi.asw.parser.writer.PDFLetter;
 import es.uniovi.asw.parser.writer.TXTLetter;
 import es.uniovi.asw.parser.writer.WordLetter;
+import es.uniovi.asw.util.CitizenException;
 
 public class TemplateWritterTest {
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();

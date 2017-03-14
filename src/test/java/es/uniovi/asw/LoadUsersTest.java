@@ -9,7 +9,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import es.uniovi.asw.common.CitizenException;
+import es.uniovi.asw.util.CitizenException;
 
 public class LoadUsersTest {
 

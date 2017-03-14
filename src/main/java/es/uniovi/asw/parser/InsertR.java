@@ -2,10 +2,14 @@ package es.uniovi.asw.parser;
 
 import java.util.List;
 
-import es.uniovi.asw.common.CitizenException;
-import es.uniovi.asw.dbupdate.Insert;
-import es.uniovi.asw.dbupdate.InsertP;
-import es.uniovi.asw.model.Citizen;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.stereotype.Service;
+
+import es.uniovi.asw.dbupdate.model.Citizen;
+import es.uniovi.asw.dbupdate.presentation.Insert;
+import es.uniovi.asw.dbupdate.presentation.InsertP;
+import es.uniovi.asw.util.CitizenException;
 
 /**
  * Clase encargada de enviar los ciudadanos a insertar al DBUpdate.

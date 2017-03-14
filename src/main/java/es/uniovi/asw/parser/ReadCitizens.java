@@ -3,8 +3,8 @@ package es.uniovi.asw.parser;
 import java.io.File;
 import java.util.List;
 
-import es.uniovi.asw.common.CitizenException;
-import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.dbupdate.model.Citizen;
+import es.uniovi.asw.util.CitizenException;
 
 /**
  * Interfaz encargada de definis los métodos que leen ficheros con los datos de

@@ -1,5 +1,6 @@
-package es.uniovi.asw.model;
+package es.uniovi.asw.dbupdate.model;
 
+import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,15 +14,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import es.uniovi.asw.common.CitizenException;
+import es.uniovi.asw.util.CitizenException;
 import es.uniovi.asw.util.EncryptMD5;
 
 @Entity
 @Table(name = "TCITIZENS")
-public class Citizen {
+public class Citizen implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
 	@NotNull

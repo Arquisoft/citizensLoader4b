@@ -1,4 +1,4 @@
-package es.uniovi.asw.common;
+package es.uniovi.asw.util;
 
 /**
  * Clase que crea una excepción personalizada para nuestro proyecto.

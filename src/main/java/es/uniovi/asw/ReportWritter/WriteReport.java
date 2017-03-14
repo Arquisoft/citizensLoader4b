@@ -1,6 +1,6 @@
 package es.uniovi.asw.ReportWritter;
 
-import es.uniovi.asw.common.CitizenException;
+import es.uniovi.asw.util.CitizenException;
 
 /**
  * Interfaz que define los métodos para guardar datos en el log del sistema

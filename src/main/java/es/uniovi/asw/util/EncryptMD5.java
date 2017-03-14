@@ -3,8 +3,6 @@ package es.uniovi.asw.util;
 import java.math.BigInteger;
 import java.security.*;
 
-import es.uniovi.asw.common.CitizenException;
-
 public class EncryptMD5 {
 
 	public String encrypting(String password)

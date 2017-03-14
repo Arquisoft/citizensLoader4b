@@ -3,8 +3,7 @@ package es.uniovi.asw.util;
 import java.util.List;
 
 import es.uniovi.asw.ReportWritter.WreportP;
-import es.uniovi.asw.common.CitizenException;
-import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.dbupdate.model.Citizen;
 
 /**
  * Clase encarga de mostrar por pantalla datos al usuario.

@@ -5,7 +5,7 @@ import java.io.*;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 
-import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.dbupdate.model.Citizen;
 
 /**
  * Clase encargada de crear las cartas con formato PDF.
