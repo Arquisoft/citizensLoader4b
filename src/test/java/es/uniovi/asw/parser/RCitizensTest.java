@@ -7,12 +7,14 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import es.uniovi.asw.dbupdate.model.Citizen;
 import es.uniovi.asw.parser.RCitizens;
 import es.uniovi.asw.parser.ReadCitizens;
 import es.uniovi.asw.util.CitizenException;
-
+@RunWith(SpringJUnit4ClassRunner.class)
 public class RCitizensTest {
 	private ReadCitizens rs = new RCitizens();
 	private List<Citizen> citizens;

@@ -4,9 +4,11 @@ import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import es.uniovi.asw.ReportWritter.WreportP;
-
+@RunWith(SpringJUnit4ClassRunner.class)
 public class LogTest {
 	private Exception exception;
 

@@ -1,16 +1,18 @@
 package es.uniovi.asw;
 
 import static org.junit.Assert.*;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.security.NoSuchAlgorithmException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import es.uniovi.asw.util.CitizenException;
 
+
+@RunWith(SpringJUnit4ClassRunner.class)
 public class LoadUsersTest {
 
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();

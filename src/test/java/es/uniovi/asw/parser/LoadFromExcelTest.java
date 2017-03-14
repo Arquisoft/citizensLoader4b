@@ -7,12 +7,15 @@ import java.util.List;
 
 import org.junit.After;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import es.uniovi.asw.dbupdate.model.Citizen;
 import es.uniovi.asw.parser.LoadFromExcel;
 import es.uniovi.asw.parser.Parser;
 import es.uniovi.asw.util.CitizenException;
 
+@RunWith(SpringJUnit4ClassRunner.class)
 public class LoadFromExcelTest {
 	private List<Citizen> citizens;
 	private Exception exception;

@@ -2,6 +2,7 @@ package es.uniovi.asw;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import es.uniovi.asw.util.CitizenException;
 
 /**
@@ -16,7 +17,9 @@ import es.uniovi.asw.util.CitizenException;
 @SpringBootApplication
 public class LoadUsers {
 	public static void main(String... args) throws CitizenException {
-		SpringApplication.run(LoadUsers.class);
+		ConfigurableApplicationContext a = SpringApplication
+				.run(LoadUsers.class);
+		a.registerShutdownHook();
 	}
 
 }

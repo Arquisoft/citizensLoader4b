@@ -12,6 +12,8 @@ import java.util.GregorianCalendar;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import es.uniovi.asw.dbupdate.model.Citizen;
 import es.uniovi.asw.parser.writer.Letter;
@@ -19,7 +21,7 @@ import es.uniovi.asw.parser.writer.PDFLetter;
 import es.uniovi.asw.parser.writer.TXTLetter;
 import es.uniovi.asw.parser.writer.WordLetter;
 import es.uniovi.asw.util.CitizenException;
-
+@RunWith(SpringJUnit4ClassRunner.class)
 public class TemplateWritterTest {
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 	private Exception exception;
