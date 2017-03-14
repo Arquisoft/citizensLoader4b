@@ -18,4 +18,5 @@ public class LoadUsers {
 	public static void main(String... args) throws CitizenException {
 		SpringApplication.run(LoadUsers.class);
 	}
+
 }
