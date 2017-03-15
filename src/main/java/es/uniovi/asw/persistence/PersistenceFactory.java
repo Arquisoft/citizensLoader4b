@@ -1,7 +1,7 @@
 package es.uniovi.asw.persistence;
 
-public interface PersistenceFactory  {
+public interface PersistenceFactory {
 
 	CitizenRepository newCitizenRepository();
-	
+
 }

@@ -10,5 +10,6 @@ import java.util.List;
  * Created by igm1990 on 15/03/2017.
  */
 public interface Insert {
-    public void save(Factories factories, List<Citizen> citizens) throws CitizenException;
+	public void save(Factories factories, List<Citizen> citizens)
+			throws CitizenException;
 }

@@ -13,9 +13,10 @@ import java.util.List;
  */
 public class InsertR implements Insert {
 
-    @Override
-    public void save(Factories factories, List<Citizen> citizens) throws CitizenException {
-        for(Citizen citizen: citizens)
-            new InsertP().save(factories, citizen);
-    }
+	@Override
+	public void save(Factories factories, List<Citizen> citizens)
+			throws CitizenException {
+		for (Citizen citizen : citizens)
+			new InsertP().save(factories, citizen);
+	}
 }

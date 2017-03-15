@@ -10,8 +10,6 @@ import org.apache.poi.xwpf.usermodel.*;
 
 import com.itextpdf.text.DocumentException;
 
-
-
 /**
  * Clase encargada de crear las cartas con formato WORD.
  * 

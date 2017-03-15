@@ -3,7 +3,6 @@ package es.uniovi.asw.business.parser;
 import java.io.File;
 import java.util.List;
 
-
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.util.CitizenException;
 

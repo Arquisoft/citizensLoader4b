@@ -1,6 +1,5 @@
 package es.uniovi.asw.persistence.impl;
 
-
 import es.uniovi.asw.persistence.CitizenRepository;
 import es.uniovi.asw.persistence.PersistenceFactory;
 import org.springframework.beans.factory.annotation.Autowired;

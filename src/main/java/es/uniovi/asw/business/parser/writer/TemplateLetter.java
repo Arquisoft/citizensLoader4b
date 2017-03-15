@@ -5,7 +5,6 @@ import java.io.IOException;
 
 import com.itextpdf.text.DocumentException;
 
-
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.util.CitizenException;
 

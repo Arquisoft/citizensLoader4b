@@ -5,7 +5,6 @@ import java.io.*;
 import com.itextpdf.text.DocumentException;
 import es.uniovi.asw.model.Citizen;
 
-
 /**
  * Clase encargada de crear las cartas con formato TXT.
  * 

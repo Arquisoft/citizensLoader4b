@@ -1,6 +1,5 @@
 package es.uniovi.asw.business.parser.writer;
 
-
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.util.CitizenException;
 

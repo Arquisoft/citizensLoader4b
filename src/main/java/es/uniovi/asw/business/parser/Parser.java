@@ -7,5 +7,5 @@ import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.util.CitizenException;
 
 public interface Parser {
-    List<Citizen> loadUsers(File fichero) throws CitizenException;
+	List<Citizen> loadUsers(File fichero) throws CitizenException;
 }

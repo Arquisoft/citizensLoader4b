@@ -12,110 +12,114 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import es.uniovi.asw.util.CitizenException;
 
 public class LoadFromExcel implements Parser {
-    // Este id cuando tengamos la BBDD habra que obtenerlo de ahi, ya que es el
-    // ultimo que añadamos.
-    private long id = 0;
+	// Este id cuando tengamos la BBDD habra que obtenerlo de ahi, ya que es el
+	// ultimo que añadamos.
+	private long id = 0;
 
+	public List<Citizen> cargarCitizens() throws CitizenException {
+		String directorio = "archivosExcel";
+		File f = new File(directorio);
+		List<Citizen> citizens = null;
+		if (f.exists()) {
+			File[] ficheros = f.listFiles();
+			if (ficheros.length == 0) {
+				System.out.println("Consulte el manual de uso con -help.");
+			} else {
+				for (int i = 0; i < ficheros.length; i++) {
+					citizens = loadUsers(ficheros[i]);
+				}
+			}
+		}
+		return citizens;
+	}
 
-    public List<Citizen> cargarCitizens() throws CitizenException {
-        String directorio = "archivosExcel";
-        File f = new File(directorio);
-        List<Citizen> citizens = null;
-        if (f.exists()) {
-            File[] ficheros = f.listFiles();
-            if (ficheros.length == 0) {
-                System.out.println("Consulte el manual de uso con -help.");
-            } else {
-                for (int i = 0; i < ficheros.length; i++) {
-                    citizens = loadUsers(ficheros[i]);
-                }
-            }
-        }
-        return citizens;
-    }
+	/**
+	 * Leemos los parametros del excel y lo vamos almacenando en una lista de
+	 * ciudadanos que serán los que metamos en la BBDD.
+	 *
+	 * @param fichero
+	 *            fichero de tipo excel
+	 * @return retorna una lista con todos los ciudadanos que se han incluido en
+	 *         el fichero
+	 * @throws CitizenException
+	 *             Cualquier problema ocurrido durante la ejecución del método.
+	 */
+	public List<Citizen> loadUsers(File fichero) throws CitizenException {
 
-    /**
-     * Leemos los parametros del excel y lo vamos almacenando en una lista de
-     * ciudadanos que serán los que metamos en la BBDD.
-     *
-     * @param fichero fichero de tipo excel
-     * @return retorna una lista con todos los ciudadanos que se han incluido en
-     * el fichero
-     * @throws CitizenException Cualquier problema ocurrido durante la ejecución del método.
-     */
-    public List<Citizen> loadUsers(File fichero) throws CitizenException {
+		List<Citizen> citizens = new ArrayList<Citizen>();
+		FileInputStream file = null;
+		try {
+			try {
+				file = new FileInputStream(fichero);
+			} catch (NullPointerException e) {
+				throw new CitizenException(
+						"No se puede pasar como fichero un null");
+			}
+		} catch (FileNotFoundException e) {
+			throw new CitizenException("Fichero no encontrado");
+		}
 
-        List<Citizen> citizens = new ArrayList<Citizen>();
-        FileInputStream file = null;
-        try {
-            try {
-                file = new FileInputStream(fichero);
-            } catch (NullPointerException e) {
-                throw new CitizenException(
-                        "No se puede pasar como fichero un null");
-            }
-        } catch (FileNotFoundException e) {
-            throw new CitizenException("Fichero no encontrado");
-        }
+		// Obtenemos la hoja de votantes del censo
+		XSSFWorkbook patron;
+		try {
+			patron = new XSSFWorkbook(file);
+		} catch (IOException e) {
+			throw new CitizenException(
+					"No hemos obtenido la hoja de votantes del censo");
 
-        // Obtenemos la hoja de votantes del censo
-        XSSFWorkbook patron;
-        try {
-            patron = new XSSFWorkbook(file);
-        } catch (IOException e) {
-            throw new CitizenException(
-                    "No hemos obtenido la hoja de votantes del censo");
+		}
 
-        }
+		// Obtenemos la primera hoja del libro excel
+		XSSFSheet hoja = patron.getSheetAt(0);
 
-        // Obtenemos la primera hoja del libro excel
-        XSSFSheet hoja = patron.getSheetAt(0);
+		// Iteramos sobre cada fila de la primera hoja
+		Iterator<Row> rowIterator = hoja.iterator();
+		rowIterator.next();
+		while (rowIterator.hasNext()) {
+			Row row = rowIterator.next();
 
-        // Iteramos sobre cada fila de la primera hoja
-        Iterator<Row> rowIterator = hoja.iterator();
-        rowIterator.next();
-        while (rowIterator.hasNext()) {
-            Row row = rowIterator.next();
+			// Para cada fila, iteramos a través de cada una de sus columnas
+			Iterator<Cell> columnas = row.cellIterator();
+			loadDataCitizen(columnas, citizens); // Cargamos los datos del
+			// votante
+		}
+		try {
+			patron.close();
+		} catch (IOException e) {
+			throw new CitizenException(
+					"No se ha podido cerrar la hoja del libro excel.");
+		}
+		return citizens;
+	}
 
-            // Para cada fila, iteramos a través de cada una de sus columnas
-            Iterator<Cell> columnas = row.cellIterator();
-            loadDataCitizen(columnas, citizens); // Cargamos los datos del
-            // votante
-        }
-        try {
-            patron.close();
-        } catch (IOException e) {
-            throw new CitizenException(
-                    "No se ha podido cerrar la hoja del libro excel.");
-        }
-        return citizens;
-    }
-
-    /**
-     * Método que crea el Citizen y lo almacena en la lista
-     *
-     * @param columnas son los datos de cada fila e iteramos por columna para obtener
-     *                 cada dato
-     * @param citizens lista donde se va a almacenar cada Citizen
-     * @throws CitizenException Excepción ocurrida durante la ejecución
-     */
-    private void loadDataCitizen(Iterator<Cell> columnas,
-                                 List<Citizen> citizens) throws CitizenException {
-        try {
-            id++;
-            String nombre = columnas.next().getStringCellValue();
-            String apellidos = columnas.next().getStringCellValue();
-            String email = columnas.next().getStringCellValue();
-            Date fechaNacimiento = new java.sql.Date(
-                    columnas.next().getDateCellValue().getTime());
-            String residencia = columnas.next().getStringCellValue();
-            String nacionalidad = columnas.next().getStringCellValue();
-            String dni = columnas.next().getStringCellValue();
-            Citizen citizen = new Citizen(id, nombre, apellidos, email,
-                    fechaNacimiento, residencia, nacionalidad, dni);
-            citizens.add(citizen);
-        } catch (Exception ne) {
-            throw new CitizenException("Error en el archivo.");
-        }
-    }
+	/**
+	 * Método que crea el Citizen y lo almacena en la lista
+	 *
+	 * @param columnas
+	 *            son los datos de cada fila e iteramos por columna para obtener
+	 *            cada dato
+	 * @param citizens
+	 *            lista donde se va a almacenar cada Citizen
+	 * @throws CitizenException
+	 *             Excepción ocurrida durante la ejecución
+	 */
+	private void loadDataCitizen(Iterator<Cell> columnas,
+			List<Citizen> citizens) throws CitizenException {
+		try {
+			id++;
+			String nombre = columnas.next().getStringCellValue();
+			String apellidos = columnas.next().getStringCellValue();
+			String email = columnas.next().getStringCellValue();
+			Date fechaNacimiento = new java.sql.Date(
+					columnas.next().getDateCellValue().getTime());
+			String residencia = columnas.next().getStringCellValue();
+			String nacionalidad = columnas.next().getStringCellValue();
+			String dni = columnas.next().getStringCellValue();
+			Citizen citizen = new Citizen(id, nombre, apellidos, email,
+					fechaNacimiento, residencia, nacionalidad, dni);
+			citizens.add(citizen);
+		} catch (Exception ne) {
+			throw new CitizenException("Error en el archivo.");
+		}
+	}
 }

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-
 import es.uniovi.asw.business.parser.LoadFromExcel;
 import es.uniovi.asw.business.parser.Parser;
 import es.uniovi.asw.business.parser.ReadCitizens;

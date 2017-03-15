@@ -7,5 +7,5 @@ import es.uniovi.asw.model.Citizen;
  * Created by igm1990 on 15/03/2017.
  */
 public interface Insert {
-    public void save(Factories factories, Citizen citizen);
+	public void save(Factories factories, Citizen citizen);
 }
