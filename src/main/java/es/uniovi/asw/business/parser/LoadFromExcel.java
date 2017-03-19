@@ -119,6 +119,7 @@ public class LoadFromExcel implements Parser {
 					fechaNacimiento, residencia, nacionalidad, dni);
 			citizens.add(citizen);
 		} catch (Exception ne) {
+			ne.printStackTrace();
 			throw new CitizenException("Error en el archivo.");
 		}
 	}

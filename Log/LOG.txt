@@ -68,3 +68,10 @@
 (Tue Mar 14 23:23:45 CET 2017) -> Prueba de fallo
 (Tue Mar 14 23:32:47 CET 2017) -> Prueba de fallo
 (Wed Mar 15 16:54:39 CET 2017) -> Prueba de fallo
+(Sun Mar 19 05:59:14 CET 2017) -> Error en el fichero la extensión del archivo
+(Sun Mar 19 06:01:07 CET 2017) -> Error en el archivo.
+(Sun Mar 19 06:02:49 CET 2017) -> Error en el archivo.
+(Sun Mar 19 06:06:59 CET 2017) -> No valid entries or contents found, this is not a valid OOXML (Office Open XML) file
+(Sun Mar 19 06:07:54 CET 2017) -> Error en el fichero la extensión del archivo
+(Sun Mar 19 06:09:19 CET 2017) -> Error en el archivo.
+(Sun Mar 19 06:10:13 CET 2017) -> Error en el archivo.
