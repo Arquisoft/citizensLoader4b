@@ -75,3 +75,4 @@
 (Sun Mar 19 06:07:54 CET 2017) -> Error en el fichero la extensión del archivo
 (Sun Mar 19 06:09:19 CET 2017) -> Error en el archivo.
 (Sun Mar 19 06:10:13 CET 2017) -> Error en el archivo.
+(Sun Apr 02 05:19:44 CEST 2017) -> No todos los campos estan inicializados

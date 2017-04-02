@@ -69,7 +69,7 @@ public class Citizen {
 			String dni2) throws NoSuchAlgorithmException, CitizenException {
 		this(nombre2, apellidos2, email2, fechaNacimiento2, residencia2,
 				nacionalidad2, dni2);
-
+		this.id = id2;
 	}
 
 	public Long getId() {
