@@ -187,7 +187,7 @@ public class TemplateWritterTest {
 	private void testUsuarioAnonimo(Letter carta) {
 		testUsuarioSinCampos(carta);
 		try {
-			anonimo.setId(9);
+			anonimo.setId((long) 9);
 			carta.generateLetter(anonimo);
 		} catch (Exception e) {
 			exception = e;
@@ -403,7 +403,7 @@ public class TemplateWritterTest {
 	private void testUsuarioImposible(Letter carta) {
 		// Prueba con un usuario con ID negativo
 		try {
-			anonimo.setId(-25);
+			anonimo.setId((long) -25);
 			carta.generateLetter(anonimo);
 		} catch (Exception e) {
 			exception = e;

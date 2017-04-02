@@ -46,6 +46,7 @@ public class LoadUsers {
 				try {
 					List<Citizen> citizens = factories.getServicesFactory()
 							.getCitizenService().findAll();
+					System.out.println(citizens.size());
 					generarCartas(citizens);
 					new InsertR().save(factories, citizens);
 				} catch (Exception e1) {

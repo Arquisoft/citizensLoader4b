@@ -18,5 +18,6 @@ public class InsertR implements Insert {
 			throws CitizenException {
 		for (Citizen citizen : citizens)
 			new InsertP().save(factories, citizen);
+		
 	}
 }
