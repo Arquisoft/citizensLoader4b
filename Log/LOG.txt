@@ -76,3 +76,9 @@
 (Sun Mar 19 06:09:19 CET 2017) -> Error en el archivo.
 (Sun Mar 19 06:10:13 CET 2017) -> Error en el archivo.
 (Sun Apr 02 05:19:44 CEST 2017) -> No todos los campos estan inicializados
+(Sun Apr 02 05:24:47 CEST 2017) -> Prueba de fallo
+(Sun Apr 02 05:28:20 CEST 2017) -> Prueba de fallo
+(Sun Apr 02 05:28:54 CEST 2017) -> Prueba de fallo
+(Sun Apr 02 05:33:40 CEST 2017) -> Prueba de fallo
+(Sun Apr 02 05:35:35 CEST 2017) -> Prueba de fallo
+(Sun Apr 02 05:36:46 CEST 2017) -> Prueba de fallo

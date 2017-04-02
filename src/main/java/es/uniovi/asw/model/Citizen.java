@@ -1,23 +1,34 @@
 package es.uniovi.asw.model;
 
+import es.uniovi.asw.util.CitizenException;
+import es.uniovi.asw.util.EncryptMD5;
+
+import java.io.Serializable;
 import java.security.NoSuchAlgorithmException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Random;
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
-import es.uniovi.asw.util.CitizenException;
-import es.uniovi.asw.util.EncryptMD5;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "TCITIZENS")
-public class Citizen {
+public class Citizen implements Serializable {
+
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private long id;
 
 	@NotNull
 	private String nombre;
@@ -25,31 +36,24 @@ public class Citizen {
 	private String apellidos;
 	@NotNull
 	private String email;
-
 	@NotNull
-	@Temporal(TemporalType.DATE)
 	private Date fechaNacimiento;
-
-	@NotNull
 	private String residencia;
-
-	@NotNull
 	private String nacionalidad;
-
 	@NotNull
 	private String dni;
-
 	@NotNull
 	private String password;
 
-	private boolean isAdmin;
+	private Calendar calendar = GregorianCalendar.getInstance();
 
 	public Citizen() {
 	}
 
-	public Citizen(String nombre, String apellidos, String email,
+	public Citizen(long id, String nombre, String apellidos, String email,
 			Date fechaNacimiento, String residencia, String nacionalidad,
 			String dni) throws NoSuchAlgorithmException, CitizenException {
+		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.email = email;
@@ -58,26 +62,17 @@ public class Citizen {
 		this.nacionalidad = nacionalidad;
 		this.dni = dni;
 		this.password = generarPassword();
-		if (nombre.equals("admin"))
-			this.isAdmin = true;
-		else
-			this.isAdmin = false;
 	}
 
-	public Citizen(long id2, String nombre2, String apellidos2, String email2,
-			Date fechaNacimiento2, String residencia2, String nacionalidad2,
-			String dni2) throws NoSuchAlgorithmException, CitizenException {
-		this(nombre2, apellidos2, email2, fechaNacimiento2, residencia2,
-				nacionalidad2, dni2);
-		this.id = id2;
-	}
-
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(long id) throws CitizenException {
+		if (id > 0)
+			this.id = id;
+		else
+			throw new CitizenException("El ID es menor que 0");
 	}
 
 	public String getNombre() {
@@ -110,7 +105,6 @@ public class Citizen {
 
 	public void setFechaNacimiento(Date fechaNacimiento)
 			throws CitizenException {
-		Calendar calendar = GregorianCalendar.getInstance();
 		try {
 			if (fechaNacimiento.before(calendar.getTime()))
 				this.fechaNacimiento = fechaNacimiento;
@@ -159,7 +153,6 @@ public class Citizen {
 	private String generarPassword()
 			throws NoSuchAlgorithmException, CitizenException {
 		String password = "";
-		Calendar calendar = GregorianCalendar.getInstance();
 		Random r = new Random(calendar.getTimeInMillis());
 		int i = 0;
 
@@ -175,19 +168,35 @@ public class Citizen {
 		return new EncryptMD5().encrypting(password);
 	}
 
-	public boolean isAdmin() {
-		return isAdmin;
-	}
-
-	public void setAdmin(boolean isAdmin) {
-		this.isAdmin = isAdmin;
+	@Override
+	public String toString() {
+		return "Citizen [id=" + id + ", nombre=" + nombre + ", apellidos="
+				+ apellidos + ", email=" + email + ", fechaNacimiento="
+				+ fechaNacimiento + ", residencia=" + residencia
+				+ ", nacionalidad=" + nacionalidad + ", dni=" + dni
+				+ ", password=" + password + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result
+				+ ((apellidos == null) ? 0 : apellidos.hashCode());
+		result = prime * result
+				+ ((calendar == null) ? 0 : calendar.hashCode());
+		result = prime * result + ((dni == null) ? 0 : dni.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result
+				+ ((fechaNacimiento == null) ? 0 : fechaNacimiento.hashCode());
+		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result
+				+ ((nacionalidad == null) ? 0 : nacionalidad.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result
+				+ ((password == null) ? 0 : password.hashCode());
+		result = prime * result
+				+ ((residencia == null) ? 0 : residencia.hashCode());
 		return result;
 	}
 
@@ -200,10 +209,52 @@ public class Citizen {
 		if (getClass() != obj.getClass())
 			return false;
 		Citizen other = (Citizen) obj;
-		if (id == null) {
-			if (other.id != null)
+		if (apellidos == null) {
+			if (other.apellidos != null)
 				return false;
-		} else if (!id.equals(other.id))
+		} else if (!apellidos.equals(other.apellidos))
+			return false;
+		if (calendar == null) {
+			if (other.calendar != null)
+				return false;
+		} else if (!calendar.equals(other.calendar))
+			return false;
+		if (dni == null) {
+			if (other.dni != null)
+				return false;
+		} else if (!dni.equals(other.dni))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (fechaNacimiento == null) {
+			if (other.fechaNacimiento != null)
+				return false;
+		} else if (!fechaNacimiento.equals(other.fechaNacimiento))
+			return false;
+		if (id != other.id)
+			return false;
+		if (nacionalidad == null) {
+			if (other.nacionalidad != null)
+				return false;
+		} else if (!nacionalidad.equals(other.nacionalidad))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (residencia == null) {
+			if (other.residencia != null)
+				return false;
+		} else if (!residencia.equals(other.residencia))
 			return false;
 		return true;
 	}
