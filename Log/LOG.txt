@@ -87,3 +87,5 @@
 (Sun Apr 09 03:29:34 CEST 2017) -> could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
 (Sun Apr 09 03:58:19 CEST 2017) -> Error en el archivo.
 (Sun Apr 09 04:01:35 CEST 2017) -> Error en el archivo.
+(Sun Apr 09 04:08:49 CEST 2017) -> Prueba de fallo
+(Sun Apr 09 04:11:37 CEST 2017) -> Prueba de fallo

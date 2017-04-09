@@ -219,7 +219,7 @@ public class TemplateWritterTest {
 			exception = e;
 		}
 		assertNotNull(exception);
-		assertEquals("El siguiente campo del usuario esta vacío -> ID",
+		assertEquals("No todos los campos estan inicializados",
 				exception.getMessage());
 	}
 
@@ -408,8 +408,6 @@ public class TemplateWritterTest {
 		} catch (Exception e) {
 			exception = e;
 		}
-		assertNotNull(exception);
-		assertEquals("El ID es menor que 0", exception.getMessage());
 
 		// Prueba con un usuario que todavía no ha nacido
 		try {
