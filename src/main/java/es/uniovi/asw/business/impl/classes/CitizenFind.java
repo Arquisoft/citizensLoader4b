@@ -3,7 +3,7 @@ package es.uniovi.asw.business.impl.classes;
 import es.uniovi.asw.business.parser.impl.RCitizens;
 import es.uniovi.asw.business.parser.ReadCitizens;
 import es.uniovi.asw.model.Citizen;
-import es.uniovi.asw.util.CitizenException;
+import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.util.FactoryCarpetas;
 
 import java.io.File;

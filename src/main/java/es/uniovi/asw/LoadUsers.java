@@ -4,7 +4,7 @@ import es.uniovi.asw.business.parser.impl.InsertR;
 import es.uniovi.asw.business.parser.writer.*;
 import es.uniovi.asw.infraestructure.Factories;
 import es.uniovi.asw.model.Citizen;
-import es.uniovi.asw.util.CitizenException;
+import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.util.Printer;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,8 +46,8 @@ public class LoadUsers {
 				try {
 					List<Citizen> citizens = factories.getServicesFactory()
 							.getCitizenService().findAll();
-					//generarCartas(citizens);
-					//new InsertR().save(factories, citizens);
+					generarCartas(citizens);
+					new InsertR().save(factories, citizens);
 				} catch (Exception e1) {
 					new Printer().printCitizenException(e1);
 				}

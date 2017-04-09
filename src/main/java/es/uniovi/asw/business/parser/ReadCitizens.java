@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.List;
 
 import es.uniovi.asw.model.Citizen;
-import es.uniovi.asw.util.CitizenException;
+import es.uniovi.asw.model.exception.CitizenException;
 
 /**
  * Interfaz encargada de definis los métodos que leen ficheros con los datos de

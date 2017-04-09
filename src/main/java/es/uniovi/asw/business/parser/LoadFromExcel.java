@@ -4,12 +4,12 @@ import java.io.*;
 import java.util.*;
 
 import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.model.exception.CitizenException;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import es.uniovi.asw.util.CitizenException;
 
 public class LoadFromExcel implements Parser {
 	// Este id cuando tengamos la BBDD habra que obtenerlo de ahi, ya que es el

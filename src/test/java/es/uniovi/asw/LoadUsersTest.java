@@ -9,7 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import es.uniovi.asw.util.CitizenException;
+
+import es.uniovi.asw.model.exception.CitizenException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class LoadUsersTest {

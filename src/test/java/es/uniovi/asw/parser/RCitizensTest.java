@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import es.uniovi.asw.business.parser.*;
 import es.uniovi.asw.business.parser.impl.RCitizens;
 import es.uniovi.asw.model.Citizen;
-import es.uniovi.asw.util.CitizenException;
+import es.uniovi.asw.model.exception.CitizenException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class RCitizensTest {

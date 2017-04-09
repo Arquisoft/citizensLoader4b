@@ -20,7 +20,7 @@ import es.uniovi.asw.business.parser.writer.PDFLetter;
 import es.uniovi.asw.business.parser.writer.TXTLetter;
 import es.uniovi.asw.business.parser.writer.WordLetter;
 import es.uniovi.asw.model.Citizen;
-import es.uniovi.asw.util.CitizenException;
+import es.uniovi.asw.model.exception.CitizenException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class TemplateWritterTest {

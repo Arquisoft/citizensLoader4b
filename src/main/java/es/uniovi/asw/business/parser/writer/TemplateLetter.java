@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.itextpdf.text.DocumentException;
 
 import es.uniovi.asw.model.Citizen;
-import es.uniovi.asw.util.CitizenException;
+import es.uniovi.asw.model.exception.CitizenException;
 
 /**
  * Clase abstracta que implementa las partes comunes a todas las clases que

@@ -9,7 +9,7 @@ import es.uniovi.asw.business.parser.LoadFromExcel;
 import es.uniovi.asw.business.parser.Parser;
 import es.uniovi.asw.business.parser.ReadCitizens;
 import es.uniovi.asw.model.Citizen;
-import es.uniovi.asw.util.CitizenException;
+import es.uniovi.asw.model.exception.CitizenException;
 
 /**
  * Clase encargada de leer los ficheros Excel con los datos de los usuarios.

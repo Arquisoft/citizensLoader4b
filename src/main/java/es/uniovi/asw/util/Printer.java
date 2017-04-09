@@ -4,6 +4,7 @@ import java.util.List;
 
 import es.uniovi.asw.business.reportwritter.WreportP;
 import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.model.exception.CitizenException;
 
 /**
  * Clase encarga de mostrar por pantalla datos al usuario.

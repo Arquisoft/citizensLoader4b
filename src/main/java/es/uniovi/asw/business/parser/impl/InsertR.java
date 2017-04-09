@@ -3,8 +3,8 @@ package es.uniovi.asw.business.parser.impl;
 import es.uniovi.asw.business.parser.Insert;
 import es.uniovi.asw.infraestructure.Factories;
 import es.uniovi.asw.model.Citizen;
+import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.persistence.impl.InsertP;
-import es.uniovi.asw.util.CitizenException;
 
 import java.util.List;
 
@@ -18,6 +18,6 @@ public class InsertR implements Insert {
 			throws CitizenException {
 		for (Citizen citizen : citizens)
 			new InsertP().save(factories, citizen);
-		
+
 	}
 }

@@ -2,7 +2,7 @@ package es.uniovi.asw.business.parser;
 
 import es.uniovi.asw.infraestructure.Factories;
 import es.uniovi.asw.model.Citizen;
-import es.uniovi.asw.util.CitizenException;
+import es.uniovi.asw.model.exception.CitizenException;
 
 import java.util.List;
 

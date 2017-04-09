@@ -3,7 +3,8 @@ package es.uniovi.asw.business.impl;
 import es.uniovi.asw.business.CitizenService;
 import es.uniovi.asw.business.impl.classes.CitizenFind;
 import es.uniovi.asw.model.Citizen;
-import es.uniovi.asw.util.CitizenException;
+import es.uniovi.asw.model.exception.CitizenException;
+
 import org.springframework.stereotype.Service;
 
 import java.security.NoSuchAlgorithmException;
