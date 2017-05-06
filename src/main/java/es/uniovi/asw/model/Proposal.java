@@ -1,6 +1,8 @@
 package es.uniovi.asw.model;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -21,9 +23,6 @@ public class Proposal {
 	@NotNull
 	private String content;
 
-	@OneToMany(mappedBy = "proposal", fetch = FetchType.EAGER)
-	private Set<Commentary> comments = new HashSet<Commentary>();
-
 	@NotNull
 	private int valoration;
 
@@ -32,18 +31,24 @@ public class Proposal {
 
 	@Enumerated(EnumType.STRING)
 	private EstadosPropuesta status;
-	
-	@OneToMany(mappedBy = "proposal", fetch = FetchType.EAGER)
+
+	@OneToMany(cascade = { CascadeType.REFRESH,
+			CascadeType.REMOVE }, mappedBy = "proposal", fetch = FetchType.EAGER)
+	private List<Commentary> comments = new ArrayList<>();
+
+	@OneToMany(cascade = { CascadeType.REFRESH,
+			CascadeType.REMOVE }, mappedBy = "proposal", fetch = FetchType.EAGER)
 	private Set<Vote> votes = new HashSet<Vote>();
 
-	public Proposal() {	}
+	public Proposal() {
+	}
 
 	public Proposal(String name, String content, int minVotes) {
-		this.name = name;
-		this.content = content;
-		this.minVotes = minVotes;
-		this.status = EstadosPropuesta.EnTramite;
-		this.valoration = 0;
+		setName(name);
+		setContent(content);
+		setMinVotes(minVotes);
+		setStatus(EstadosPropuesta.EnTramite);
+		setValoration(0);
 	}
 
 	public EstadosPropuesta getStatus() {
@@ -85,17 +90,9 @@ public class Proposal {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
-	public Set<Commentary> getComments() {
-		return new HashSet<Commentary>(comments);
-	}
 
-	public Set<Commentary> _getComments() {
+	public List<Commentary> getComments() {
 		return comments;
-	}
-
-	public void setComments(Set<Commentary> comments) {
-		this.comments = comments;
 	}
 
 	public int getValoration() {
@@ -118,34 +115,41 @@ public class Proposal {
 		this.id = id;
 	}
 
-	public void positiveVote() {
+	public boolean positiveVote(Citizen citizen) {
+		if (comprobarVotacion(citizen))
+			return false;
 		this.valoration++;
+		return true;
 	}
 
-	public void negativeVote() {
+	public boolean negativeVote(Citizen citizen) {
+		if (comprobarVotacion(citizen))
+			return false;
 		this.valoration--;
+		return true;
 	}
 
-	public void insertComment(Commentary comment) {
-		this.comments.add(comment);
+	private boolean comprobarVotacion(Citizen citizen) {
+		for (Vote v : votes)
+			if (v.getCitizen().equals(citizen))
+				return true;
+		votes.add(new Vote(citizen, this));
+		return false;
 	}
 
 	public Set<Vote> getVotes() {
-		return new HashSet<Vote>(votes);
-	}
-	
-	public Set<Vote> _getVotes() {
 		return votes;
 	}
 
-	public void setVotes(Set<Vote> votes) {
-		this.votes = votes;
+	public void setValoration(int valoration) {
+		this.valoration = valoration;
 	}
 
 	@Override
 	public String toString() {
-		String cadena = "La propuesta: '" + name + "' tiene un total de "
-				+ valoration + " votos y " + comments.size() + " comments.\n";
+		String cadena = "La propuesta: '" + getName() + "' tiene un total de "
+				+ getValoration() + " votos y " + getComments().size()
+				+ " comments.\n";
 		return cadena;
 	}
 
@@ -173,8 +177,5 @@ public class Proposal {
 			return false;
 		return true;
 	}
-
-
-	
 
 }

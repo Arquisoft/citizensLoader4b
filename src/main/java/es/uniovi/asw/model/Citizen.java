@@ -4,6 +4,8 @@ import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.model.util.EncryptMD5;
 
 import java.security.NoSuchAlgorithmException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -47,13 +49,15 @@ public class Citizen {
 
 	private boolean isAdmin;
 
-	@OneToMany(mappedBy = "citizen", fetch = FetchType.EAGER)
+	@OneToMany(cascade = { CascadeType.REFRESH,
+			CascadeType.REMOVE }, mappedBy = "citizen", fetch = FetchType.EAGER)
 	private Set<Commentary> comentarios = new HashSet<Commentary>();
 
-	@OneToMany(mappedBy = "citizen", fetch = FetchType.EAGER)
+	@OneToMany(cascade = { CascadeType.REFRESH,
+			CascadeType.REMOVE }, mappedBy = "citizen", fetch = FetchType.EAGER)
 	private Set<Vote> votes = new HashSet<Vote>();
 
-	public Citizen() {
+	Citizen() {
 	}
 
 	public Citizen(String nombre, String apellidos, String email,
@@ -68,14 +72,6 @@ public class Citizen {
 		setDni(dni);
 		setPassword(generarPassword());
 		setAdmin(false);
-	}
-
-	public Citizen(long id2, String nombre2, String apellidos2, String email2,
-			Date fechaNacimiento2, String residencia2, String nacionalidad2,
-			String dni2) throws NoSuchAlgorithmException, CitizenException {
-		this(nombre2, apellidos2, email2, fechaNacimiento2, residencia2,
-				nacionalidad2, dni2);
-		this.id = id2;
 	}
 
 	public Long getId() {
@@ -182,15 +178,7 @@ public class Citizen {
 	}
 
 	public Set<Commentary> getComentarios() {
-		return new HashSet<Commentary>(comentarios);
-	}
-
-	public Set<Commentary> _getComentarios() {
 		return comentarios;
-	}
-
-	public void setComentarios(Set<Commentary> comentarios) {
-		this.comentarios = comentarios;
 	}
 
 	public boolean isAdmin() {
@@ -202,26 +190,17 @@ public class Citizen {
 	}
 
 	public Set<Vote> getVotes() {
-		return new HashSet<Vote>(votes);
-	}
-
-	public Set<Vote> _getVotes() {
 		return votes;
-	}
-
-	public void setVotes(Set<Vote> votes) {
-		this.votes = votes;
 	}
 
 	@Override
 	public String toString() {
-		return "Citizen [id=" + id + ", nombre=" + nombre + ", apellidos="
-				+ apellidos + ", email=" + email + ", fechaNacimiento="
-				+ fechaNacimiento + ", residencia=" + residencia
-				+ ", nacionalidad=" + nacionalidad + ", dni=" + dni
-				+ ", password=" + password + ", isAdmin=" + isAdmin
-				+ ", comentarios=" + comentarios.size() + ", votes="
-				+ votes.size() + "]";
+		DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+		String reportDate = df.format(fechaNacimiento);
+		return "Citizen [nombre=" + nombre + ", apellidos=" + apellidos
+				+ ", email=" + email + ", fechaNacimiento=" + reportDate
+				+ ", residencia=" + residencia + ", nacionalidad="
+				+ nacionalidad + ", dni=" + dni + ", isAdmin=" + isAdmin + "]";
 	}
 
 	@Override

@@ -7,28 +7,28 @@ public class Association {
 			commentary.setCitizen(citizen);
 			commentary.setProposal(proposal);
 			citizen.getComentarios().add(commentary);
-			proposal._getComments().add(commentary);
+			proposal.getComments().add(commentary);
 		}
 
 		public static void unlink(Commentary commentary) {
 			commentary.getCitizen().getComentarios().remove(commentary);
-			commentary.getProposal()._getComments().remove(commentary);
+			commentary.getProposal().getComments().remove(commentary);
 			commentary.setCitizen(null);
 			commentary.setProposal(null);
 		}
 	}
-	
+
 	public static class Vota {
 		public static void link(Citizen citizen, Vote vote, Proposal proposal) {
 			vote.setCitizen(citizen);
 			vote.setProposal(proposal);
-			citizen._getVotes().add(vote);
-			proposal._getVotes().add(vote);
+			citizen.getVotes().add(vote);
+			proposal.getVotes().add(vote);
 		}
-		
+
 		public static void unlink(Vote vote) {
-			vote.getCitizen()._getVotes().remove(vote);
-			vote.getProposal()._getVotes().remove(vote);
+			vote.getCitizen().getVotes().remove(vote);
+			vote.getProposal().getVotes().remove(vote);
 			vote.setCitizen(null);
 			vote.setProposal(null);
 		}

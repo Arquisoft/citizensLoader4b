@@ -1,5 +1,7 @@
 package es.uniovi.asw.model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -7,23 +9,22 @@ import java.util.GregorianCalendar;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-import es.uniovi.asw.model.types.keys.ComentaryKey;
+import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.model.types.status.EstadosComentario;
 
 @Entity
-@IdClass(ComentaryKey.class)
 @Table(name = "TCOMMENTARIES")
 public class Commentary {
-
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
 	@ManyToOne
 	private Citizen citizen;
 
-	@Id
 	@ManyToOne
 	private Proposal proposal;
 
-	@Id
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date creationDate;
 
@@ -39,16 +40,24 @@ public class Commentary {
 	Commentary() {
 	}
 
-	public Commentary(Citizen citizen, Proposal proposal, String content) {
-		//Association.Comenta.link(citizen, this, proposal);
+	public Commentary(Citizen citizen, Proposal proposal, String content)
+			throws CitizenException {
+		if (citizen == null)
+			throw new CitizenException("Citizen is null");
+		if (proposal == null)
+			throw new CitizenException("Proposal is null");
 		Calendar calendar = GregorianCalendar.getInstance();
-		this.creationDate = new Date(calendar.getTimeInMillis());
-		this.content = content;
-		this.valoration = 0;
-		this.status = EstadosComentario.Correcto;
+		setCreationDate(new Date(calendar.getTimeInMillis()));
+		setContent(content);
+		setValoracion(0);
+		setEstado(EstadosComentario.Correcto);
 		Association.Comenta.link(citizen, this, proposal);
 	}
-	
+
+	public Long getId() {
+		return id;
+	}
+
 	public String getContent() {
 		return content;
 	}
@@ -74,8 +83,8 @@ public class Commentary {
 		this.status = status;
 	}
 
-	public void censurarComentario(Commentary comment) {
-		comment.setEstado(EstadosComentario.Censurado);
+	public void censurarComentario() {
+		setEstado(EstadosComentario.Censurado);
 	}
 
 	public Proposal getProposal() {
@@ -104,10 +113,12 @@ public class Commentary {
 
 	@Override
 	public String toString() {
-		return "Comentario [citizen=" + citizen + ", proposal=" + proposal
-				+ ", fechaCreacion=" + creationDate + ", valoracion="
-				+ valoration + ", contenido=" + content + ", estado=" + status
-				+ "]";
+		DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+		String reportDate = df.format(getCreationDate());
+		return "Commentary [citizen=" + getCitizen() + ", proposal="
+				+ getProposal() + ", creationDate=" + reportDate
+				+ ", valoration=" + getValoracion() + ", content="
+				+ getContent() + ", status=" + getEstado() + "]";
 	}
 
 	@Override
@@ -115,8 +126,10 @@ public class Commentary {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((citizen == null) ? 0 : citizen.hashCode());
-		result = prime * result + ((creationDate == null) ? 0 : creationDate.hashCode());
-		result = prime * result + ((proposal == null) ? 0 : proposal.hashCode());
+		result = prime * result
+				+ ((creationDate == null) ? 0 : creationDate.hashCode());
+		result = prime * result
+				+ ((proposal == null) ? 0 : proposal.hashCode());
 		return result;
 	}
 
@@ -146,8 +159,5 @@ public class Commentary {
 			return false;
 		return true;
 	}
-
-
-	
 
 }
