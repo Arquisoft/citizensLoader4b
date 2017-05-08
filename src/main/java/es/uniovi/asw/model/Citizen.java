@@ -57,7 +57,7 @@ public class Citizen {
 			CascadeType.REMOVE }, mappedBy = "citizen", fetch = FetchType.EAGER)
 	private Set<Vote> votes = new HashSet<Vote>();
 
-	Citizen() {
+	public Citizen() {
 	}
 
 	public Citizen(String nombre, String apellidos, String email,
@@ -72,6 +72,22 @@ public class Citizen {
 		setDni(dni);
 		setPassword(generarPassword());
 		setAdmin(false);
+	}
+
+
+
+	public Citizen(Long id, String nombre, String apellidos, String email,
+			Date fechaNacimiento, String residencia, String nacionalidad,
+			String dni) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.email = email;
+		this.fechaNacimiento = fechaNacimiento;
+		this.residencia = residencia;
+		this.nacionalidad = nacionalidad;
+		this.dni = dni;
 	}
 
 	public Long getId() {

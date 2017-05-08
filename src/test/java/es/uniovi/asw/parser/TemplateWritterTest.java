@@ -45,7 +45,7 @@ public class TemplateWritterTest {
 		c1.set(Calendar.YEAR, 1988);
 		c1.set(Calendar.MONTH, Calendar.JANUARY);
 		c1.set(Calendar.DAY_OF_MONTH, 1);
-		usuario = new Citizen(8, "a", "b b", "c@gmail.com",
+		usuario = new Citizen((long)8, "a", "b b", "c@gmail.com",
 				new Date(c1.getTimeInMillis()), "residencia", "nacionalidad",
 				"dni");
 		anonimo = new Citizen();
