@@ -1,10 +1,10 @@
-package es.uniovi.asw.business.parser.impl;
+package es.uniovi.asw.parser.impl;
 
-import es.uniovi.asw.business.parser.Insert;
+import es.uniovi.asw.dbupdate.impl.InsertP;
 import es.uniovi.asw.infraestructure.Factories;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.CitizenException;
-import es.uniovi.asw.persistence.impl.InsertP;
+import es.uniovi.asw.parser.Insert;
 
 import java.util.List;
 

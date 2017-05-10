@@ -1,4 +1,4 @@
-package es.uniovi.asw.business.parser;
+package es.uniovi.asw.parser;
 
 import es.uniovi.asw.infraestructure.Factories;
 import es.uniovi.asw.model.Citizen;

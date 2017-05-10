@@ -1,15 +1,15 @@
-package es.uniovi.asw.business.parser.impl;
+package es.uniovi.asw.parser.impl;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import es.uniovi.asw.business.parser.LoadFromExcel;
-import es.uniovi.asw.business.parser.Parser;
-import es.uniovi.asw.business.parser.ReadCitizens;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.CitizenException;
+import es.uniovi.asw.parser.LoadFromExcel;
+import es.uniovi.asw.parser.Parser;
+import es.uniovi.asw.parser.ReadList;
 
 /**
  * Clase encargada de leer los ficheros Excel con los datos de los usuarios.
@@ -18,7 +18,7 @@ import es.uniovi.asw.model.exception.CitizenException;
  * @author Iván González Mahagamage
  *
  */
-public class RCitizens implements ReadCitizens {
+public class RList implements ReadList {
 
 	@Override
 	public List<Citizen> readCitizens(File fichero) throws CitizenException {

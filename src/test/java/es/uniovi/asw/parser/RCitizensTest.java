@@ -10,14 +10,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import es.uniovi.asw.business.parser.*;
-import es.uniovi.asw.business.parser.impl.RCitizens;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.CitizenException;
+import es.uniovi.asw.parser.*;
+import es.uniovi.asw.parser.impl.RList;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class RCitizensTest {
-	private ReadCitizens rs = new RCitizens();
+	private ReadList rs = new RList();
 	private List<Citizen> citizens;
 	private Exception exception;
 

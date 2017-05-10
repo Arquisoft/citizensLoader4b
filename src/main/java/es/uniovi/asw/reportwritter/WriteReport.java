@@ -1,4 +1,4 @@
-package es.uniovi.asw.business.reportwritter;
+package es.uniovi.asw.reportwritter;
 
 import es.uniovi.asw.model.exception.CitizenException;
 

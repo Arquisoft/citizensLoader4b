@@ -1,4 +1,4 @@
-package es.uniovi.asw.business.parser;
+package es.uniovi.asw.parser;
 
 import java.io.File;
 import java.util.*;

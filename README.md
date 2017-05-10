@@ -24,4 +24,4 @@ Si no ha creado dicha carpeta el programa la creara por defecto.
 El usuario tendrá ayuda con el comando -help.
 Un ejemplo de uso sería:
 
-    java -jar target\citizensLoader4b-0.0.1-jar-with-dependecies.jar [-help]
+    java -jar target\citizensLoader4b-0.0.1.jar [-help]

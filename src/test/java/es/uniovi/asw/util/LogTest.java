@@ -7,8 +7,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import es.uniovi.asw.business.reportwritter.WreportP;
 import es.uniovi.asw.model.exception.CitizenException;
+import es.uniovi.asw.reportwritter.WreportP;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class LogTest {

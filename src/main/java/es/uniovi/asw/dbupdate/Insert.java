@@ -1,4 +1,4 @@
-package es.uniovi.asw.persistence;
+package es.uniovi.asw.dbupdate;
 
 import es.uniovi.asw.infraestructure.Factories;
 import es.uniovi.asw.model.Citizen;

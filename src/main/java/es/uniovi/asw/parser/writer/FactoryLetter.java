@@ -1,4 +1,4 @@
-package es.uniovi.asw.business.parser.writer;
+package es.uniovi.asw.parser.writer;
 
 import es.uniovi.asw.model.exception.CitizenException;
 import es.uniovi.asw.util.FactoryCarpetas;

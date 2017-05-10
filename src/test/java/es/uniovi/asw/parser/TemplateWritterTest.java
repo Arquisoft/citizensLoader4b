@@ -15,12 +15,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import es.uniovi.asw.business.parser.writer.Letter;
-import es.uniovi.asw.business.parser.writer.PDFLetter;
-import es.uniovi.asw.business.parser.writer.TXTLetter;
-import es.uniovi.asw.business.parser.writer.WordLetter;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.CitizenException;
+import es.uniovi.asw.parser.writer.Letter;
+import es.uniovi.asw.parser.writer.PDFLetter;
+import es.uniovi.asw.parser.writer.TXTLetter;
+import es.uniovi.asw.parser.writer.WordLetter;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class TemplateWritterTest {

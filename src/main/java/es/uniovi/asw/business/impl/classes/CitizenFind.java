@@ -1,9 +1,9 @@
 package es.uniovi.asw.business.impl.classes;
 
-import es.uniovi.asw.business.parser.impl.RCitizens;
-import es.uniovi.asw.business.parser.ReadCitizens;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.CitizenException;
+import es.uniovi.asw.parser.ReadList;
+import es.uniovi.asw.parser.impl.RList;
 import es.uniovi.asw.util.FactoryCarpetas;
 
 import java.io.File;
@@ -44,7 +44,7 @@ public class CitizenFind {
 	}
 
 	private List<Citizen> leerFichero(File fichero) throws CitizenException {
-		ReadCitizens leer = new RCitizens();
+		ReadList leer = new RList();
 		return leer.readCitizens(fichero);
 	}
 }

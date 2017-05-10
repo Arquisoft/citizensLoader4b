@@ -1,10 +1,10 @@
 package es.uniovi.asw;
 
-import es.uniovi.asw.business.parser.impl.InsertR;
-import es.uniovi.asw.business.parser.writer.*;
 import es.uniovi.asw.infraestructure.Factories;
 import es.uniovi.asw.model.Citizen;
 import es.uniovi.asw.model.exception.CitizenException;
+import es.uniovi.asw.parser.impl.InsertR;
+import es.uniovi.asw.parser.writer.*;
 import es.uniovi.asw.util.Printer;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +35,7 @@ public class LoadUsers {
 							"Debe añadir los ficheros de los datos de usuarios a "
 									+ "la carpeta archivosExcel.\n"
 									+ "Y ejecutar sin argumentos ejemplo:\n\t"
-									+ "java -jar target\\citizensLoader4b-0.0.1-"
-									+ "jar-with-dependecies.jar");
+									+ "java -jar target\\citizensLoader4b-0.0.1.jar");
 				} else {
 					System.out.println("La orden: " + args[0]
 							+ " no ha sido reconocida. \n"

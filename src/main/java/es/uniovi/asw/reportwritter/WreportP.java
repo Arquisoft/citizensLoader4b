@@ -1,4 +1,4 @@
-package es.uniovi.asw.business.reportwritter;
+package es.uniovi.asw.reportwritter;
 
 import java.io.*;
 import java.util.GregorianCalendar;

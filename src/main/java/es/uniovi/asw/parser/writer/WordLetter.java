@@ -1,4 +1,4 @@
-package es.uniovi.asw.business.parser.writer;
+package es.uniovi.asw.parser.writer;
 
 import java.io.File;
 import java.io.FileNotFoundException;

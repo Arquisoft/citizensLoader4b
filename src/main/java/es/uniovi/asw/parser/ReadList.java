@@ -1,4 +1,4 @@
-package es.uniovi.asw.business.parser;
+package es.uniovi.asw.parser;
 
 import java.io.File;
 import java.util.List;
@@ -14,7 +14,7 @@ import es.uniovi.asw.model.exception.CitizenException;
  * @author Iván González Mahagamage
  *
  */
-public interface ReadCitizens {
+public interface ReadList {
 	/**
 	 * Método encargado de leer los datos de los ciudadanos.
 	 * 

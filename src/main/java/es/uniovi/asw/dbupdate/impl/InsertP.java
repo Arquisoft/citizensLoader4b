@@ -1,8 +1,8 @@
-package es.uniovi.asw.persistence.impl;
+package es.uniovi.asw.dbupdate.impl;
 
+import es.uniovi.asw.dbupdate.Insert;
 import es.uniovi.asw.infraestructure.Factories;
 import es.uniovi.asw.model.Citizen;
-import es.uniovi.asw.persistence.Insert;
 
 /**
  * Created by igm1990 on 15/03/2017.
