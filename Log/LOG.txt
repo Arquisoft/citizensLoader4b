@@ -89,3 +89,8 @@
 (Sun Apr 09 04:01:35 CEST 2017) -> Error en el archivo.
 (Sun Apr 09 04:08:49 CEST 2017) -> Prueba de fallo
 (Sun Apr 09 04:11:37 CEST 2017) -> Prueba de fallo
+(Mon May 08 13:51:43 CEST 2017) -> Prueba de fallo
+(Wed May 10 20:55:35 CEST 2017) -> Prueba de fallo
+(Wed May 10 20:59:54 CEST 2017) -> Prueba de fallo
+(Wed May 10 21:01:48 CEST 2017) -> Prueba de fallo
+(Wed May 10 21:02:28 CEST 2017) -> Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Error while committing the transaction
