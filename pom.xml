@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>es.uniovi.asw</groupId>
-	<artifactId>parti4b</artifactId>
-	<name>parti4b</name>
+	<artifactId>citizensLoader4b</artifactId>
+	<name>citizensLoader4b</name>
 	<version>0.0.1</version>
 
 	<parent>
